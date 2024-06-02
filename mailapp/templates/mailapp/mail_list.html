@@ -1,6 +1,6 @@
-{% extends 'boat/base.html'%}
+{% extends 'mailapp/base.html'%}
 {% load static %}
-{% load my_tags %}
+
 {% block content %}
 
 
@@ -10,7 +10,7 @@
     <div class="col-4">
 
         <div class="card mb-3 box-shadow">
-            <img src="{{ object.image | media_filter }}" class="card-img-top" alt={{object.image|media_filter}}>
+
 
 
             <div class="card-body">
@@ -19,33 +19,18 @@
                 </h5>
                 <p class="card-text">
 
-                    {% if object.price %}
 
-                <h1>{{ object.price }} ₽</h1>
-                {% else %}
-                <h5>Цена договорная*</h5>
-
-                <small class="text-body-secondary">
-                     <span class="text-muted">
-
-                    * если договоритесь :)
-                     </span>
-                    <br>
-
-
-                </small>
                 <br>
-                {% endif %}
 
 
-                <b>Имя:</b> {{ object.name }} <br>
-                <b>Год изготовления:</b> {{ object.year }} <br>
-                <b>Владелец:</b> {{ object.owner }} <br>
+
+                <b>Имя:</b> {{ object.mail }} <br>
+
 
 
                 </p>
                 <div class="btn-group">
-                    <a class="btn btn-primary" href="{% url 'boat:boat_view' object.pk%}" role="button">Информация</a>
+                    <a class="btn btn-primary" href="#" role="button">Информация</a>
 
 
                     <a class="btn btn-primary" href="#"

@@ -1,5 +1,6 @@
 from django.db import models
 
+NULLALE = {'blank': True, 'none': True}
 # Create your models here.
 
 class Mail(models.Model):
@@ -7,8 +8,8 @@ class Mail(models.Model):
 
 
     def __str__(self):
-        return f"{self.boat} от {self.email}"
+        return f" {self.email}"
 
     class Meta:
-        verbose_name = ''
-        verbose_name_plural = 'заказы'
+        verbose_name = 'емайл'
+        verbose_name_plural = 'емайлы'

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% load my_tags %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,7 +14,7 @@
 
 </head>
 <body>
-{% include 'boat/includes/inc_main_menu.html' %}
+{% include 'mailapp/includes/inc_main_menu.html' %}
 
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -41,10 +40,9 @@
         </small>
     </p>
     <p class="lead">
-    <div style="color: red">{% time_until_11_nov %}</div>
 
     </p>
-    <label>{%  current_time '%Y-%m-%d' %} </label>
+
 
 </div>
 

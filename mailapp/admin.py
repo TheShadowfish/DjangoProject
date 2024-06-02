@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from mailapp.models import Mail
+
+
+@admin.register(Mail)
+class MailAdmin(admin.ModelAdmin):
+    list_display = ('id', 'email',)
+    list_filter = ('email',)
