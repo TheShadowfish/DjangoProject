@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="добавлены приложения">
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/boat_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/boat_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/includes/inc_main_menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/order_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/product_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/product_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/views.py" afterDir="false" />
+    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="дfirst step still work">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -127,12 +125,40 @@
       <option name="project" value="LOCAL" />
       <updated>1717329242081</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="добавлены приложения">
+      <option name="closed" value="true" />
+      <created>1717331035470</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717331035470</updated>
+    </task>
+    <task id="LOCAL-00005" summary="дfirst step still work">
+      <option name="closed" value="true" />
+      <created>1717348537379</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717348537379</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="добавлены приложения" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлены приложения" />
+    <MESSAGE value="дfirst step still work" />
+    <option name="LAST_COMMIT_MESSAGE" value="дfirst step still work" />
   </component>
 </project>
