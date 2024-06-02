@@ -1,0 +1,80 @@
+{% extends 'catalog/base.html'%}
+{% block content %}
+
+
+<div class="row text-start">
+
+    <div class="col-lg-12 col-md-6 col-sm-12">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Удаление продукта</h4>
+            </div>
+            <div class="card-text">Вы действительно хотите удалить продукт {{object.name}} ?</div>
+            <div class="card-body">
+                <form method="post" action="" class="form-floating" enctype="multipart/form-data">
+                    <div class="mb-3">
+
+                    {% csrf_token %}
+
+
+
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-lg btn-block btn-outline-primary">
+                        Удалить
+                    </button>
+
+                    <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:home' %}">Отмена</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-12">
+
+
+    <div class="card mb-3 box-shadow">
+
+        <div class="card-body">
+            <h5 class="card-title">Последние продукты</h5>
+            <p class="card-text">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% load my_tags %}
+                {% for object in object_list %}
+
+                <tr>
+                    <td>{{object.name | initial_letter_filter}}</td>
+                    <td>{{object.description}}</td>
+                    <td>{{object.category}}</td>
+                    <td>{{object.price}}</td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+            </p>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

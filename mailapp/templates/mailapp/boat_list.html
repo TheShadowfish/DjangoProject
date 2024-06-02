@@ -1,0 +1,136 @@
+{% extends 'boat/base.html'%}
+{% load static %}
+{% load my_tags %}
+{% block content %}
+
+
+<div class="row text-right">
+    {% for object in object_list %}
+
+    <div class="col-4">
+
+        <div class="card mb-3 box-shadow">
+            <img src="{{ object.image | media_filter }}" class="card-img-top" alt={{object.image|media_filter}}>
+
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div style="color: orange"><b>{{object | title}}</b></div>
+                </h5>
+                <p class="card-text">
+
+                    {% if object.price %}
+
+                <h1>{{ object.price }} ₽</h1>
+                {% else %}
+                <h5>Цена договорная*</h5>
+
+                <small class="text-body-secondary">
+                     <span class="text-muted">
+
+                    * если договоритесь :)
+                     </span>
+                    <br>
+
+
+                </small>
+                <br>
+                {% endif %}
+
+
+                <b>Имя:</b> {{ object.name }} <br>
+                <b>Год изготовления:</b> {{ object.year }} <br>
+                <b>Владелец:</b> {{ object.owner }} <br>
+
+
+                </p>
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{% url 'boat:boat_view' object.pk%}" role="button">Информация</a>
+
+
+                    <a class="btn btn-primary" href="#"
+                       role="button">Изменить</a>
+
+                    <a class="btn btn-primary" href="#"
+                       role="button">Удалить</a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    {% endfor %}
+
+
+</div>
+
+
+{% if is_paginated %}
+
+<div class="col-12">
+    <div class="card mb-3 box-shadow">
+
+        <div class="card-body">
+
+            <div class="btn-group">
+
+
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+
+
+                    <li>
+
+                        <a class="p-2 btn btn-outline-primary"
+                           href="?page={{ page_obj.previous_page_number }}"
+                           role="button"> &laquo; </a> &nbsp;
+
+
+                    </li>
+                    {% else %}
+
+                    <li class="disabled p-2 btn btn-outline-primary" role="button"><span>&laquo;</span></li> &nbsp;
+                    {% endif %}
+
+
+                    {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                    <li class="disabled p-2 btn btn-outline-primary" role="button"><span>{{ i }}(текущая);</span></li>
+                    &nbsp;
+                    {% else %}
+                    <li>
+
+
+                        <a class="p-2 btn btn-outline-primary"
+                           href="?page={{ i }}"
+                           role="button"> {{ i }} </a> &nbsp;
+
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                    <li>
+
+                        <a class="p-2 btn btn-outline-primary"
+                           href="?page={{ page_obj.next_page_number }}"
+                           role="button"> &raquo; </a>
+
+                    </li>
+                    {% else %}
+                    <li class="disabled p-2 btn btn-outline-primary" role="button"><span>&raquo; </span></li> &nbsp;
+                    {% endif %}
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}

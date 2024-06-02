@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
+from .models import Mail
 
-
-class MailLisView(ListView)
-# Create your views here.
+class MailListView(ListView):
+    model = Mail
+    fields = ('email')

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+{% load my_tags %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Продажа лодок
+    {% if title %}
+        - {{title}}
+        {% endif %}
+
+    </title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+</head>
+<body>
+{% include 'boat/includes/inc_main_menu.html' %}
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">
+        <img
+                src="{% static 'image/shark.svg' %}"
+                alt="Fishstore. We are sharks of business!"
+                height="100px"
+                width="100px"/>
+        <br>
+        BoatSell
+    </h1>
+    <p class="lead">BoatSell - это сервис для продажи и покупки лодок для владельцев! Мы поможем продать ваше судно!*
+        <br>
+
+        <small class="text-body-secondary">
+                     <span class="text-muted">
+
+                    * Если оно в принципе плавает. Затонувшие плавсредства не продаем!
+                     </span>
+
+
+        </small>
+    </p>
+    <p class="lead">
+    <div style="color: red">{% time_until_11_nov %}</div>
+
+    </p>
+    <label>{%  current_time '%Y-%m-%d' %} </label>
+
+</div>
+
+<div class="container">
+
+    {% comment "Этот HTML код пока не нужен, но вдруг пригодится в следующем домашнем задании" %}
+    <div class="row text-center">
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Удобный сервис рассылок</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$ 140</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>- Неограниченная лицензия</li>
+                        <li>- Поддержка</li>
+                        <li>- Установка на сервер</li>
+                        <li>- Получение обновлений</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row text-center">
+            <div class="col-3 col-md">
+                SkyStore
+                <small class="d-block mb-3 text-muted">&copy; 2023 - {% now 'Y' %}</small>
+            </div>
+            <div class="col-3 col-md">
+                <h5>Категории</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Рассылки</a></li>
+                    <li><a class="text-muted" href="#">Телеграм боты</a></li>
+                    <li><a class="text-muted" href="#">Полезные утилиты</a></li>
+                    <li><a class="text-muted" href="#">Веб-приложения</a></li>
+                    <li><a class="text-muted" href="#">Микросервисы</a></li>
+                </ul>
+            </div>
+            <div class="col-3 col-md">
+                <h5>Дополнительно</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Мы пишем</a></li>
+                </ul>
+            </div>
+            <div class="col-3 col-md">
+                <h5>О нас</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="/contacts/">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Mail(models.models):
+class Mail(models.Model):
     email = models.EmailField(max_length=150, verbose_name='почта')
 
 
@@ -10,5 +10,5 @@ class Mail(models.models):
         return f"{self.boat} от {self.email}"
 
     class Meta:
-        verbose_name = 'заказ'
+        verbose_name = ''
         verbose_name_plural = 'заказы'
