@@ -4,6 +4,17 @@
 
 
 <div class="row text-right">
+    <div class="col-12 mb-3">
+        <div class="card mb-3 box-shadow">
+            <br>
+            <div class="btn-group">
+          &nbsp; &nbsp; &nbsp;  <a class="p-2 btn btn-outline-primary btn-lg btn-block" href="{%url 'mailapp:user_create' %}">Добавить пользователя</a> &nbsp; &nbsp; &nbsp;
+            </div>
+            <br>
+        </div>
+    </div>
+
+
     {% for object in object_list %}
 
     <div class="col-4">
@@ -11,20 +22,19 @@
         <div class="card mb-3 box-shadow">
 
 
-
             <div class="card-body">
                 <h5 class="card-title">
-                    <div style="color: orange"><b>{{object | title}}</b></div>
+                    Пользователь: &nbsp;
+                    <div style="color: orange"><b> {{object | title}}</b></div>
                 </h5>
                 <p class="card-text">
 
 
-                <br>
+                    <br>
 
 
-
-                <b>Имя:</b> {{ object.mail }} <br>
-
+                    <b>Имя:</b> {{ object.name }} <br>
+                    <b>Email:</b> {{ object.email }} <br>
 
 
                 </p>

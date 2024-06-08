@@ -48,7 +48,7 @@ class Mailing(models.Model):
 
 
 class Mail(models.Model):
-    name = models.CharField(max_length=150, verbose_name='имя получателя', **NULLABLE)
+    name = models.CharField(max_length=150, verbose_name='имя получателя', default='Уважаемый клиент!')
     email = models.EmailField(max_length=150, verbose_name='почта')
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка',

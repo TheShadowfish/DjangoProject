@@ -18,10 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
-from mailapp.apps import MailappConfig
-app_name = MailappConfig.name
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mailapp/', include('mailapp.urls')),
+    path('', include('mailapp.urls'), name='main'),
 ]
