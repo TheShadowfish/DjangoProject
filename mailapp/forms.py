@@ -1,6 +1,6 @@
 from django import forms
 
-from mailapp.models import User
+from mailapp.models import User, Mail, Mailing
 
 
 class UserForm(forms.ModelForm):
@@ -10,3 +10,13 @@ class UserForm(forms.ModelForm):
         # fields = ('username', 'email')
 
 
+class MailForm(forms.ModelForm):
+    class Meta:
+        model = Mail
+        fields = '__all__'
+
+
+class MailingForm(forms.ModelForm):
+    class Meta:
+        model = Mailing
+        fields = '__all__'

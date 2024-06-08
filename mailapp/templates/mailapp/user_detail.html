@@ -1,0 +1,90 @@
+{% extends 'mailapp/base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="row text-right">
+
+    <div class="col-6">
+
+        <div class="card mb-3 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Информация о пользователе</h4>
+            </div>
+
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div style="color: orange"><b>{{object.name}}</b></div>
+                </h5>
+                <p class="card-text">
+
+                <b>Имя пользователя:</b> {{ object.name }} <br>
+
+                <b>Email:</b> {{ object.email }} <br>
+
+                {% comment "Сделаем таблицу рассылок пользователя или ч-л еще" %}
+
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Начало</th>
+                        <th>Окончание</th>
+                        <th>Владелец</th>
+
+                    </tr>
+
+
+                    {% for history_item in object.boathistory_set.all%}
+                    <tr>
+
+                        <td>{{history_item.start_year}}</td>
+                        <td>
+                            {% if history_item.stop_year%}
+                            {{history_item.stop_year}}
+                            {% else %}
+                            по настоящее время
+                            {% endif %}
+
+
+                        </td>
+                        <td>
+                            {% if history_item.owner%}
+                            {{history_item.owner}}
+                            {% else %}
+                            не указан
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </table>
+                {% endcomment %}
+
+
+                </p>
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="{% url 'mailapp:user_list' %}" role="button">Вернуться к
+                        каталогу</a>
+
+
+                </div>
+                <br>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+{% endblock %}
