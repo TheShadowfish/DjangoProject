@@ -34,7 +34,7 @@ class Mailing(models.Model):
                                          help_text='введите дату срабатывания')
 
     mailing_log = models.OneToOneField(MailingLog, on_delete=models.CASCADE, verbose_name='лог рассылки',
-                                       primary_key=True, related_name='mailing_log', null=True, blank=True)
+                                       primary_key=True, related_name='mailing_log')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
                              help_text='пользователь', related_name='user')
@@ -48,7 +48,7 @@ class Mailing(models.Model):
 
 
 class Mail(models.Model):
-    name = models.CharField(max_length=150, verbose_name='имя получателя')
+    name = models.CharField(max_length=150, verbose_name='имя получателя', **NULLABLE)
     email = models.EmailField(max_length=150, verbose_name='почта')
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка',
