@@ -1,6 +1,7 @@
 from django.db import models
+from django.utils import timezone
 
-NULLABLE = {'blank': True, 'none': True}
+NULLABLE = {'blank': True, 'null': True}
 
 
 # Create your models here.
@@ -8,9 +9,16 @@ class User(models.Model):
     name = models.CharField(max_length=150, verbose_name='имя пользователя')
     email = models.EmailField(max_length=150, verbose_name='почта')
 
+    class Meta:
+        verbose_name = 'пользователь'
+        verbose_name_plural = 'пользователи'
+
+    def __str__(self):
+        return f" {self.name}"
+
 
 class MailingLog(models.Model):
-    log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога')
+    log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания лога')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
@@ -20,7 +28,7 @@ class MailingLog(models.Model):
         verbose_name_plural = 'логи рассылок'
 
     def __str__(self):
-        return f" {self.logtext}"
+        return f" {self.log_text}"
 
 
 class Mailing(models.Model):

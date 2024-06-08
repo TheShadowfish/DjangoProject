@@ -19,4 +19,8 @@ class MailForm(forms.ModelForm):
 class MailingForm(forms.ModelForm):
     class Meta:
         model = Mailing
-        fields = '__all__'
+        fields = ('title',
+                  'message',
+                  'status',
+                  'datetime_send',
+                  'user')
