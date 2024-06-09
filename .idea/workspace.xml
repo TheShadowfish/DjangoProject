@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении.">
-      <change afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/urls.py" afterDir="false" />
+    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении.&#10;&#10;Try to send">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/user_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/user_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717942841226</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении.&#10;&#10;Try to send">
+      <option name="closed" value="true" />
+      <created>1717947990857</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1717947990857</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +325,7 @@
     <MESSAGE value="Стабильное состояние: user-CRUD, рассылка - crud, email-crud" />
     <MESSAGE value="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов" />
     <MESSAGE value="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении." />
-    <option name="LAST_COMMIT_MESSAGE" value="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении." />
+    <MESSAGE value="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении.&#10;&#10;Try to send" />
+    <option name="LAST_COMMIT_MESSAGE" value="Стабильное состояние 3: user-CRUD, рассылка - crud, email-crud, списки рассылок, список логов. Лог при изменении.&#10;&#10;Try to send" />
   </component>
 </project>

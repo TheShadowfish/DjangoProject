@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
+{% load my_tags %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Продажа лодок
+    <title>Рассылка
     {% if title %}
         - {{title}}
         {% endif %}
@@ -34,7 +35,10 @@
                      <span class="text-muted">
 
                     * Если таковы ваши требования. <br> Обращаем внимание, что "Макар", который гонял телят, является фолклорным персонажем и в реальности наш сервер его адрес вам предоставить не может.
+                    <br>
+
                      </span>
+                    Сегодня у нас: {% current_time '%d-%m-%Y' %}
 
 
         </small>

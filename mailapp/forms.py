@@ -1,16 +1,27 @@
 from django import forms
+from django.forms import BooleanField
 from django.utils import timezone
 from mailapp.models import User, Mail, Mailing, MailingLog
 
 
-class UserForm(forms.ModelForm):
+class StyleFormMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if isinstance(field, BooleanField):
+                field.widget.attrs['class'] = 'form-check-input'
+            else:
+                field.widget.attrs['class'] = 'form-control'
+
+
+class UserForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
         # fields = ('username', 'email')
 
 
-class MailingForm(forms.ModelForm):
+class MailingForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Mailing
         fields = '__all__'
@@ -29,7 +40,7 @@ class MailingForm(forms.ModelForm):
     #     return cleaned_data
 
 
-class MailForm(forms.ModelForm):
+class MailForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Mail
         fields = '__all__'
