@@ -17,20 +17,6 @@ class User(models.Model):
         return f" {self.name}"
 
 
-class MailingLog(models.Model):
-    log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
-                                      help_text='введите дату создания лога')
-    updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
-
-    class Meta:
-        verbose_name = 'лог рассылки'
-        verbose_name_plural = 'логи рассылок'
-
-    def __str__(self):
-        return f" {self.log_text}"
-
-
 class Mailing(models.Model):
     title = models.CharField(max_length=150, unique=True, verbose_name='рассылка',
                              help_text='введите название рассылки')
@@ -41,9 +27,6 @@ class Mailing(models.Model):
     datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата срабатывания',
                                          help_text='введите дату срабатывания')
 
-    mailing_log = models.OneToOneField(MailingLog, on_delete=models.CASCADE, verbose_name='лог рассылки',
-                                       primary_key=True, related_name='mailing_log')
-
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
                              help_text='пользователь', related_name='user')
 
@@ -53,6 +36,24 @@ class Mailing(models.Model):
 
     def __str__(self):
         return f" {self.title}"
+
+
+class MailingLog(models.Model):
+    log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
+
+    mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='логгируемая рассылка',
+                                help_text='логгируемая рассылка', related_name='mailing_logged')
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
+                                      help_text='введите дату создания лога')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
+
+    class Meta:
+        verbose_name = 'лог рассылки'
+        verbose_name_plural = 'логи рассылок'
+
+    def __str__(self):
+        return f" {self.log_text}"
 
 
 class Mail(models.Model):

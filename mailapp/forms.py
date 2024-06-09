@@ -19,8 +19,11 @@ class MailForm(forms.ModelForm):
 class MailingForm(forms.ModelForm):
     class Meta:
         model = Mailing
-        fields = ('title',
-                  'message',
-                  'status',
-                  'datetime_send',
-                  'user')
+        fields = '__all__'
+        # fields = ('title',
+        #           'message',
+        #           'status',
+        #           'datetime_send',
+        #           'user')
+        exclude = ('created_at',)
+

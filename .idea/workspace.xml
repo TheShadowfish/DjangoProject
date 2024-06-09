@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="dumpdata">
+    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="чёртов затык с тупыми логами, нам еще и их навалили :(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0002_mailinglog_user_alter_mail_options_mail_name_mailing_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0003_alter_user_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0004_alter_mailinglog_log_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0005_alter_mailinglog_log_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="try_to_crate_admin" />
+        <entry key="$PROJECT_DIR$" value="try_to_crate_admin_mail_not" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,6 +45,12 @@
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="TheShadowfish" />
+        <option name="repository" value="pythonProject2" />
+      </RepoCoordinatesHolder>
+    </option>
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="c13cb2e1-e792-4280-8972-9d845d9d3c08" />
@@ -58,12 +75,13 @@
     &quot;Python.manage.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/shadowfish/ProectJango/pythonProject2/static&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/shadowfish/ProectJango/pythonProject2/mailapp/templates/mailapp&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mailapp/templates/mailapp" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/mailapp" />
       <recent name="$PROJECT_DIR$/mailapp/templates" />
@@ -178,7 +196,55 @@
       <option name="project" value="LOCAL" />
       <updated>1717357851246</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="create models">
+      <option name="closed" value="true" />
+      <created>1717840011749</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717840011749</updated>
+    </task>
+    <task id="LOCAL-00010" summary="create models">
+      <option name="closed" value="true" />
+      <created>1717840357056</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717840357056</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add users +, user_list +">
+      <option name="closed" value="true" />
+      <created>1717847946177</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717847946177</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add users +, user_list +">
+      <option name="closed" value="true" />
+      <created>1717847955003</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717847955003</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add users +, user_list +">
+      <option name="closed" value="true" />
+      <created>1717861646495</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717861646495</updated>
+    </task>
+    <task id="LOCAL-00014" summary="чёртов затык с тупыми логами, нам еще и их навалили :(">
+      <option name="closed" value="true" />
+      <created>1717886330848</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717886330848</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +275,9 @@
     <MESSAGE value="добавлены приложения" />
     <MESSAGE value="дfirst step still work" />
     <MESSAGE value="dumpdata" />
-    <option name="LAST_COMMIT_MESSAGE" value="dumpdata" />
+    <MESSAGE value="create models" />
+    <MESSAGE value="add users +, user_list +" />
+    <MESSAGE value="чёртов затык с тупыми логами, нам еще и их навалили :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="чёртов затык с тупыми логами, нам еще и их навалили :(" />
   </component>
 </project>

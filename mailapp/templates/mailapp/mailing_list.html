@@ -51,14 +51,14 @@
                         <td>{{object.created_at}}</td>
                         <td>{{object.status}}</td>
                         <td>{{object.datetime_send}}</td>
-                        <td>{{object.mailing_log}}</td>
+                        <td>UNDER CONSTRUCTION</td>
                         <td>{{object.user}}</td>
 
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:user_detail' object.pk%}" role="button">Информация</a>
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:user_update' object.pk%}"
+                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_update' object.pk%}"
                                role="button">Изменить</a>
                         </td>
                         <td>
