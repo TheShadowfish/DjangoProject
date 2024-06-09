@@ -42,59 +42,35 @@ class MailingListView(ListView):
     model = Mailing
 
 
-class MailingCreateView(CreateView):
+class MailFormsetMixin():
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mail_form_set = inlineformset_factory(Mailing, Mail, form=MailForm, extra=1)
+        context['formset'] = mail_form_set()
+        if self.request.method == 'POST':
+            context['formset'] = mail_form_set(self.request.POST, instance=self.object)
+        else:
+            context['formset'] = mail_form_set(instance=self.object)
+        return context
+
+    def form_valid(self, form):
+        formset = self.get_context_data()['formset']
+        self.object = form.save()
+
+        if formset.is_valid():
+            formset.instance = self.object
+            formset.save()
+
+        return super().form_valid(form)
+
+
+class MailingCreateView(MailFormsetMixin, CreateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
 
-    def get_context_data(self, **kwargs):
-        context = super(MailingCreateView, self).get_context_data(**kwargs)
-        MailingFormset = inlineformset_factory(Mailing, Mail, MailForm, extra=1)
-        if self.request.POST:
-            context['formset'] = MailForm(self.request.POST, instance=self.object)
-        else:
-            context['formset'] = MailForm(instance=self.object)
-        return context
 
-    def form_valid(self, form):
-        context = self.get_context_data()
-        formset = context['formset']
-
-        if formset.is_valid() and formset.is_valid():
-            self.object = form.save()
-            formset.instance = self.object
-            formset.save()
-
-            return super().form_valid(form)
-
-        else:
-            return self.render_to_response(self.get_context_data(form=form, formset=formset))
-
-
-class MailingUpdateView(UpdateView):
+class MailingUpdateView(MailFormsetMixin, UpdateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
-
-    def get_context_data(self, **kwargs):
-        context = super(MailingUpdateView, self).get_context_data(**kwargs)
-        MailingFormset = inlineformset_factory(Mailing, Mail, MailForm, extra=1)
-        if self.request.POST:
-            context['formset'] = MailForm(self.request.POST, instance=self.object)
-        else:
-            context['formset'] = MailForm(instance=self.object)
-        return context
-
-    def form_valid(self, form):
-        context = self.get_context_data()
-        formset = context['formset']
-
-        if formset.is_valid() and formset.is_valid():
-            self.object = form.save()
-            formset.instance = self.object
-            formset.save()
-
-            return super().form_valid(form)
-
-        else:
-            return self.render_to_response(self.get_context_data(form=form, formset=formset))

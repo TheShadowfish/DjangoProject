@@ -10,12 +10,6 @@ class UserForm(forms.ModelForm):
         # fields = ('username', 'email')
 
 
-class MailForm(forms.ModelForm):
-    class Meta:
-        model = Mail
-        fields = '__all__'
-
-
 class MailingForm(forms.ModelForm):
     class Meta:
         model = Mailing
@@ -27,3 +21,8 @@ class MailingForm(forms.ModelForm):
         #           'user')
         exclude = ('created_at',)
 
+
+class MailForm(forms.ModelForm):
+    class Meta:
+        model = Mail
+        fields = '__all__'

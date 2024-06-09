@@ -61,7 +61,7 @@ class Mail(models.Model):
     email = models.EmailField(max_length=150, verbose_name='почта')
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка',
-                                help_text='рассылка', related_name='mailing', null=True, blank=True)
+                                help_text='рассылка', related_name='mailing')
 
     def __str__(self):
         return f" {self.email}"

@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="чёртов затык с тупыми логами, нам еще и их навалили :(">
+    <list default="true" id="1e16bba7-347c-4476-b376-9423b36ab331" name="Changes" comment="пока ползём через аномалии">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0002_mailinglog_user_alter_mail_options_mail_name_mailing_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0003_alter_user_options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0004_alter_mailinglog_log_text.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/migrations/0005_alter_mailinglog_log_text.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mailapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/templates/mailapp/mailing_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717886330848</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="пока ползём через аномалии">
+      <option name="closed" value="true" />
+      <created>1717913978757</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1717913978757</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,6 +280,7 @@
     <MESSAGE value="create models" />
     <MESSAGE value="add users +, user_list +" />
     <MESSAGE value="чёртов затык с тупыми логами, нам еще и их навалили :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="чёртов затык с тупыми логами, нам еще и их навалили :(" />
+    <MESSAGE value="пока ползём через аномалии" />
+    <option name="LAST_COMMIT_MESSAGE" value="пока ползём через аномалии" />
   </component>
 </project>
