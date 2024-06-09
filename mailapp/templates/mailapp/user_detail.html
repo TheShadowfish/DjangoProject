@@ -5,7 +5,7 @@
 
 <div class="row text-right">
 
-    <div class="col-6">
+    <div class="col-12">
 
         <div class="card mb-3 box-shadow">
             <div class="card-header">
@@ -23,47 +23,39 @@
 
                 <b>Email:</b> {{ object.email }} <br>
 
-                {% comment "Сделаем таблицу рассылок пользователя или ч-л еще" %}
+                <hr>
+                <h5 class="card-title">
+                    <div style="color: orange"><b>Список рассылок пользователя:</b></div>
+                </h5>
 
                 <table class="table table-stripped">
                     <tr>
-                        <th>Начало</th>
-                        <th>Окончание</th>
-                        <th>Владелец</th>
+
+                        <th>Название</th>
+                        <th>Текст рассылки</th>
+                        <th>Дата создания</th>
+                        <th>Статус</th>
+                        <th>Время рассылки</th>
+                        <th>Владелец рассылки</th>
 
                     </tr>
 
-
-                    {% for history_item in object.boathistory_set.all%}
+                {% for mailing_item in mailing_list %}
                     <tr>
 
-                        <td>{{history_item.start_year}}</td>
-                        <td>
-                            {% if history_item.stop_year%}
-                            {{history_item.stop_year}}
-                            {% else %}
-                            по настоящее время
-                            {% endif %}
 
-
-                        </td>
-                        <td>
-                            {% if history_item.owner%}
-                            {{history_item.owner}}
-                            {% else %}
-                            не указан
-                            {% endif %}
-
-                        </td>
+                        <td>{{mailing_item.title}}</td>
+                        <td>{{mailing_item.message}}</td>
+                        <td>{{mailing_item.created_at}}</td>
+                        <td>{{mailing_item.status}}</td>
+                        <td>{{mailing_item.datetime_send}}</td>
+                        <td>{{mailing_item.user}}</td>
 
                     </tr>
 
-
-                    {% endfor %}
-
+                {% endfor %}
 
                 </table>
-                {% endcomment %}
 
 
                 </p>

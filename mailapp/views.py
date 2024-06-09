@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from mailapp.forms import UserForm, MailingForm, MailForm
-from mailapp.models import Mail, User, Mailing
+from mailapp.models import Mail, User, Mailing, MailingLog
 
 
 # from django.apps.config import models.Mail
@@ -51,6 +51,12 @@ class UserUpdateView(UpdateView):
 
 class UserDetailView(DetailView):
     model = User
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['mailing_list'] = Mailing.objects.all()
+        context['mailing_list'] = Mailing.objects.filter(user=self.object)
+        return context
 
 
 class UserDeleteView(DeleteView):
@@ -113,3 +119,12 @@ class MailingUpdateView(MailFormsetMixin, UpdateView):
 class MailingDeleteView(DeleteView):
     model = Mailing
     success_url = reverse_lazy('mailapp:mailing_list')
+
+
+class MailingDetailView(DetailView):
+    model = Mailing
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['logs'] = MailingLog.objects.filter(mailing=self.object)
+        return context
