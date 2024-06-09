@@ -36,11 +36,11 @@
                         <th>Дата создания</th>
                         <th>Статус</th>
                         <th>Время рассылки</th>
-                        <th>Лог рассылки</th>
                         <th>Владелец рассылки</th>
                         <th>Информация</th>
                         <th>Изменить</th>
                         <th>Удалить</th>
+                        <th>Отправить</th>
 
                     </tr>
 
@@ -56,8 +56,7 @@
                         <td>{{object.created_at}}</td>
                         <td>{{object.status}}</td>
                         <td>{{object.datetime_send}}</td>
-                        <td>UNDER CONSTRUCTION</td>
-                        <td>{{object.user}}</td>
+                                                <td>{{object.user}}</td>
 
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mailing_detail' object.pk%}" role="button">Информация</a>
@@ -69,6 +68,10 @@
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mailing_delete' object.pk%}"
                                role="button">Удалить</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="{%url 'sender:mailing_delete'
+                               role="button">Отправить</a>
                         </td>
 
                     </tr>
