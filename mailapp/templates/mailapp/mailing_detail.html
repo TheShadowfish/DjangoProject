@@ -9,7 +9,7 @@
 
         <div class="card mb-3 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Информация о пользователе</h4>
+                <h4 class="my-0 font-weight-normal">Информация о рассылке</h4>
             </div>
 
 
@@ -75,6 +75,63 @@
 
 
     </div>
+    <div class="col-6">
+
+        <div class="card mb-3 box-shadow">
+
+
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Информация о рассылке</h4>
+            </div>
+
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div style="color: orange"><b>{{object.name}}</b></div>
+                </h5>
+                <p class="card-text">
+
+
+            <h5 class="card-title">
+                <div style="color: orange"><b>Список адресов рассылки:</b></div>
+            </h5>
+
+
+            <table class="table table-stripped">
+                <tr>
+                    <th>Обращение</th>
+                    <th>Email</th>
+
+
+                </tr>
+
+
+                {% for email in emails%}
+                <tr>
+
+                    <td>{{email.name}}</td>
+                    <td>{{email.email}}</td>
+
+                </tr>
+
+
+                {% endfor %}
+
+
+            </table>
+
+
+            </p>
+            <br>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
 
 
 </div>

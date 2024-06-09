@@ -1,10 +1,11 @@
 from django.forms import inlineformset_factory
-from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from mailapp.forms import UserForm, MailingForm, MailForm
 from mailapp.models import Mail, User, Mailing, MailingLog
+from mailapp.services import sending
 
 
 # from django.apps.config import models.Mail
@@ -28,6 +29,7 @@ class MailUpdateView(UpdateView):
 class MailDeleteView(DeleteView):
     model = Mail
     success_url = reverse_lazy('mailapp:mail_list')
+
 
 # class MailDetailView(DetailView):
 #     model = Mail
@@ -134,4 +136,23 @@ class MailingDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['logs'] = MailingLog.objects.filter(mailing=self.object)
+        context['emails'] = Mail.objects.filter(mailing=self.object)
         return context
+
+
+def mailing_send(request, pk):
+    mailing_item = get_object_or_404(Mailing, pk=pk)
+
+    print("mailing_send")
+
+    try:
+        sending(mailing_item)
+    except Exception as e:
+        print(e)
+    else:
+        mailing_item.status = True
+        mailing_item.save()
+
+    print(mailing_item)
+    print(mailing_item.status)
+    return redirect(reverse('mailapp:mailing_list'))
