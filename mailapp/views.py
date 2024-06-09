@@ -115,6 +115,13 @@ class MailingUpdateView(MailFormsetMixin, UpdateView):
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
 
+    # def save(self, commit=True):
+    #     instance = super(Form, self).save(commit=False)
+    #     instance.flag1 = 'flag1' in self.cleaned_data['multi_choice']  # etc
+    #     if commit:
+    #         instance.save()
+    #     return instance
+
 
 class MailingDeleteView(DeleteView):
     model = Mailing

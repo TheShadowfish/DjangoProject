@@ -1,6 +1,6 @@
 from django import forms
-
-from mailapp.models import User, Mail, Mailing
+from django.utils import timezone
+from mailapp.models import User, Mail, Mailing, MailingLog
 
 
 class UserForm(forms.ModelForm):
@@ -20,6 +20,13 @@ class MailingForm(forms.ModelForm):
         #           'datetime_send',
         #           'user')
         exclude = ('created_at',)
+
+    # def clean(self):
+    #     cleaned_data = self.cleaned_data
+    #     log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self.instance)
+    #     log.save()
+    #
+    #     return cleaned_data
 
 
 class MailForm(forms.ModelForm):

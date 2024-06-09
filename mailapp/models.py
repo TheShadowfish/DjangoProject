@@ -37,6 +37,11 @@ class Mailing(models.Model):
     def __str__(self):
         return f" {self.title}"
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
+        log.save()
+
 
 class MailingLog(models.Model):
     log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
