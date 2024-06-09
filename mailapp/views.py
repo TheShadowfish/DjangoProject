@@ -13,6 +13,26 @@ class MailListView(ListView):
     model = Mail
 
 
+class MailCreateView(CreateView):
+    model = Mail
+    form_class = MailForm
+    success_url = reverse_lazy('mailapp:mail_list')
+
+
+class MailUpdateView(UpdateView):
+    model = Mail
+    form_class = MailForm
+    success_url = reverse_lazy('mailapp:mail_list')
+
+
+class MailDeleteView(DeleteView):
+    model = Mail
+    success_url = reverse_lazy('mailapp:mail_list')
+
+# class MailDetailView(DetailView):
+#     model = Mail
+
+
 class UserListView(ListView):
     model = User
 
@@ -40,6 +60,20 @@ class UserDeleteView(DeleteView):
 
 class MailingListView(ListView):
     model = Mailing
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['only_send'] = False
+        return context
+
+
+class MailingListViewSend(ListView):
+    model = Mailing
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['only_send'] = True
+        return context
 
 
 class MailFormsetMixin():
@@ -73,4 +107,9 @@ class MailingCreateView(MailFormsetMixin, CreateView):
 class MailingUpdateView(MailFormsetMixin, UpdateView):
     model = Mailing
     form_class = MailingForm
+    success_url = reverse_lazy('mailapp:mailing_list')
+
+
+class MailingDeleteView(DeleteView):
+    model = Mailing
     success_url = reverse_lazy('mailapp:mailing_list')

@@ -9,7 +9,8 @@
             <br>
             <div class="btn-group">
                 &nbsp; &nbsp; &nbsp; <a class="p-2 btn btn-outline-primary btn-lg btn-block"
-                                        href="{%url 'mailapp:mailing_create' %}">Добавить рассылку</a> &nbsp; &nbsp; &nbsp;
+                                        href="{%url 'mailapp:mailing_create' %}">Добавить рассылку</a> &nbsp; &nbsp;
+                &nbsp;
             </div>
             <br>
         </div>
@@ -26,6 +27,7 @@
                     <div style="color: orange"><b> Рассылки: </b></div>
                 </h5>
                 <p class="card-text">
+                    <b>SEND</b>{{only_send}}
 
                 <table class="table table-stripped">
                     <tr>
@@ -44,6 +46,9 @@
 
 
                     {% for object in object_list %}
+                    {% if only_send and object.status or only_send == False %}
+
+
                     <tr>
 
                         <td>{{object.title}}</td>
@@ -62,12 +67,13 @@
                                role="button">Изменить</a>
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:user_delete' object.pk%}"
+                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_delete' object.pk%}"
                                role="button">Удалить</a>
                         </td>
 
                     </tr>
 
+                    {% endif %}
                     {% endfor %}
 
                 </table>
