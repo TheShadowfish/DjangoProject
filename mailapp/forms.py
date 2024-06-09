@@ -1,7 +1,6 @@
 from django import forms
 from django.forms import BooleanField
-from django.utils import timezone
-from mailapp.models import User, Mail, Mailing, MailingLog
+from mailapp.models import User, Mail, Mailing
 
 
 class StyleFormMixin:

@@ -29,33 +29,32 @@
 
                 <hr>
                 <h5 class="card-title">
-                    <div style="color: orange"><b>Список логов рассылки:</b></div>
-                </h5>
+                <div style="color: orange"><b>Список адресов рассылки:</b></div>
+            </h5>
 
 
-                <table class="table table-stripped">
-                    <tr>
-                        <th>Текст лога</th>
-                        <th>Создан</th>
-                        <th>Изменен</th>
-
-                    </tr>
+            <table class="table table-stripped">
+                <tr>
+                    <th>Обращение</th>
+                    <th>Email</th>
 
 
-                    {% for log_item in logs%}
-                    <tr>
-
-                        <td>{{log_item.log_text}}</td>
-                        <td>{{log_item.created_at}}</td>
-                        <td>{{log_item.updated_at}}</td>
-
-                    </tr>
+                </tr>
 
 
-                    {% endfor %}
+                {% for email in emails%}
+                <tr>
+
+                    <td>{{email.name}}</td>
+                    <td>{{email.email}}</td>
+
+                </tr>
 
 
-                </table>
+                {% endfor %}
+
+
+            </table>
 
 
                 </p>
@@ -91,34 +90,35 @@
                 </h5>
                 <p class="card-text">
 
-
             <h5 class="card-title">
-                <div style="color: orange"><b>Список адресов рассылки:</b></div>
-            </h5>
+                    <div style="color: orange"><b>Список логов рассылки:</b></div>
+                </h5>
 
 
-            <table class="table table-stripped">
-                <tr>
-                    <th>Обращение</th>
-                    <th>Email</th>
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Текст лога</th>
+                        <th>Создан</th>
+                        <th>Изменен</th>
+
+                    </tr>
 
 
-                </tr>
+                    {% for log_item in logs%}
+                    <tr>
+
+                        <td>{{log_item.log_text}}</td>
+                        <td>{{log_item.created_at}}</td>
+                        <td>{{log_item.updated_at}}</td>
+
+                    </tr>
 
 
-                {% for email in emails%}
-                <tr>
-
-                    <td>{{email.name}}</td>
-                    <td>{{email.email}}</td>
-
-                </tr>
+                    {% endfor %}
 
 
-                {% endfor %}
+                </table>
 
-
-            </table>
 
 
             </p>

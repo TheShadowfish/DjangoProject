@@ -1,5 +1,5 @@
 from django.forms import inlineformset_factory
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
@@ -84,7 +84,7 @@ class MailingListViewSend(ListView):
         return context
 
 
-class MailFormsetMixin():
+class MailFormsetMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mail_form_set = inlineformset_factory(Mailing, Mail, form=MailForm, extra=1)

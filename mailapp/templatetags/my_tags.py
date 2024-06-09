@@ -73,6 +73,3 @@ def media_filter(path):
         return f'/media/{path}'
 
     return '/static/image/no_image.png'
-
-
-
