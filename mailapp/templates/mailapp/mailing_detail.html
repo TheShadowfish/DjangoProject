@@ -20,11 +20,41 @@
                 <p class="card-text">
 
                     <b>Название рассылки:</b> {{ object.title }} <br>
-                    <b>Текст рассылки:</b> {{ object.message }} <br>
+                    <b>Текст рассылки:</b> {{ object.message_in }} <br>
                     <b>Рассылка создана:</b> {{ object.created_at }} <br>
                     <b>Статус активности:</b> {{ object.status }} <br>
                     <b>Время отправки:</b> {{ object.datetime_send }} <br>
                     <b>Пользователь (создатель рассылки):</b> {{ object.user }} <br>
+
+
+                                <hr>
+                <h5 class="card-title">
+                    <div style="color: orange"><b>Сообщение:</b></div>
+                </h5>
+
+
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Тема</th>
+                        <th>Текст</th>
+
+
+                    </tr>
+
+
+                    {% for message_item in message%}
+                    <tr>
+
+                        <td>{{message_item.title}}</td>
+                        <td>{{message_item.body}}</td>
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </table>
 
 
                 <hr>

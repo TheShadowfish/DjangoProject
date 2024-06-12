@@ -1,6 +1,7 @@
 from django.forms import inlineformset_factory
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
+from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm
@@ -96,20 +97,29 @@ class MailFormsetMixin:
         return context
 
     def form_valid(self, form):
-        formset = self.get_context_data()['formset']
+        # self.object = form.save()
+
 
         mailing = form.save()
         if mailing.message is None:
             message = Message.objects.create()
             message.save()
             mailing.message = message
-            print('Сохранение сообщения')
-            mailing.save()
+            print(f'Сохранение сообщения {mailing.message}')
 
+        mailing.save()
+        print('mailing.save()')
 
+        log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=mailing)
+        log.save()
+
+        print('log.save()')
+
+        formset = self.get_context_data()['formset']
         if formset.is_valid():
-            formset.instance = self.object
+            formset.instance = mailing
             formset.save()
+
 
         return super().form_valid(form)
 
@@ -146,7 +156,7 @@ class MailingDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['logs'] = MailingLog.objects.filter(mailing=self.object)
         context['clients'] = Client.objects.filter(mailing=self.object)
-        context['messages'] = Message.objects.filter(mailing=self.object)
+        context['message'] = Message.objects.filter(id=self.object.message_id)
         return context
 
 

@@ -46,14 +46,14 @@ class Mailing(models.Model):
     def __str__(self):
         return f" {self.title}"
 
-    def save(self, *args, **kwargs):
-
-            # self.save()
-
-        log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
-        log.save()
-
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #
+    #         # self.save()
+    #
+    #     log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
+    #     log.save()
+    #
+    #     super().save(*args, **kwargs)
 
 
 """
