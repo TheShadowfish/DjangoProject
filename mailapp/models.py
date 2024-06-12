@@ -47,11 +47,8 @@ class Mailing(models.Model):
         return f" {self.title}"
 
     def save(self, *args, **kwargs):
-        if self.message is None:
-            message = Message.objects.create()
-            self.message = message
 
-            print('Сохранение сообщения')
+            # self.save()
 
         log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
         log.save()

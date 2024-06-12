@@ -97,7 +97,15 @@ class MailFormsetMixin:
 
     def form_valid(self, form):
         formset = self.get_context_data()['formset']
-        self.object = form.save()
+
+        mailing = form.save()
+        if mailing.message is None:
+            message = Message.objects.create()
+            message.save()
+            mailing.message = message
+            print('Сохранение сообщения')
+            mailing.save()
+
 
         if formset.is_valid():
             formset.instance = self.object
@@ -110,6 +118,7 @@ class MailingCreateView(MailFormsetMixin, CreateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
+
 
 
 class MailingUpdateView(MailFormsetMixin, UpdateView):
