@@ -47,11 +47,11 @@
                         <td>{{object.title}}</td>
                         <td>{{object.body}}</td>
 
-                        {% for mailing_item in mailings%}
                         {% if object.mailing == mailing_item.pk %}
                         <td>{{mailing_item.title}}</td>
+                        {%else%}
+                        <td>Not found!</td>
                         {%endif%}
-                        {% endfor %}
 
 
                         <td>

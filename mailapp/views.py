@@ -86,6 +86,7 @@ class MailingListViewSend(ListView):
 
 
 class MailFormsetMixin:
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         mail_form_set = inlineformset_factory(Mailing, Client, form=ClientForm, extra=1)
@@ -98,7 +99,6 @@ class MailFormsetMixin:
 
     def form_valid(self, form):
         # self.object = form.save()
-
 
         mailing = form.save()
         if mailing.message is None:
@@ -120,6 +120,8 @@ class MailFormsetMixin:
             formset.instance = mailing
             formset.save()
 
+        redirect_url = reverse('mailapp:message_update', args=[mailing.message.id])
+        self.success_url = redirect_url
 
         return super().form_valid(form)
 
@@ -127,8 +129,17 @@ class MailFormsetMixin:
 class MailingCreateView(MailFormsetMixin, CreateView):
     model = Mailing
     form_class = MailingForm
-    success_url = reverse_lazy('mailapp:mailing_list')
 
+    # success_url = reverse_lazy('mailapp:mailing_list') #object.pk
+
+    # def get_success_url(self):
+    #     print(f"1 {self}")
+    #     print(f"2 {self.args}")
+    #     print(f"3 {[self.kwargs.get('pk')]}")
+    #     print(f"4 {self.message}")
+    #     return reverse('mailapp:message_update', args=[self.object.message_id])
+
+     # context['message'] = Message.objects.filter(id=self.object.message_id)
 
 
 class MailingUpdateView(MailFormsetMixin, UpdateView):
@@ -161,6 +172,12 @@ class MailingDetailView(DetailView):
 
 
 class MessageCreateView(CreateView):
+    model = Message
+    form_class = MessageForm
+    success_url = reverse_lazy('mailapp:message_list')
+
+
+class MessageUpdateView(CreateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailapp:message_list')
