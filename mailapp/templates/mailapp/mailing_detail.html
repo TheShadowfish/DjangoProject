@@ -44,13 +44,13 @@
                     </tr>
 
 
-                    {% for email in emails%}
+                    {% for client_item in clients%}
                     <tr>
 
-                        <td>{{email.name}}</td>
-                        <td>{{email.email}}</td>
-                        <td>{{email.comment}}</td>
-                        <td>{{email.is_active}}</td>
+                        <td>{{client_item.name}}</td>
+                        <td>{{client_item.email}}</td>
+                        <td>{{client_item.comment}}</td>
+                        <td>{{client_item.is_active}}</td>
 
                     </tr>
 

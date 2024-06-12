@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mailapp.models import Mail, Mailing, MailingLog
+from mailapp.models import Client, Mailing, MailingLog
 
 
 @admin.register(Mailing)
@@ -9,7 +9,7 @@ class MailingAdmin(admin.ModelAdmin):
     list_filter = ('title',)
 
 
-@admin.register(Mail)
+@admin.register(Client)
 class MailAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'email',)
     list_filter = ('email',)

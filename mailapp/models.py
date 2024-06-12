@@ -62,7 +62,7 @@ class MailingLog(models.Model):
         return f" {self.log_text}"
 
 
-class Mail(models.Model):
+class Client(models.Model):
     """модель клиента"""
     name = models.CharField(max_length=150, verbose_name='имя получателя', default='Уважаемый клиент!')
     email = models.EmailField(max_length=150, verbose_name='почта')

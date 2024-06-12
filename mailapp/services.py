@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.core.mail import send_mail
 
 from config import settings
-from mailapp.models import Mailing, Mail, MailingLog
+from mailapp.models import Mailing, Client, MailingLog
 
 
 def sending(mailing_item: Mailing):
@@ -12,7 +12,7 @@ def sending(mailing_item: Mailing):
     """
     print(f"mailing_item={mailing_item}...")
 
-    mail_list = Mail.objects.filter(mailing=mailing_item)
+    mail_list = Client.objects.filter(mailing=mailing_item)
 
     for mail in mail_list:
         try:

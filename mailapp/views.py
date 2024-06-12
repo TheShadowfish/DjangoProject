@@ -3,31 +3,31 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from mailapp.forms import UserForm, MailingForm, MailForm
-from mailapp.models import Mail, User, Mailing, MailingLog
+from mailapp.forms import UserForm, MailingForm, ClientForm
+from mailapp.models import Client, User, Mailing, MailingLog
 from mailapp.services import sending
 
 
 # from django.apps.config import models.Mail
 
-class MailListView(ListView):
-    model = Mail
+class ClientListView(ListView):
+    model = Client
 
 
-class MailCreateView(CreateView):
-    model = Mail
-    form_class = MailForm
+class ClientCreateView(CreateView):
+    model = Client
+    form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
 
-class MailUpdateView(UpdateView):
-    model = Mail
-    form_class = MailForm
+class ClientUpdateView(UpdateView):
+    model = Client
+    form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
 
-class MailDeleteView(DeleteView):
-    model = Mail
+class ClientDeleteView(DeleteView):
+    model = Client
     success_url = reverse_lazy('mailapp:mail_list')
 
 
@@ -87,7 +87,7 @@ class MailingListViewSend(ListView):
 class MailFormsetMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mail_form_set = inlineformset_factory(Mailing, Mail, form=MailForm, extra=1)
+        mail_form_set = inlineformset_factory(Mailing, Client, form=ClientForm, extra=1)
         context['formset'] = mail_form_set()
         if self.request.method == 'POST':
             context['formset'] = mail_form_set(self.request.POST, instance=self.object)
@@ -136,7 +136,7 @@ class MailingDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['logs'] = MailingLog.objects.filter(mailing=self.object)
-        context['emails'] = Mail.objects.filter(mailing=self.object)
+        context['clients'] = Client.objects.filter(mailing=self.object)
         return context
 
 
