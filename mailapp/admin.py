@@ -10,8 +10,8 @@ class MailingAdmin(admin.ModelAdmin):
 
 
 @admin.register(Client)
-class MailAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'email',)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'email', 'comment', 'is_active', 'mailing')
     list_filter = ('email',)
 
 
