@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-
 NULLABLE = {'blank': True, 'null': True}
 
 
@@ -18,10 +17,16 @@ class User(models.Model):
         return f" {self.name}"
 
 
+class Message(models.Model):
+    title = models.CharField(max_length=150, verbose_name='тема сообщения', help_text="Введите тему сообщения",
+                             default='рассылка')
+    body = models.TextField(verbose_name='тело сообщения', help_text='Введите тело сообщения', default='текст рассылки')
+
+
 class Mailing(models.Model):
     title = models.CharField(max_length=150, unique=True, verbose_name='рассылка',
                              help_text='введите название рассылки')
-    message = models.TextField(verbose_name='сообщение', help_text='введите текст рассылки')
+    message_in = models.TextField(verbose_name='сообщение', help_text='введите текст рассылки', **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания рассылки')
     status = models.BooleanField(default=False, verbose_name='статус', help_text='введите статус рассылки')
@@ -31,6 +36,9 @@ class Mailing(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
                              help_text='пользователь', related_name='user')
 
+    message = models.OneToOneField(Message, on_delete=models.SET_NULL, verbose_name='сообщение', **NULLABLE,
+                                   related_name='message')
+
     class Meta:
         verbose_name = 'рассылка'
         verbose_name_plural = 'рассылки'
@@ -39,11 +47,16 @@ class Mailing(models.Model):
         return f" {self.title}"
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+        if self.message is None:
+            message = Message.objects.create()
+            self.message = message
+
+            print('Сохранение сообщения')
+
         log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
         log.save()
 
-
+        super().save(*args, **kwargs)
 
 
 """
@@ -69,6 +82,7 @@ class Mailing(models.Model):
 - ответ почтового сервера, если он был.
 """
 
+
 class MailingLog(models.Model):
     log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
 
@@ -92,7 +106,7 @@ class Client(models.Model):
     name = models.CharField(max_length=150, verbose_name='имя получателя', default='Уважаемый клиент!')
     email = models.EmailField(max_length=150, verbose_name='почта')
     comment = models.TextField(verbose_name='комментарий', help_text='Введите комментарий', default='')
-    is_active = models.BooleanField(default=True, verbose_name='активен',)
+    is_active = models.BooleanField(default=True, verbose_name='активен', )
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка',
                                 help_text='рассылка', related_name='mailing')

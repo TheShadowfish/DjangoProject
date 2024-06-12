@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from mailapp.forms import UserForm, MailingForm, ClientForm
-from mailapp.models import Client, User, Mailing, MailingLog
+from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm
+from mailapp.models import Client, User, Mailing, MailingLog, Message
 from mailapp.services import sending
 
 
@@ -137,6 +137,22 @@ class MailingDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['logs'] = MailingLog.objects.filter(mailing=self.object)
         context['clients'] = Client.objects.filter(mailing=self.object)
+        context['messages'] = Message.objects.filter(mailing=self.object)
+        return context
+
+
+class MessageCreateView(CreateView):
+    model = Message
+    form_class = MessageForm
+    success_url = reverse_lazy('mailapp:message_list')
+
+
+class MessageListView(ListView):
+    model = Message
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['mailings'] = Mailing.objects.all()
         return context
 
 

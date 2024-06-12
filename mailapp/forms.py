@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import BooleanField
-from mailapp.models import User, Client, Mailing
+from mailapp.models import User, Client, Mailing, Message
 
 
 class StyleFormMixin:
@@ -29,7 +29,7 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
         #           'status',
         #           'datetime_send',
         #           'user')
-        exclude = ('created_at',)
+        exclude = ('created_at', 'message')
 
     # def clean(self):
     #     cleaned_data = self.cleaned_data
@@ -43,3 +43,10 @@ class ClientForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Client
         fields = '__all__'
+
+
+class MessageForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = '__all__'
+
