@@ -63,8 +63,11 @@ class MailingLog(models.Model):
 
 
 class Mail(models.Model):
+    """модель клиента"""
     name = models.CharField(max_length=150, verbose_name='имя получателя', default='Уважаемый клиент!')
     email = models.EmailField(max_length=150, verbose_name='почта')
+    comment = models.TextField(verbose_name='комментарий', help_text='Введите комментарий', default='')
+    is_active = models.BooleanField(default=True, verbose_name='активен',)
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='рассылка',
                                 help_text='рассылка', related_name='mailing')
