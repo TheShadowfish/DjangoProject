@@ -48,7 +48,7 @@ def get_info_and_send(mailing_item: Mailing):
                 subject=mail_title,
                 message=mail_body,
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[mail],
+                recipient_list=[mail.email],
                 fail_silently=False,
             )
 
