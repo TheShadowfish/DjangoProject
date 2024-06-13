@@ -71,39 +71,6 @@ class Mailing(models.Model):
     def __str__(self):
         return f" {self.title}"
 
-    # def save(self, *args, **kwargs):
-    #
-    #         # self.save()
-    #
-    #     log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self)
-    #     log.save()
-    #
-    #     super().save(*args, **kwargs)
-
-
-"""
-**_Рассылка (настройки):_**
-- дата и время первой отправки рассылки;
-- периодичность: раз в день, раз в неделю, раз в месяц;
-- статус рассылки (например, завершена, создана, запущена).
-
-Рассылка внутри себя должна содержать ссылки на модели «Сообщения и «Клиенты сервиса». 
-Сообщение у рассылки может быть только одно, а вот клиентов может быть много. 
-Выберите правильные типы связи между моделями.
-
-Пример: компания N захотела создать на нашем сервисе рассылку. Создала для нее сообщение, которое будет отправлено клиентам, наполнила базу клиентов своими данными с помощью графического интерфейса сайта, затем перешла к созданию рассылки: указала необходимые параметры, сообщение и выбрала клиентов, которым эта рассылка должна быть отправлена.
-
-**_Сообщение для рассылки:_**
-- тема письма,
-- тело письма.
-Сообщения — неотъемлемая часть рассылки. Для них также необходимо реализовать CRUD-механизм!
-
-**_Попытка рассылки:_**
-- дата и время последней попытки;
-- статус попытки (успешно / не успешно);
-- ответ почтового сервера, если он был.
-"""
-
 
 class MailingLog(models.Model):
     log_text = models.TextField(verbose_name='текст лога', help_text='введите текст лога', default=timezone.now())
@@ -114,7 +81,8 @@ class MailingLog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания лога')
     status = models.BooleanField(default=True, verbose_name='статус попытки', help_text='введите статус попытки')
-    mail_answer = models.TextField(verbose_name='ответ почтового сервера', help_text='введите ответ почтового сервера', default='No sending, create or change')
+    mail_answer = models.TextField(verbose_name='ответ почтового сервера', help_text='введите ответ почтового сервера',
+                                   default='No sending, create or change')
 
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
 
@@ -133,7 +101,7 @@ class MailingLog(models.Model):
 
 
 class Client(models.Model):
-    """модель клиента"""
+    """Модель клиента"""
     name = models.CharField(max_length=150, verbose_name='имя получателя', default='Уважаемый клиент!')
     email = models.EmailField(max_length=150, verbose_name='почта')
     comment = models.TextField(verbose_name='комментарий', help_text='Введите комментарий', default='')
