@@ -32,12 +32,12 @@ class Message(models.Model):
 
 
 class MailingSettings(models.Model):
-    datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата и время первой отправки рассылки',
+    datetime_send = models.DateTimeField(auto_now_add=True, verbose_name='дата и время первой отправки рассылки',
                                          help_text='введите дату и время первой отправки рассылки')
 
     # раз в день, раз в неделю, раз в месяц
 
-    periodicity = models.PositiveSmallIntegerField(max_length=150, verbose_name='периодичность (через сколько дней)',
+    periodicity = models.PositiveSmallIntegerField(verbose_name='периодичность (через сколько дней)',
                                                    help_text='введите периодичность', default='1')
     # завершена, запущена
     status = models.BooleanField(default=True, verbose_name='статус', help_text='введите статус рассылки (ожидается ('
@@ -113,7 +113,16 @@ class MailingLog(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания лога')
+    status = models.BooleanField(default=True, verbose_name='статус попытки', help_text='введите статус попытки')
+    mail_answer = models.TextField(verbose_name='ответ почтового сервера', help_text='введите ответ почтового сервера', default='No sending, create or change')
+
     updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
+
+    """
+    - дата и время последней попытки; (+)
+    - статус попытки (успешно / не успешно);
+    - ответ почтового сервера, если он был.
+    """
 
     class Meta:
         verbose_name = 'лог рассылки'

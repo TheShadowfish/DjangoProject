@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import BooleanField
-from mailapp.models import User, Client, Mailing, Message
+from mailapp.models import User, Client, Mailing, Message, MailingSettings
 
 
 class StyleFormMixin:
@@ -29,8 +29,8 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
         #           'status',
         #           'datetime_send',
         #           'user')
-        exclude = ('created_at', 'message')
-        widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}),}
+        exclude = ('created_at', 'message', 'settings')
+        widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
 
     # def clean(self):
     #     cleaned_data = self.cleaned_data
@@ -51,3 +51,17 @@ class MessageForm(StyleFormMixin, forms.ModelForm):
         model = Message
         fields = '__all__'
 
+
+class MailingSettingsForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = MailingSettings
+        fields = '__all__'
+        # exclude = ('datetime_send',)
+        """
+        datetime_send = models.DateTimeField(auto_now_add=True,)
+        # раз в день, раз в неделю, раз в месяц
+        periodicity = models.PositiveSmallIntegerField(default='1')
+        # завершена, запущена
+        status = models.BooleanField(default=True, help_text='введите статус (ожидается (запущена) или завершена)')
+        active = models.BooleanField(default=True, verbose_name='активность', help_text='запущена ли рассылка сейчас')
+        """
