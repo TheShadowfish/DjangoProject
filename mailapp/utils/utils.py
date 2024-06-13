@@ -36,7 +36,7 @@ def get_info_and_send(mailing_item: Mailing):
     # mail_list = Client.objects.get(mailing=mailing_item)
 
     mail_list = Client.objects.filter(mailing=mailing_item)
-    print(f"mail_list={mail_list}...")
+    print(f"mail_list={mail_list.email}...")
 
     for mail in mail_list:
         result = ''
