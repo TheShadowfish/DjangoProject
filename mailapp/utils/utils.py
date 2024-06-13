@@ -10,10 +10,10 @@ def get_info_and_send(mailing_item: Mailing):
     """
     Отправка письма
     """
-    print(f"mailing_item={mailing_item}")
-    print(f"mailing_item.message={mailing_item.message}")
-    print(f"mailing_item.message={mailing_item.message.title}")
-    print(f"mailing_item.message={mailing_item.message.body}")
+    # print(f"mailing_item={mailing_item}")
+    # print(f"mailing_item.message={mailing_item.message}")
+    # print(f"mailing_item.message={mailing_item.message.title}")
+    # print(f"mailing_item.message={mailing_item.message.body}")
 
 
 
@@ -48,7 +48,7 @@ def get_info_and_send(mailing_item: Mailing):
                 subject=mail_title,
                 message=mail_body,
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[mail.email],
+                recipient_list=[mail],
                 fail_silently=False,
             )
 
