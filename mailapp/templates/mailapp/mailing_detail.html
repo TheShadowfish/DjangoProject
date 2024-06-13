@@ -20,7 +20,7 @@
                 <p class="card-text">
 
                     <b>Название рассылки:</b> {{ object.title }} <br>
-                    <b>Текст рассылки:</b> {{ object.message_in }} <br>
+                    <b>Комментарий:</b> {{ object.message_in }} <br>
                     <b>Рассылка создана:</b> {{ object.created_at }} <br>
                     <b>Статус активности:</b> {{ object.status }} <br>
                     <b>Время отправки:</b> {{ object.datetime_send }} <br>
@@ -42,53 +42,50 @@
                     </tr>
 
 
-                    {% for message_item in message%}
                     <tr>
 
-                        <td>{{message_item.title}}</td>
-                        <td>{{message_item.body}}</td>
+                        <td>{{message.title}}</td>
+                        <td>{{message.body}}</td>
 
                     </tr>
 
 
-                    {% endfor %}
-
 
                 </table>
 
-
-                <hr>
+                                                <hr>
                 <h5 class="card-title">
-                    <div style="color: orange"><b>Список адресов рассылки:</b></div>
+                    <div style="color: orange"><b>Настройки:</b></div>
                 </h5>
 
 
                 <table class="table table-stripped">
                     <tr>
-                        <th>Обращение</th>
-                        <th>Email</th>
-                        <th>Комментарий</th>
-                        <th>Активен</th>
+                        <th>Время старта</th>
+                        <th>Периодичность (дни)</th>
+                        <th>Статус (активна)</th>
+                        <th>Запущена сейчас</th>
 
 
                     </tr>
 
-
-                    {% for client_item in clients%}
                     <tr>
 
-                        <td>{{client_item.name}}</td>
-                        <td>{{client_item.email}}</td>
-                        <td>{{client_item.comment}}</td>
-                        <td>{{client_item.is_active}}</td>
+                        <td>{{settings.datetime_send}}</td>
+                        <td>{{settings.periodicity}}</td>
+                        <td>{{settings.status}}</td>
+                        <td>{{settings.active}}</td>
+
 
                     </tr>
 
 
-                    {% endfor %}
 
 
                 </table>
+
+
+
 
 
                 </p>
@@ -123,6 +120,39 @@
                     <div style="color: orange"><b>{{object.name}}</b></div>
                 </h5>
                 <p class="card-text">
+
+                <h5 class="card-title">
+                    <div style="color: orange"><b>Список адресов рассылки:</b></div>
+                </h5>
+
+
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Обращение</th>
+                        <th>Email</th>
+                        <th>Комментарий</th>
+                        <th>Активен</th>
+
+
+                    </tr>
+
+
+                    {% for client_item in clients%}
+                    <tr>
+
+                        <td>{{client_item.name}}</td>
+                        <td>{{client_item.email}}</td>
+                        <td>{{client_item.comment}}</td>
+                        <td>{{client_item.is_active}}</td>
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </table>
+                <hr>
 
                 <h5 class="card-title">
                     <div style="color: orange"><b>Список логов рассылки:</b></div>

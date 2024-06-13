@@ -180,7 +180,8 @@ class MailingDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['logs'] = MailingLog.objects.filter(mailing=self.object)
         context['clients'] = Client.objects.filter(mailing=self.object)
-        context['message'] = Message.objects.filter(id=self.object.message_id)
+        context['message'] = Message.objects.get(id=self.object.message_id)
+        context['settings'] = MailingSettings.objects.get(id=self.object.settings_id)
         return context
 
 
