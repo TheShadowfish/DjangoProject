@@ -133,7 +133,9 @@
                     <tr>
                         <th>Текст лога</th>
                         <th>Создан</th>
-                        <th>Изменен</th>
+
+                        <th>Статус попытки рассылки</th>
+                        <th>Ответ почтового сервера</th>
 
                     </tr>
 
@@ -143,7 +145,10 @@
 
                         <td>{{log_item.log_text}}</td>
                         <td>{{log_item.created_at}}</td>
-                        <td>{{log_item.updated_at}}</td>
+
+                        <td>{{log_item.status}}</td>
+                        <td>{{log_item.mail_answer}}</td>
+
 
                     </tr>
 
