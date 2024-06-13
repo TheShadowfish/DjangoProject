@@ -51,12 +51,12 @@
                         <td>{{object.active}}</td>
 
                         {%for mailing_item in mailings%}
-                        {%if mailing_item.message_id == object.id%}
+                        {%if mailing_item.settings == object.id%}
 
                         <td>{{mailing_item}}</td>
 
                         <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:settings_update' mailing_item.message_id %}"
+                            <a class="btn btn-primary" href="{%url 'mailapp:settings_update' mailing_item.settings_id %}"
                                role="button">Изменить</a>
                         </td>
 
@@ -68,21 +68,6 @@
                         <td>{{object.datetime_send}}</td>
                         <td>{{object.user}}</td>
 
-                        <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_detail' object.pk%}" role="button">Информация</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_update' object.pk%}"
-                               role="button">Изменить</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_delete' object.pk%}"
-                               role="button">Удалить</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" href="{%url 'mailapp:mailing_send' object.pk%}"
-                               role="button">Отправить</a>
-                        </td>
 
                     </tr>
 

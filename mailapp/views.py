@@ -111,7 +111,7 @@ class MailFormsetMixin:
             print('mailing.save()')
 
         if mailing.settings is None:
-            settings = MailingSettings.objects.create(mailing=mailing)
+            settings = MailingSettings.objects.create()
             settings.save()
             mailing.settings = settings
             print(f'Сохранение настроек {mailing.settings}')
@@ -128,11 +128,13 @@ class MailFormsetMixin:
             formset.save()
 
         # print(f"message.id= {message.id}, message= {message}, mailing.message_id={mailing.message_id}")
-        # redirect_url = reverse('mailapp:message_update', args=[message.id])
+        redirect_url = reverse('mailapp:message_settings_update', args=[message.id])
 
-        redirect_url = reverse('mailapp:message_settings_update', args=[mailing.message_id])
+        #redirect_url = reverse('mailapp:message_settings_update', args=[mailing.message_id])
         # { % if mailing_item.message_id == object.id %}
         self.success_url = redirect_url
+
+        print(f"redirect_url= {redirect_url}")
 
         return super().form_valid(form)
 
@@ -197,18 +199,26 @@ class MessageUpdateView(UpdateView):
 class MessageSettingsUpdateView(UpdateView):
     model = Message
     form_class = MessageForm
-    success_url = reverse_lazy('mailapp:message_list')
+    success_url = reverse_lazy('mailapp:settings_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['mailing'] = Message.objects.filter(message_id=self.object.id)
-        return context
 
+        # print(f"BEFORE CRASH")
+
+        context['mailing'] = Mailing.objects.get(message_id=self.object.id)
+        # print(f"context['mailing'] {context['mailing']}")
+
+        return context
+    #
     def form_valid(self, form):
         # self.object = form.save()
+        # print(f"form_valid!!!!!!!!!!!!!!!!!!!!!")
         mailing = self.get_context_data()['mailing']
+        # context['message'] = Message.objects.filter(id=self.object.message_id)
 
-        print(f"message.id= {mailing.id}, message= {mailing}, mailing.message_id={mailing.message_id}")
+
+        # print(f"mailing= {mailing}, mailing= {mailing}")
         # redirect_url = reverse('mailapp:message_update', args=[message.id])
 
         redirect_url = reverse('mailapp:settings_update', args=[mailing.settings_id])

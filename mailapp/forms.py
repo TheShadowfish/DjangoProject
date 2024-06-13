@@ -56,6 +56,7 @@ class MailingSettingsForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = MailingSettings
         fields = '__all__'
+        widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
         # exclude = ('datetime_send',)
         """
         datetime_send = models.DateTimeField(auto_now_add=True,)
