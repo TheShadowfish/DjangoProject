@@ -102,7 +102,8 @@ class MailFormsetMixin:
 
         mailing = form.save()
         if mailing.message is None:
-            message = Message.objects.create()
+            message = Message.objects.create(title=f"{mailing.title} - first ", body=f"{mailing.message_in} - first creation")
+
             message.save()
             mailing.message = message
             print(f'Сохранение сообщения {mailing.message}')
@@ -120,7 +121,12 @@ class MailFormsetMixin:
             formset.instance = mailing
             formset.save()
 
-        redirect_url = reverse('mailapp:message_update', args=[mailing.message.id])
+        print(f"message.id= {message.id}, message= {message}, mailing.message_id={mailing.message_id}")
+        redirect_url = reverse('mailapp:message_update', args=[message.id])
+
+        # redirect_url = reverse('mailapp:message_update', args=[mailing.message_id])
+
+        # { % if mailing_item.message_id == object.id %}
         self.success_url = redirect_url
 
         return super().form_valid(form)

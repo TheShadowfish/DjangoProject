@@ -52,11 +52,11 @@
                     <tr>
 
                         <td>{{object.title}}</td>
-                        <td>{{object.message}}</td>
+                        <td>{{object.message.body}}</td>
                         <td>{{object.created_at}}</td>
                         <td>{{object.status}}</td>
                         <td>{{object.datetime_send}}</td>
-                                                <td>{{object.user}}</td>
+                        <td>{{object.user}}</td>
 
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mailing_detail' object.pk%}" role="button">Информация</a>
