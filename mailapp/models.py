@@ -23,6 +23,28 @@ class Message(models.Model):
     body = models.TextField(verbose_name='тело сообщения', help_text='Введите тело сообщения', default='текст рассылки')
 
 
+"""
+**_Рассылка (настройки):_**
+- дата и время первой отправки рассылки;
+- периодичность: раз в день, раз в неделю, раз в месяц;
+- статус рассылки (например, завершена, создана, запущена).
+"""
+
+
+class MailingSettings(models.Model):
+    datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата и время первой отправки рассылки',
+                                         help_text='введите дату и время первой отправки рассылки')
+
+    # раз в день, раз в неделю, раз в месяц
+
+    periodicity = models.PositiveSmallIntegerField(max_length=150, verbose_name='периодичность (через сколько дней)',
+                                                   help_text='введите периодичность', default='1')
+    # завершена, запущена
+    status = models.BooleanField(default=True, verbose_name='статус', help_text='введите статус рассылки (ожидается ('
+                                                                                'запущена) или завершена)')
+    active = models.BooleanField(default=True, verbose_name='активность', help_text='запущена ли рассылка сейчас')
+
+
 class Mailing(models.Model):
     title = models.CharField(max_length=150, unique=True, verbose_name='рассылка',
                              help_text='введите название рассылки')
@@ -38,6 +60,9 @@ class Mailing(models.Model):
 
     message = models.OneToOneField(Message, on_delete=models.SET_NULL, verbose_name='сообщение', **NULLABLE,
                                    related_name='message')
+
+    settings = models.OneToOneField(MailingSettings, on_delete=models.SET_NULL, verbose_name='настройки', **NULLABLE,
+                                    related_name='settings')
 
     class Meta:
         verbose_name = 'рассылка'

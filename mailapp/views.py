@@ -124,7 +124,7 @@ class MailFormsetMixin:
         print(f"message.id= {message.id}, message= {message}, mailing.message_id={mailing.message_id}")
         # redirect_url = reverse('mailapp:message_update', args=[message.id])
 
-        redirect_url = reverse('mailapp:message_update', args=[mailing.message_id])
+        redirect_url = reverse('mailapp:message_settings_update', args=[mailing.message_id])
 
         # { % if mailing_item.message_id == object.id %}
         self.success_url = redirect_url
@@ -184,6 +184,11 @@ class MessageCreateView(CreateView):
 
 
 class MessageUpdateView(UpdateView):
+    model = Message
+    form_class = MessageForm
+    success_url = reverse_lazy('mailapp:message_list')
+
+class MessageSettingsUpdateView(UpdateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailapp:message_list')
