@@ -262,12 +262,13 @@ class MailingSettingsListView(ListView):
 def mailing_send(request, pk):
     mailing_item = get_object_or_404(Mailing, pk=pk)
 
-    print("mailing_send")
+    print(f"mailing_send {mailing_item}")
 
     try:
         # sending(mailing_item)
         get_info_and_send(mailing_item)
     except Exception as e:
+        print("FUCKING ERROR!!!")
         print(e)
     else:
         mailing_item.status = True

@@ -21,6 +21,7 @@ def get_info_and_send(mailing_item: Mailing):
     print(f"message={message}...")
 
 
+    print(f"mail_from={settings.EMAIL_HOST_USER}...")
 
     mail_title = mailing_item.message.title
     print(f"mail_title={mail_title}...")
@@ -30,8 +31,6 @@ def get_info_and_send(mailing_item: Mailing):
 
 
 
-    mail_from = settings.EMAIL_HOST_USER
-    print(f"mail_from={mail_from}...")
 
     # mail_list = Client.objects.get(mailing=mailing_item)
 
