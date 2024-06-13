@@ -32,7 +32,7 @@ class Message(models.Model):
 
 
 class MailingSettings(models.Model):
-    datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата и время первой отправки рассылки',
+    datetime_send = models.DateTimeField(auto_now_add=True, verbose_name='дата и время первой отправки рассылки',
                                          help_text='введите дату и время первой отправки рассылки')
 
     # раз в день, раз в неделю, раз в месяц

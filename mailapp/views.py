@@ -7,6 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm
 from mailapp.models import Client, User, Mailing, MailingLog, Message, MailingSettings
 from mailapp.services import sending
+from mailapp.utils.utils import get_info_and_send
 
 
 # from django.apps.config import models.Mail
@@ -264,7 +265,8 @@ def mailing_send(request, pk):
     print("mailing_send")
 
     try:
-        sending(mailing_item)
+        # sending(mailing_item)
+        get_info_and_send(mailing_item)
     except Exception as e:
         print(e)
     else:
