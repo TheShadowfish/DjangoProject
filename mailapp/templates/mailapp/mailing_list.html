@@ -43,7 +43,7 @@
 
 
                     {% for object in object_list %}
-                    {% if only_send and object.status or only_send == False %}
+                    {% if only_send and object.settings.status == False or only_send == False %}
 
 
                     <tr>
