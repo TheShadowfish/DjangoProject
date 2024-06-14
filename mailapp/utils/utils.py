@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from apscheduler.schedulers.background import BackgroundScheduler
 from django.core.mail import send_mail
 from django.utils import timezone
 from smtplib import SMTPException
@@ -7,6 +8,9 @@ import pytz
 
 from config import settings
 from mailapp.models import Mailing, Client, Message, MailingLog, MailingSettings
+
+
+# from django.conf import settings
 
 
 def get_info_and_send(mailing_item: Mailing):
@@ -48,21 +52,21 @@ def get_info_and_send(mailing_item: Mailing):
 def select_mailings():
     zone = pytz.timezone(settings.TIME_ZONE)
     current_datetime = datetime.now(zone)
+    print("appsheduller started!")
+
     # создание объекта с применением фильтра
 
     # mailings = Mailing.objects.all()
 
-    setgs = MailingSettings.objects.filter(datetime_send__lte=current_datetime).filter(status=True).filter()
+    # setgs = MailingSettings.objects.filter(datetime_send__lte=current_datetime).filter(status=True).filter()
 
     # mailings = Mailing.objects.filter(setgs in (setgs))
 
-    [print(f"settings={setting.__dict__}...") for setting in setgs]
-
-
+    # [print(f"settings={setting.__dict__}...") for setting in setgs]
 
     mailings2 = Mailing.objects.filter(settings__datetime_send__lte=current_datetime).filter(settings__status=True)
 
-    [print(f"mailing={mailing_item.__dict__}...") for mailing_item in mailings2]
+    # [print(f"mailing={mailing_item.__dict__}...") for mailing_item in mailings2]
 
     i = 1
 
@@ -70,15 +74,16 @@ def select_mailings():
         setting = MailingSettings.objects.get(pk=mailing_item.settings_id)
         # logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(created_at > (current_datetime - timezone.timedelta(days=setting.periodicity)))
 
-        #days=, hours= - для тестирования
+        # days=, hours= - для тестирования
         logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(
             created_at__range=[current_datetime - timezone.timedelta(hours=setting.periodicity), current_datetime])
-        [print(f"log={log.__dict__}...") for log in logs]
+        # [print(f"log={log.__dict__}...") for log in logs]
 
         if logs.count() == 0:
             print(f"{i}) mailing={mailing_item.__dict__} NO SENDED YET!")
             i += 1
             get_info_and_send(mailing_item)
+            print(f"send message! {mailing_item}")
 
         """
         settings: datetime_send, periodicity, status, active
@@ -102,3 +107,9 @@ def select_mailings():
     #         from_email=settings.EMAIL_HOST_USER,
     #         recipient_list=[client.email for client in mailing.клиенты.all()]
     #     )
+
+
+def start():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(select_mailings, 'interval', seconds=30)
+    scheduler.start()
