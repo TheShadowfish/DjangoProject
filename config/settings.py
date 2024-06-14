@@ -146,5 +146,6 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 CRONJOBS = [
-    ('*/5 * * * *', ' mailapp.utils.utils.select_mailings')
+    ('*/5 * * * *', 'mailapp.utils.utils.select_mailings'),
+    ('*/1 * * * *', 'mailapp.utils.task.print_hello')
 ]
