@@ -5,7 +5,7 @@ from mailapp.models import Client, Mailing, MailingLog
 
 @admin.register(Mailing)
 class MailingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'message', 'created_at', 'status', 'datetime_send',)
+    list_display = ('id', 'title', 'message', 'created_at',)
     list_filter = ('title',)
 
 
@@ -17,5 +17,5 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(MailingLog)
 class MailingLogAdmin(admin.ModelAdmin):
-    list_display = ('log_text', 'mailing', 'created_at', 'updated_at',)
+    list_display = ('log_text', 'mailing', 'created_at',)
     list_filter = ('mailing',)

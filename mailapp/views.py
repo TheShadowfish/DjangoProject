@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm
 from mailapp.models import Client, User, Mailing, MailingLog, Message, MailingSettings
 from mailapp.services import sending
-from mailapp.utils.utils import get_info_and_send
+from mailapp.utils.utils import get_info_and_send, select_mailings
 
 
 # from django.apps.config import models.Mail
@@ -123,7 +123,7 @@ class MailFormsetMixin:
         # else:
         # settings = MailingSettings.objects.get(id=mailing.settings_id)
 
-        log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=mailing)
+        log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', status=False, mailing=mailing)
         log.save()
         # print('log.save()')
 
@@ -132,14 +132,9 @@ class MailFormsetMixin:
             formset.instance = mailing
             formset.save()
 
-        # print(f"message.id= {message.id}, message= {message}, mailing.message_id={mailing.message_id}")
         redirect_url = reverse('mailapp:message_settings_update', args=[message.id])
 
-        # redirect_url = reverse('mailapp:message_settings_update', args=[mailing.message_id])
-        # { % if mailing_item.message_id == object.id %}
         self.success_url = redirect_url
-
-        # print(f"redirect_url= {redirect_url}")
 
         return super().form_valid(form)
 
@@ -150,27 +145,11 @@ class MailingCreateView(MailFormsetMixin, CreateView):
 
     success_url = reverse_lazy('mailapp:mailing_list')  # object.pk
 
-    # def get_success_url(self):
-    #     print(f"1 {self}")
-    #     print(f"2 {self.args}")
-    #     print(f"3 {[self.kwargs.get('pk')]}")
-    #     print(f"4 {self.message_id}")
-    #     return reverse('mailapp:message_update', args=[self.object.message_id])
-
-    # context['message'] = Message.objects.filter(id=self.object.message_id)
-
 
 class MailingUpdateView(MailFormsetMixin, UpdateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
-
-    # def save(self, commit=True):
-    #     instance = super(Form, self).save(commit=False)
-    #     instance.flag1 = 'flag1' in self.cleaned_data['multi_choice']  # etc
-    #     if commit:
-    #         instance.save()
-    #     return instance
 
 
 class MailingDeleteView(DeleteView):
@@ -209,27 +188,16 @@ class MessageSettingsUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # print(f"BEFORE CRASH")
-
         context['mailing'] = Mailing.objects.get(message_id=self.object.id)
-        # print(f"context['mailing'] {context['mailing']}")
 
         return context
 
     #
     def form_valid(self, form):
-        # self.object = form.save()
-        # print(f"form_valid!!!!!!!!!!!!!!!!!!!!!")
         mailing = self.get_context_data()['mailing']
-        # context['message'] = Message.objects.filter(id=self.object.message_id)
-
-        # print(f"mailing= {mailing}, mailing= {mailing}")
-        # redirect_url = reverse('mailapp:message_update', args=[message.id])
 
         redirect_url = reverse('mailapp:settings_update', args=[mailing.settings_id])
 
-        # { % if mailing_item.message_id == object.id %}
         self.success_url = redirect_url
 
         return super().form_valid(form)
@@ -275,5 +243,8 @@ def mailing_send(request, pk):
         mailing_item.save()
 
     print(mailing_item)
-    print(mailing_item.status)
+    # print(mailing_item.status)
+
+    select_mailings()
+
     return redirect(reverse('mailapp:mailing_list'))

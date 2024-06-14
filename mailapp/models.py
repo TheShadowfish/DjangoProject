@@ -51,17 +51,17 @@ class Mailing(models.Model):
     message_in = models.TextField(verbose_name='сообщение', help_text='введите текст рассылки', **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания рассылки')
-    status = models.BooleanField(default=False, verbose_name='статус', help_text='введите статус рассылки')
-    datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата срабатывания',
-                                         help_text='введите дату срабатывания')
+    # status = models.BooleanField(default=False, verbose_name='статус', help_text='введите статус рассылки')
+    # datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата срабатывания',
+    #                                      help_text='введите дату срабатывания')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
                              help_text='пользователь', related_name='user')
 
-    message = models.OneToOneField(Message, on_delete=models.SET_NULL, verbose_name='сообщение', **NULLABLE,
+    message = models.OneToOneField(Message, on_delete=models.CASCADE, verbose_name='сообщение', **NULLABLE,
                                    related_name='message')
 
-    settings = models.OneToOneField(MailingSettings, on_delete=models.SET_NULL, verbose_name='настройки', **NULLABLE,
+    settings = models.OneToOneField(MailingSettings, on_delete=models.CASCADE, verbose_name='настройки', **NULLABLE,
                                     related_name='settings')
 
     class Meta:
@@ -84,7 +84,7 @@ class MailingLog(models.Model):
     mail_answer = models.TextField(verbose_name='ответ почтового сервера', help_text='введите ответ почтового сервера',
                                    default='No sending, create or change')
 
-    updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
+    # updated_at = models.DateTimeField(auto_now=True, verbose_name='дата')
 
     """
     - дата и время последней попытки; (+)
