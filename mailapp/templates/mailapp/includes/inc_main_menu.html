@@ -1,21 +1,24 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Boatsell:
+    <h5 class="my-0 mr-md-auto font-weight-normal">Mailling:
         {% if title %}
         - {{title}}
         {% endif %}
     </h5>
     <nav class="ms-5">
-        <a class="p-2 btn btn-outline-primary" href="{% url 'mail:mail_list' %}">Каталог лодок (весь)</a>
-
-        <a class="p-2 btn btn-outline-primary" href="#">Создать продукт</a>
-
-        <a class="p-2 btn btn-outline-primary" href="#">Контакты</a>
-
-        <a class="p-2 btn btn-outline-primary" href="#">Перейти к блогу</a>
+        <a class="p-2 btn btn-outline-primary" href="/">Главная</a>
 
 
-        <a class="p-2 btn btn-outline-primary" href="#">Регистрация</a>
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:user_list' %}">Список пользователей</a>
 
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:mailing_list'%}">Список рассылок</a>
+
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:mailing_list_send'%}">Список проведенных рассылок</a>
+
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:mail_list'%}">Список email-адресов</a>
+
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:message_list'%}">Список сообщений рассылок</a>
+
+        <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:settings_list'%}">Список настроек рассылок</a>
 
 
 

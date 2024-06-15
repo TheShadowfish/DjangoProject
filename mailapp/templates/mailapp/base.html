@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Продажа лодок
+    <title>Рассылка
     {% if title %}
         - {{title}}
         {% endif %}
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-{% include 'boat/includes/inc_main_menu.html' %}
+{% include 'mailapp/includes/inc_main_menu.html' %}
 
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -26,33 +26,34 @@
                 height="100px"
                 width="100px"/>
         <br>
-        BoatSell
+        MailApp
     </h1>
-    <p class="lead">BoatSell - это сервис для продажи и покупки лодок для владельцев! Мы поможем продать ваше судно!*
+    <p class="lead">MailApp - работа с расссылками. Рассылаем по расписанию, на любое количество адресов, любые сообщения! MailApp - пошлем туда, куда Макар телят не гонял!*
         <br>
 
         <small class="text-body-secondary">
                      <span class="text-muted">
 
-                    * Если оно в принципе плавает. Затонувшие плавсредства не продаем!
+                    * Если таковы ваши требования. <br> Обращаем внимание, что "Макар", который гонял телят, является фолклорным персонажем и в реальности наш сервер его адрес вам предоставить не может.
+                    <br>
+
                      </span>
+                    Сегодня у нас: {% current_time '%d-%m-%Y' %}
 
 
         </small>
     </p>
     <p class="lead">
-    <div style="color: red">{% time_until_11_nov %}</div>
 
     </p>
-    <label>{%  current_time '%Y-%m-%d' %} </label>
+
 
 </div>
 
 <div class="container">
-
-    {% comment "Этот HTML код пока не нужен, но вдруг пригодится в следующем домашнем задании" %}
-    <div class="row text-center">
-        <div class="col-3">
+  {% comment "Заколебала эта карточка" %}
+     <div class="row text-center">
+        <div class="col-12">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Удобный сервис рассылок</h4>
@@ -70,8 +71,7 @@
             </div>
         </div>
     </div>
-    {% endcomment %}
-
+{% endcomment %}
 
     {% block content %}
     {% endblock %}
