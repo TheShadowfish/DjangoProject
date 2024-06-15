@@ -9,6 +9,11 @@ readme = "README.md"
 python = "^3.10"
 django = "^5.0.6"
 psycopg2 = "^2.9.9"
+python-decouple = "^3.8"
+black = "^24.4.2"
+pytz = "^2024.1"
+django-crontab = "^0.7.1"
+python-crontab = "^3.1.0"
 
 
 [build-system]
