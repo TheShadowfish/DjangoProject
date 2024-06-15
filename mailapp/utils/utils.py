@@ -58,8 +58,6 @@ def select_mailings():
 
     [print(f"settings={setting.__dict__}...") for setting in setgs]
 
-
-
     mailings2 = Mailing.objects.filter(settings__datetime_send__lte=current_datetime).filter(settings__status=True)
 
     [print(f"mailing={mailing_item.__dict__}...") for mailing_item in mailings2]
@@ -70,7 +68,7 @@ def select_mailings():
         setting = MailingSettings.objects.get(pk=mailing_item.settings_id)
         # logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(created_at > (current_datetime - timezone.timedelta(days=setting.periodicity)))
 
-        #days=, hours= - для тестирования
+        # days=, hours= - для тестирования
         logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(
             created_at__range=[current_datetime - timezone.timedelta(hours=setting.periodicity), current_datetime])
         [print(f"log={log.__dict__}...") for log in logs]
@@ -102,3 +100,11 @@ def select_mailings():
     #         from_email=settings.EMAIL_HOST_USER,
     #         recipient_list=[client.email for client in mailing.клиенты.all()]
     #     )
+
+
+def start():
+    from crontab import CronTab
+    cron = CronTab(user='shadowfish')
+    job = cron.new(command='echo hello_world')
+    job.minute.every(1)
+    cron.write()
