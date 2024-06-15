@@ -85,20 +85,4 @@ def select_mailings():
 
         class MailingLog: log_text, mailing, created_at, status, mail_answer, updated_at
         """
-    # mailings2 = Mailing.objects.filter(start_date__lte=current_datetime).filter(status='created')
 
-    # MailingSettings.datetime_send
-    #
-    # MailingSettings.status
-
-    # message = Message.objects.get(pk=mailing_item.message_id)
-
-    # settings
-
-    # for mailing in mailings:
-    #     send_mail(
-    #         subject=theme,
-    #         message=text,
-    #         from_email=settings.EMAIL_HOST_USER,
-    #         recipient_list=[client.email for client in mailing.клиенты.all()]
-    #     )
