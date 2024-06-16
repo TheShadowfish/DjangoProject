@@ -13,6 +13,7 @@
         <a class="p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Войти</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'users:register' %}">Регистрация</a>
         {% endif %}
+        <a class="p-2 btn btn-outline-primary" href="{%url 'users:user_list' %}">Список регистрированных пользователей</a>
 
         <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:free_user_list' %}">Список пользователей</a>
 

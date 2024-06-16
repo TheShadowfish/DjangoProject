@@ -4,10 +4,11 @@ from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 
 from config.settings import EMAIL_HOST_USER
-from users.forms import UserRegisterForm
+from mailapp.models import Mailing
+from users.forms import UserRegisterForm, UserProfileForm
 from users.models import User, UserToken
 
 
@@ -66,3 +67,34 @@ def token_expired(request):
 
 def email_confirmed(request):
     return render(request, 'users/email_confirmed.html')
+
+
+class UserListView(ListView):
+    model = User
+
+
+# class UserCreateView(CreateView):
+#     model = User
+#     form_class = UserForm
+#     success_url = reverse_lazy('users:user_list')
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    form_class = UserProfileForm
+    success_url = reverse_lazy('users:user_list')
+
+
+class UserDetailView(DetailView):
+    model = User
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['mailing_list'] = Mailing.objects.all()
+        context['mailing_list'] = Mailing.objects.filter(user=self.object)
+        return context
+
+
+class UserDeleteView(DeleteView):
+    model = User
+    success_url = reverse_lazy('users:user_list')
