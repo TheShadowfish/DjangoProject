@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import BooleanField
-from mailapp.models import User, Client, Mailing, Message, MailingSettings
+from mailapp.models import FreeUser, Client, Mailing, Message, MailingSettings
 
 
 class StyleFormMixin:
@@ -15,7 +15,7 @@ class StyleFormMixin:
 
 class UserForm(StyleFormMixin, forms.ModelForm):
     class Meta:
-        model = User
+        model = FreeUser
         fields = '__all__'
         # fields = ('username', 'email')
 

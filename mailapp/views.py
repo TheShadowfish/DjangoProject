@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm
-from mailapp.models import Client, User, Mailing, MailingLog, Message, MailingSettings
+from mailapp.models import Client, FreeUser, Mailing, MailingLog, Message, MailingSettings
 from mailapp.services import sending
 from mailapp.utils.utils import get_info_and_send, select_mailings
 
@@ -38,23 +38,23 @@ class ClientDeleteView(DeleteView):
 
 
 class UserListView(ListView):
-    model = User
+    model = FreeUser
 
 
 class UserCreateView(CreateView):
-    model = User
+    model = FreeUser
     form_class = UserForm
     success_url = reverse_lazy('mailapp:user_list')
 
 
 class UserUpdateView(UpdateView):
-    model = User
+    model = FreeUser
     form_class = UserForm
     success_url = reverse_lazy('mailapp:user_list')
 
 
 class UserDetailView(DetailView):
-    model = User
+    model = FreeUser
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,7 +64,7 @@ class UserDetailView(DetailView):
 
 
 class UserDeleteView(DeleteView):
-    model = User
+    model = FreeUser
     success_url = reverse_lazy('mailapp:user_list')
 
 
