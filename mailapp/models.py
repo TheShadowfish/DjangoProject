@@ -10,8 +10,8 @@ class FreeUser(models.Model):
     email = models.EmailField(max_length=150, verbose_name='почта')
 
     class Meta:
-        verbose_name = 'пользователь'
-        verbose_name_plural = 'пользователи'
+        verbose_name = 'simple пользователь'
+        verbose_name_plural = 'simple пользователи'
 
     def __str__(self):
         return f" {self.name}"
