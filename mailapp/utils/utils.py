@@ -58,8 +58,6 @@ def select_mailings():
 
     [print(f"settings={setting.__dict__}...") for setting in setgs]
 
-
-
     mailings2 = Mailing.objects.filter(settings__datetime_send__lte=current_datetime).filter(settings__status=True)
 
     [print(f"mailing={mailing_item.__dict__}...") for mailing_item in mailings2]
@@ -70,7 +68,7 @@ def select_mailings():
         setting = MailingSettings.objects.get(pk=mailing_item.settings_id)
         # logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(created_at > (current_datetime - timezone.timedelta(days=setting.periodicity)))
 
-        #days=, hours= - для тестирования
+        # days=, hours= - для тестирования
         logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(
             created_at__range=[current_datetime - timezone.timedelta(hours=setting.periodicity), current_datetime])
         [print(f"log={log.__dict__}...") for log in logs]
@@ -85,4 +83,3 @@ def select_mailings():
 
         class MailingLog: log_text, mailing, created_at, status, mail_answer, updated_at
         """
-

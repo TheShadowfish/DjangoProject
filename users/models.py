@@ -61,3 +61,12 @@ class User(AbstractUser):
 
     def __str__(self):
         return f" {self.name} ({self.email})"
+
+
+class UserToken(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='токен для восстановления пароля',
+                             help_text='токен для восстановления пароля', related_name='user_token')
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
+                                      help_text='введите дату создания токена')
+    token = models.CharField(max_length=100, verbose_name='Token', **NULLABLE)
