@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from users.models import User
+
 NULLABLE = {'blank': True, 'null': True}
 
 
@@ -55,7 +57,7 @@ class Mailing(models.Model):
     # datetime_send = models.DateTimeField(auto_now_add=False, verbose_name='дата срабатывания',
     #                                      help_text='введите дату срабатывания')
 
-    user = models.ForeignKey(FreeUser, on_delete=models.CASCADE, verbose_name='пользователь',
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
                              help_text='пользователь', related_name='user')
 
     message = models.OneToOneField(Message, on_delete=models.CASCADE, verbose_name='сообщение', **NULLABLE,

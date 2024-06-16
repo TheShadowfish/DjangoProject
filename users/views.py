@@ -16,7 +16,7 @@ class RegisterView(CreateView):
     model = User
     form_class = UserRegisterForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('users:login')
+    success_url = reverse_lazy('users:confirm_email')
 
     def form_valid(self, form):
         user = form.save()
@@ -42,10 +42,17 @@ class RegisterView(CreateView):
 
 
 def email_verification(request, token):
-    user = get_object_or_404(User)
-    this_user_token = get_object_or_404(UserToken, user=user, token=token)
+    # user = get_object_or_404(User)
+    # message = Message.objects.get(pk=mailing_item.message_id)
+    # mail_title = mailing_item.message.title
+    # mail_body = mailing_item.message.body
+    # mail_list = Client.objects.filter(mailing=mailing_item)
 
-    if this_user_token.created_at < timezone.now() - timezone.timedelta(hours=1):
+    this_user_token = get_object_or_404(UserToken, token=token)
+    user = this_user_token.user
+
+    if this_user_token.created_at < timezone.now() - timezone.timedelta(minutes=45):
+        user.delete()
         this_user_token.delete()
         return render(request, 'users/token_expired.html')
     else:
@@ -67,6 +74,10 @@ def token_expired(request):
 
 def email_confirmed(request):
     return render(request, 'users/email_confirmed.html')
+
+
+def confirm_email(request):
+    return render(request, 'users/confirm_email.html')
 
 
 class UserListView(ListView):
