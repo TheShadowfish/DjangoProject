@@ -2,7 +2,7 @@ import secrets
 
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils import timezone
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 
@@ -16,7 +16,8 @@ class RegisterView(CreateView):
     model = User
     form_class = UserRegisterForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('users:confirm_email')
+
+    # success_url = reverse_lazy('users:confirm_email' args=[self.kwargs.get("email")])
 
     def form_valid(self, form):
         user = form.save()
@@ -37,8 +38,23 @@ class RegisterView(CreateView):
             from_email=EMAIL_HOST_USER,
             recipient_list=[user.email]
         )
+
+        redirect_url = reverse('users:confirm_email', args=[user.email])
+        self.success_url = redirect_url
+
         # print(f'Отправлено {EMAIL_HOST_USER} to {user.email}')
+
         return super().form_valid(form)
+    #
+    # def get_success_url(self):
+    #     return reverse("users:confirm_email", args=[self.kwargs.get("email")])
+
+    # def set_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     user_email = self.kwargs.get("email")
+    #     context['user_email'] = user_email
+    #     print(f'user_email {user_email}')
+    #     return context
 
 
 def email_verification(request, token):
@@ -76,8 +92,12 @@ def email_confirmed(request):
     return render(request, 'users/email_confirmed.html')
 
 
-def confirm_email(request):
-    return render(request, 'users/confirm_email.html')
+def confirm_email(request, email):
+    context = {
+        'email': email,
+    }
+
+    return render(request, 'users/confirm_email.html', context)
 
 
 class UserListView(ListView):
