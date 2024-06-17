@@ -70,7 +70,7 @@ def select_mailings():
 
         # days=, hours= - для тестирования
         logs = MailingLog.objects.filter(mailing=mailing_item).filter(status=True).filter(
-            created_at__range=[current_datetime - timezone.timedelta(hours=setting.periodicity), current_datetime])
+            created_at__range=[current_datetime - timezone.timedelta(days=setting.periodicity), current_datetime])
         [print(f"log={log.__dict__}...") for log in logs]
 
         if logs.count() == 0:
