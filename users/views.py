@@ -1,7 +1,8 @@
 import secrets
+import string
 
 from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.utils import timezone
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
@@ -116,6 +117,15 @@ class UserUpdateView(UpdateView):
     success_url = reverse_lazy('users:user_list')
 
 
+class ProfileView(UpdateView):
+    model = User
+    form_class = UserProfileForm
+    success_url = reverse_lazy('users:user_list')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
 class UserDetailView(DetailView):
     model = User
 
@@ -129,3 +139,48 @@ class UserDetailView(DetailView):
 class UserDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('users:user_list')
+
+
+def password_recovery(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+
+        print(f'Получен адрес {email}')
+
+        user = get_object_or_404(User, email=email)
+
+        print(f'Пользователь {user}')
+
+        password = ''
+
+        # Создание двенадцатисимвольного буквенно-цифрового пароля, содержащего как минимум один символ нижнего регистра,
+        # как минимум один символ верхнего регистра и как минимум три цифры:
+        alphabet = string.ascii_letters + string.digits
+        while True:
+            password = ''.join(secrets.choice(alphabet) for i in range(12))
+            if (any(c.islower() for c in password)
+                    and any(c.isupper() for c in password)
+                    and sum(c.isdigit() for c in password) >= 3):
+                break
+
+        print(f'Пароль {password}')
+
+        message = f"Привет, держи новый сложный 12-ти символьный пароль, который ты тоже забудешь: {password}. \
+                    Если вы не запрашивали восстановление пароля, просто игнорируйте это сообщение."
+
+        print(f'Пароль {message}')
+
+        send_mail(
+            subject='Восстановление пароля',
+            message=message,
+            from_email=EMAIL_HOST_USER,
+            recipient_list=[email]
+        )
+        # пароль шифрует  - как его дальше в шифрованом виде в базу сохранять?
+        # psw = make_password(password, salt=None, hasher='default')
+
+        user.set_password(password)
+        user.save()
+        return redirect(reverse('users:login'))
+
+    return render(request, 'users/password_recovery.html')
