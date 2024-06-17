@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
             raise ValueError("The given email must be set")
         # email = self.normalize_email(email)
         # GlobalUserModel = apps.get_model(self.model._meta.app_label, self.model._meta.object_name)
-        email = GlobalUserModel.normalize_username(email)
+        # email = GlobalUserModel.normalize_username(email)
         user = self.model(email=email, **extra_fields)
         user.password = make_password(password)
         user.save(using=self._db)
@@ -39,6 +39,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
+    objects = UserManager()
     username = None
 
     email = models.EmailField(max_length=150, verbose_name='почта', unique=True, help_text='Введите вашу почту')
