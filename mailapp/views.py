@@ -7,11 +7,12 @@ from django.urls import reverse_lazy, reverse
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm, \
+from mailapp.forms import MailingForm, ClientForm, MessageForm, MailingSettingsForm, \
     MailingSettingsModeratorForm
-from mailapp.models import Client, FreeUser, Mailing, MailingLog, Message, MailingSettings
+from mailapp.models import Client, Mailing, MailingLog, Message, MailingSettings
 from mailapp.services import sending
 from mailapp.utils.utils import get_info_and_send, select_mailings
+from users.models import User
 
 
 # from django.apps.config import models.Mail
@@ -40,34 +41,29 @@ class ClientDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class UserListView(LoginRequiredMixin, ListView):
-    model = FreeUser
+    model = User
 
 
-class UserCreateView(LoginRequiredMixin, CreateView):
-    model = FreeUser
-    form_class = UserForm
-    success_url = reverse_lazy('mailapp:user_list')
-
-
-class UserUpdateView(LoginRequiredMixin, UpdateView):
-    model = FreeUser
-    form_class = UserForm
-    success_url = reverse_lazy('mailapp:user_list')
+# class UserCreateView(LoginRequiredMixin, CreateView):
+#     model = User
+#     form_class = UserForm
+#     success_url = reverse_lazy('mailapp:user_list')
+#
+#
+# class UserUpdateView(LoginRequiredMixin, UpdateView):
+#     model = FreeUser
+#     form_class = UserForm
+#     success_url = reverse_lazy('mailapp:user_list')
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
-    model = FreeUser
+    model = User
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # context['mailing_list'] = Mailing.objects.all()
         context['mailing_list'] = Mailing.objects.filter(user=self.object)
         return context
-
-
-class UserDeleteView(LoginRequiredMixin, DeleteView):
-    model = FreeUser
-    success_url = reverse_lazy('mailapp:user_list')
 
 
 class MailingListView(LoginRequiredMixin, ListView):

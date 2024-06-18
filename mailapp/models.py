@@ -7,16 +7,16 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 # Create your models here.
-class FreeUser(models.Model):
-    name = models.CharField(max_length=150, verbose_name='имя пользователя')
-    email = models.EmailField(max_length=150, verbose_name='почта')
-
-    class Meta:
-        verbose_name = 'simple пользователь'
-        verbose_name_plural = 'simple пользователи'
-
-    def __str__(self):
-        return f" {self.name}"
+# class User(models.Model):
+#     name = models.CharField(max_length=150, verbose_name='имя пользователя')
+#     email = models.EmailField(max_length=150, verbose_name='почта')
+#
+#     class Meta:
+#         verbose_name = 'simple пользователь'
+#         verbose_name_plural = 'simple пользователи'
+#
+#     def __str__(self):
+#         return f" {self.name}"
 
 
 class Message(models.Model):

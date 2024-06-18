@@ -73,3 +73,11 @@ def media_filter(path):
         return f'/media/{path}'
 
     return '/static/image/no_image.png'
+
+
+@register.filter()
+def user_media_filter(path):
+    if path:
+        return f'/media/{path}'
+
+    return '/static/image/no_avatar.png'
