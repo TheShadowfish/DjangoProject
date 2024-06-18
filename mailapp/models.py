@@ -69,6 +69,23 @@ class Mailing(models.Model):
     class Meta:
         verbose_name = 'рассылка'
         verbose_name_plural = 'рассылки'
+        permissions = [
+            ("can_set_user_inactive", "Can blocked user (bool is_active = False)"),
+            ("can_turn_off_mailing", "Can turn off mailing (mailing.settings.status = False"),
+        ]
+
+
+    """
+    # Функционал менеджера
+    - Может просматривать любые рассылки.  PermissionRequiredMixin permission_required = "article.view_article
+    - Может просматривать список пользователей сервиса.  PermissionRequiredMixin permission_required = "article.view_article
+    - Может блокировать пользователей сервиса. "can_set_user_inactive", "Can blocked user (bool is_active (is_blocked ?) = False)"
+    - Может отключать рассылки. "can_turn_off_mailing", "Can turn off mailing (mailing.settings.status = False"
+
+    - Не может редактировать рассылки.
+    - Не может управлять списком рассылок.
+    - Не может изменять рассылки и сообщения.
+     """
 
     def __str__(self):
         return f" {self.title}"
