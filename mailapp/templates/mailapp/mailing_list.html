@@ -8,9 +8,20 @@
         <div class="card mb-3 box-shadow">
             <br>
             <div class="btn-group">
-                &nbsp; &nbsp; &nbsp; <a class="p-2 btn btn-outline-primary btn-lg btn-block"
+                {% if perms.mailapp.can_turn_off_mailing %}
+                <div class="card-body">
+                <div style="color: red"><b>Рассылки: &nbsp; режим модератора. Добавление невозможно. </b></div>
+                    </div>
+
+                    {%else%}
+
+
+                     &nbsp; &nbsp; &nbsp; <a class="p-2 btn btn-outline-primary btn-lg btn-block"
                                         href="{%url 'mailapp:mailing_create' %}">Добавить рассылку</a> &nbsp; &nbsp;
                 &nbsp;
+                    {% endif %}
+
+
             </div>
             <br>
         </div>
@@ -24,9 +35,18 @@
 
             <div class="card-body">
                 <h5 class="card-title">
+                    {% if perms.mailapp.can_turn_off_mailing %}
+                     <div style="color: red"><b>Рассылки: &nbsp; режим модератора. </b></div>
+                    {%else%}
+
+
                     <div style="color: orange"><b> Рассылки: </b></div>
+                    {% endif %}
                 </h5>
                 <p class="card-text">
+
+
+
 
                 <table class="table table-stripped">
                     <tr>
@@ -34,10 +54,17 @@
                         <th>Текст рассылки</th>
                         <th>Дата создания</th>
                         <th>Владелец рассылки</th>
+                        <th>Статус</th>
                         <th>Информация</th>
                         <th>Изменить</th>
+
+                        {% if perms.mailapp.can_turn_off_mailing %}
+                        {%else%}
+
                         <th>Удалить</th>
                         <th>Отправить</th>
+                        {%endif%}
+
 
                     </tr>
 
@@ -47,11 +74,13 @@
 
 
                     <tr>
+                        {% if user == object.user %}
 
                         <td>{{object.title}}</td>
                         <td>{{object.message.body}}</td>
                         <td>{{object.created_at}}</td>
                         <td>{{object.user}}</td>
+                        <td>{{object.settings.status}}</td>
 
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mailing_detail' object.pk%}" role="button">Информация</a>
@@ -68,6 +97,33 @@
                             <a class="btn btn-danger" href="{%url 'mailapp:mailing_send' object.pk%}"
                                role="button">Отправить</a>
                         </td>
+                        {% endif %}
+
+
+                        {% if perms.mailapp.can_turn_off_mailing and user != object.user %}
+                        <td>{{object.title}}</td>
+                        <td>{{object.message.body}}</td>
+                        <td>{{object.created_at}}</td>
+                        <td>{{object.user}}</td>
+                        <td>{{object.settings.status}}</td>
+
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mailing_detail' object.pk%}" role="button">Информация</a>
+                        </td>
+                        <td>
+                            {%if object.settings.status %}
+                            <a class="btn btn-success" href="{%url 'mailapp:mailing_activity' object.pk%}"
+                               role="button">Деактивировать</a>
+                            {% else %}
+                            <a class="btn btn-danger" href="{%url 'mailapp:mailing_activity' object.pk%}"
+                               role="button">&nbsp;&nbsp;Активировать&nbsp;&nbsp;</a>
+                            {%endif%}
+                        </td>
+
+
+
+
+                        {% endif %}
 
                     </tr>
 

@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
@@ -37,10 +37,6 @@ class ClientUpdateView(LoginRequiredMixin, UpdateView):
 class ClientDeleteView(LoginRequiredMixin, DeleteView):
     model = Client
     success_url = reverse_lazy('mailapp:mail_list')
-
-
-# class MailDetailView(DetailView):
-#     model = Mail
 
 
 class UserListView(LoginRequiredMixin, ListView):
@@ -159,6 +155,12 @@ class MailingCreateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, Create
 
     success_url = reverse_lazy('mailapp:mailing_list')  # object.pk
 
+    # def get_form_class(self):
+    #     user = self.request.user
+    #     if user == self.object.user or user.is_superuser:
+    #         return MailingForm
+    #     raise PermissionDenied
+
 
 class MailingUpdateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, UpdateView):
     model = Mailing
@@ -169,10 +171,6 @@ class MailingUpdateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, Update
         user = self.request.user
         if user == self.object.user:
             return MailingForm
-        if (
-                user.has_perm("catalog.can_turn_off_mailing")
-        ):
-            return MailingSettingsModeratorForm
         raise PermissionDenied
 
 
@@ -222,7 +220,7 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
 class MessageSettingsUpdateView(LoginRequiredMixin, UpdateView):
     model = Message
     form_class = MessageForm
-    success_url = reverse_lazy('mailapp:settings_list')
+    success_url = reverse_lazy('mailapp:mailing_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -285,5 +283,19 @@ def mailing_send(request, pk):
     # print(mailing_item.status)
 
     select_mailings()
+
+    return redirect(reverse('mailapp:mailing_list'))
+
+
+@login_required
+@permission_required('mailapp.can_turn_off_mailing')
+def toggle_activity_mailing(request, pk):
+    mailing_item = get_object_or_404(Mailing, pk=pk)
+    if mailing_item.settings.status:
+        mailing_item.settings.status = False
+    else:
+        mailing_item.settings.status = True
+
+    mailing_item.settings.save()
 
     return redirect(reverse('mailapp:mailing_list'))

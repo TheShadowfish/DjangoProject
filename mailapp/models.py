@@ -50,7 +50,7 @@ class MailingSettings(models.Model):
 class Mailing(models.Model):
     title = models.CharField(max_length=150, unique=True, verbose_name='рассылка',
                              help_text='введите название рассылки')
-    message_in = models.TextField(verbose_name='сообщение', help_text='введите текст рассылки', **NULLABLE)
+    message_in = models.TextField(verbose_name='описание', help_text='введите описание рассылки', **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания рассылки')
     # status = models.BooleanField(default=False, verbose_name='статус', help_text='введите статус рассылки')
@@ -58,7 +58,7 @@ class Mailing(models.Model):
     #                                      help_text='введите дату срабатывания')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
-                             help_text='пользователь', related_name='user')
+                             help_text='пользователь', related_name='user', **NULLABLE)
 
     message = models.OneToOneField(Message, on_delete=models.CASCADE, verbose_name='сообщение', **NULLABLE,
                                    related_name='message')

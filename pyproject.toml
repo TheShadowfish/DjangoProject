@@ -16,6 +16,7 @@ django-crontab = "^0.7.1"
 python-crontab = "^3.1.0"
 django-phonenumber-field = {extras = ["phonenumberslite"], version = "^7.3.0"}
 pillow = "^10.3.0"
+ipython = "^8.25.0"
 
 
 [build-system]
