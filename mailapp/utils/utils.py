@@ -58,7 +58,8 @@ def select_mailings():
 
     [print(f"settings={setting.__dict__}...") for setting in setgs]
 
-    mailings2 = Mailing.objects.filter(settings__datetime_send__lte=current_datetime).filter(settings__status=True)
+    # дополнение к логике: рассылки неактивных пользователей не запускаются
+    mailings2 = Mailing.objects.filter(settings__datetime_send__lte=current_datetime).filter(settings__status=True).filter(user__is_active=True)
 
     [print(f"mailing={mailing_item.__dict__}...") for mailing_item in mailings2]
 

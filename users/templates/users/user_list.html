@@ -1,19 +1,29 @@
 {% extends 'mailapp/base.html'%}
 {% load static %}
-{% block content %}
 {% load my_tags %}
+{% block content %}
 
 
 <div class="row text-right">
-    <div class="col-12 mb-3">
+    {% if perms.users.can_set_user_inactive %}
+    <div class="col-12">
+
         <div class="card mb-3 box-shadow">
-            <br>
-            <div class="btn-group">
-          &nbsp; &nbsp; &nbsp;  <a class="p-2 btn btn-outline-primary btn-lg btn-block" href="{%url 'users:register' %}">Регистрация пользователя</a> &nbsp; &nbsp; &nbsp;
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div style="color: red"><b>Список пользователей: &nbsp; режим модератора. </b></div>
+                    {% if user.is_superuser %}
+                    <div style="color: red"><b>Вы - суперпользователь. Поэтому можете удалять других пользователей. И себя тоже.</b></div>
+                    {%endif%}
+
+                </h5>
             </div>
-            <br>
         </div>
     </div>
+    {% else %}
+    <div style="color: red"><b>Список пользователей: &nbsp; </b></div>
+    {% endif %}
 
 
     {% for object in object_list %}
@@ -33,7 +43,10 @@
 
                     <br>
 
-                    <b>Аватар:</b><br> <img src="{{ object.avatar | user_media_filter }}" width="100"  alt={{object.avatar | user_media_filter}}> <br>
+
+                    <b>Аватар:</b><br> <img src="{{ object.avatar|user_media_filter }}" width="100"
+                                            alt={{object.avatar|user_media_filter}}> <br>
+
                     <b>Имя:</b> {{object.name}} <br>
                     <b>Email:</b> {{object.email}} <br>
                     <b>Телефон:</b> {{object.phone_number}} <br>
@@ -42,17 +55,26 @@
                     <b>Комментарий:</b> {{object.description}} <br>
 
 
-
                 </p>
                 <div class="btn-group">
                     <a class="btn btn-primary" href="{%url 'users:user_detail' object.pk%}" role="button">Информация</a>
 
+                    {% if perms.users.can_set_user_inactive %}
+                    {%if object.is_active %}
+                    <a class="btn btn-danger" href="{%url 'users:user_activity' object.pk%}"
+                       role="button">Заблокировать</a>
+                    {% else %}
+                    <a class="btn btn-success" href="{%url 'users:user_activity' object.pk%}"
+                       role="button">Разблокировать</a>
 
-                    <a class="btn btn-primary" href="{%url 'users:user_update' object.pk%}"
-                       role="button">Изменить</a>
+                    {%endif%}
+                    {%endif%}
 
-                    <a class="btn btn-primary" href="{%url 'users:user_delete' object.pk%}"
+
+                    {% if user.is_superuser %}
+                    <a class="btn btn-dark" href="{%url 'users:user_delete' object.pk%}"
                        role="button">Удалить</a>
+                    {% endif %}
                 </div>
 
             </div>

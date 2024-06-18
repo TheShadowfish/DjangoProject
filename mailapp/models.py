@@ -70,7 +70,6 @@ class Mailing(models.Model):
         verbose_name = 'рассылка'
         verbose_name_plural = 'рассылки'
         permissions = [
-            ("can_set_user_inactive", "Can blocked user (bool is_active = False)"),
             ("can_turn_off_mailing", "Can turn off mailing (mailing.settings.status = False"),
         ]
 

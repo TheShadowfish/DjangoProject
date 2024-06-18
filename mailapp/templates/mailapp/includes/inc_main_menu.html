@@ -14,7 +14,12 @@
         <a class="p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Войти</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'users:register' %}">Регистрация</a>
         {% endif %}
-        <a class="p-2 btn btn-outline-primary" href="{%url 'users:user_list' %}">Список зарегистрированных пользователей</a>
+
+        {% if perms.users.can_set_user_inactive or user.is_superuser %}
+            <a class="p-2 btn btn-outline-primary" href="{%url 'users:user_list' %}">Список зарегистрированных пользователей</a>
+        {% endif %}
+
+
 
         <a class="p-2 btn btn-outline-primary" href="{%url 'mailapp:mailing_list'%}">Список рассылок</a>
 

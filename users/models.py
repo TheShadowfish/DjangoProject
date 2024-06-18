@@ -46,12 +46,14 @@ class User(AbstractUser):
     name = models.CharField(max_length=150, verbose_name='имя пользователя', help_text='Введите ваше имя', **NULLABLE)
     description = models.TextField(verbose_name='описание', help_text='Введите дополнительную информацию', **NULLABLE)
     phone_number = PhoneNumberField(**NULLABLE, verbose_name='телефон', help_text='Введите ваш номер телефона')
-    avatar = models.ImageField(upload_to='users/avatars/', verbose_name='аватар', help_text='Выберите аватар',
+    avatar = models.ImageField(upload_to='users/avatars', verbose_name='аватар', help_text='Выберите аватар',
                                **NULLABLE)
 
     # is_active = models.BooleanField(default=True, verbose_name='активен', )
     is_content_manager = models.BooleanField(default=False, verbose_name='админ', )
     is_moderator = models.BooleanField(default=False, verbose_name='модератор', )
+
+    is_banned = models.BooleanField(default=False, verbose_name='Забанен',)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -59,6 +61,9 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'пользователь'
         verbose_name_plural = 'пользователи'
+        permissions = [
+            ("can_set_user_inactive", "Can blocked user (bool is_active = False)"),
+        ]
 
     def __str__(self):
         return f" {self.name} ({self.email})"

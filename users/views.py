@@ -1,6 +1,8 @@
 import secrets
 import string
 
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
@@ -101,8 +103,9 @@ def confirm_email(request, email):
     return render(request, 'users/confirm_email.html', context)
 
 
-class UserListView(ListView):
+class UserListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = User
+    permission_required = "users.view_user"
 
 
 # class UserCreateView(CreateView):
@@ -110,34 +113,39 @@ class UserListView(ListView):
 #     form_class = UserForm
 #     success_url = reverse_lazy('users:user_list')
 
+#
+# class UserUpdateView(LoginRequiredMixin, UpdateView):
+#     model = User
+#     form_class = UserProfileForm
+#     success_url = reverse_lazy('users:user_list')
 
-class UserUpdateView(UpdateView):
+
+class ProfileView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserProfileForm
-    success_url = reverse_lazy('users:user_list')
 
-
-class ProfileView(UpdateView):
-    model = User
-    form_class = UserProfileForm
-    success_url = reverse_lazy('users:user_list')
+    success_url = reverse_lazy('users:profile')
 
     def get_object(self, queryset=None):
         return self.request.user
 
 
-class UserDetailView(DetailView):
+class UserDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = User
+    permission_required = "users.view_user"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # context['mailing_list'] = Mailing.objects.all()
+
         context['mailing_list'] = Mailing.objects.filter(user=self.object)
         return context
 
 
-class UserDeleteView(DeleteView):
+class UserDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = User
+    # Суперпользователь сможет
+    permission_required = "users.delete_user"
     success_url = reverse_lazy('users:user_list')
 
 
@@ -184,3 +192,19 @@ def password_recovery(request):
         return redirect(reverse('users:login'))
 
     return render(request, 'users/password_recovery.html')
+
+
+@login_required
+@permission_required('users.can_set_user_inactive')
+def toggle_activity_user(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if user.is_active:
+        user.is_active = False
+        user.is_banned = True
+    else:
+        user.is_active = True
+        user.is_banned = False
+
+    user.save()
+
+    return redirect(reverse('users:user_list'))
