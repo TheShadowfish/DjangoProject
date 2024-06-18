@@ -90,7 +90,7 @@ class MailingListViewSend(LoginRequiredMixin, ListView):
         return context
 
 
-class MailFormsetMixin:
+class MailingCreateAndFormsetMixin:
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -103,9 +103,15 @@ class MailFormsetMixin:
         return context
 
     def form_valid(self, form):
-        # self.object = form.save()
 
+        # Xозяином рассылки автоматически становится тот, кто её создал
         mailing = form.save()
+        user = self.request.user
+        # Что же я его owner не назвал сразу... теперь поздняк метаться.
+        mailing.user = user
+        mailing.save()
+
+        # Сохранение сообщения рассылки обязательно, так как связь 1 к 1 и рассылка без сообщения не имеет смысла
         if mailing.message is None:
             message = Message.objects.create(title=f"{mailing.title} - first ",
                                              body=f"{mailing.message_in} - first creation")
@@ -117,6 +123,7 @@ class MailFormsetMixin:
         else:
             message = Message.objects.get(id=mailing.message_id)
 
+        # Сохранение настроек рассылки обязательно, связь 1 к 1 и рассылка без настроек не имеет смысла
         if mailing.settings is None:
             settings = MailingSettings.objects.create()
             settings.save()
@@ -127,6 +134,7 @@ class MailFormsetMixin:
         # else:
         # settings = MailingSettings.objects.get(id=mailing.settings_id)
 
+        # Лог рассылки - создание и изменение тоже туда пишутся, не только попытки отправки
         log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', status=False, mailing=mailing)
         log.save()
         # print('log.save()')
@@ -143,14 +151,14 @@ class MailFormsetMixin:
         return super().form_valid(form)
 
 
-class MailingCreateView(LoginRequiredMixin, MailFormsetMixin, CreateView):
+class MailingCreateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, CreateView):
     model = Mailing
     form_class = MailingForm
 
     success_url = reverse_lazy('mailapp:mailing_list')  # object.pk
 
 
-class MailingUpdateView(LoginRequiredMixin, MailFormsetMixin, UpdateView):
+class MailingUpdateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, UpdateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')

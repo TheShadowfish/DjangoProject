@@ -29,7 +29,7 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
         #           'status',
         #           'datetime_send',
         #           'user')
-        exclude = ('created_at', 'message', 'settings')
+        exclude = ('created_at', 'message', 'settings', 'user')
         widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
 
     # def clean(self):
