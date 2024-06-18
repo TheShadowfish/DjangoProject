@@ -49,8 +49,8 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='users/avatars/', verbose_name='аватар', help_text='Выберите аватар',
                                **NULLABLE)
 
-    is_active = models.BooleanField(default=True, verbose_name='активен', )
-    is_admin = models.BooleanField(default=False, verbose_name='админ', )
+    # is_active = models.BooleanField(default=True, verbose_name='активен', )
+    is_content_manager = models.BooleanField(default=False, verbose_name='админ', )
     is_moderator = models.BooleanField(default=False, verbose_name='модератор', )
 
     USERNAME_FIELD = "email"

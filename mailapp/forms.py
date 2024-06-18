@@ -40,6 +40,26 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
     #     return cleaned_data
 
 
+class MailingSettingsModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = MailingSettings
+        fields = ('status',)
+        # fields = ('title',
+        #           'message',
+        #           'status',
+        #           'datetime_send',
+        #           'user')
+        # exclude = ('created_at', 'message', 'settings', 'user')
+        # widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
+
+    # def clean(self):
+    #     cleaned_data = self.cleaned_data
+    #     log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self.instance)
+    #     log.save()
+    #
+    #     return cleaned_data
+
+
 class ClientForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Client

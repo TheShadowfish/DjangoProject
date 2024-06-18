@@ -1,12 +1,14 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm
+from mailapp.forms import UserForm, MailingForm, ClientForm, MessageForm, MailingSettingsForm, \
+    MailingSettingsModeratorForm
 from mailapp.models import Client, FreeUser, Mailing, MailingLog, Message, MailingSettings
 from mailapp.services import sending
 from mailapp.utils.utils import get_info_and_send, select_mailings
@@ -129,7 +131,7 @@ class MailingCreateAndFormsetMixin:
             settings.save()
             mailing.settings = settings
             print(f'Сохранение настроек {mailing.settings}')
-            settings.save()
+            mailing.save()
             # print('settings.save()')
         # else:
         # settings = MailingSettings.objects.get(id=mailing.settings_id)
@@ -163,10 +165,27 @@ class MailingUpdateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, Update
     form_class = MailingForm
     success_url = reverse_lazy('mailapp:mailing_list')
 
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.user:
+            return MailingForm
+        if (
+                user.has_perm("catalog.can_turn_off_mailing")
+        ):
+            return MailingSettingsModeratorForm
+        raise PermissionDenied
+
 
 class MailingDeleteView(LoginRequiredMixin, DeleteView):
     model = Mailing
     success_url = reverse_lazy('mailapp:mailing_list')
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user == self.object.user:
+            return
+        else:
+            raise PermissionDenied
 
 
 class MailingDetailView(LoginRequiredMixin, DetailView):
@@ -179,6 +198,13 @@ class MailingDetailView(LoginRequiredMixin, DetailView):
         context['message'] = Message.objects.get(id=self.object.message_id)
         context['settings'] = MailingSettings.objects.get(id=self.object.settings_id)
         return context
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user == self.object.user:
+            return
+        else:
+            raise PermissionDenied
 
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
