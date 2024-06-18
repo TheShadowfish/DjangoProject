@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.forms import inlineformset_factory
 from django.shortcuts import get_object_or_404, redirect
@@ -201,7 +201,7 @@ class MailingDetailView(LoginRequiredMixin, DetailView):
 
     def form_valid(self, form):
         user = self.request.user
-        if user == self.object.user:
+        if user == self.object.user or user.has_perm("mailapp.view_mailing"):
             return
         else:
             raise PermissionDenied
