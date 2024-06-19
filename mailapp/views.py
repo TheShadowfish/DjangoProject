@@ -14,13 +14,21 @@ from mailapp.services import sending
 from mailapp.utils.utils import get_info_and_send, select_mailings
 from users.models import User
 
+ONLY_USERS_PROPERTY = True
+
 
 # from django.apps.config import models.Mail
 
 class ClientListView(LoginRequiredMixin, ListView):
     model = Client
     login_url = "users:login"
+
     # redirect_field_name = "login"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['only_users'] = ONLY_USERS_PROPERTY
+        return context
 
 
 class GetFormKwargsGetUserMixin:
@@ -43,68 +51,20 @@ class ClientCreateView(LoginRequiredMixin, GetFormKwargsGetUserMixin, CreateView
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
-    # login_url = "users:login"
-    # redirect_field_name = "login"
-
-    # def form_valid(self, form):
-    #     product = form.save()
-    #     user = self.request.user
-    #     product.owner = user
-    #     product.save()
-    #     return super().form_valid(form)
-
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs['user'] = self.request.user
-    #     return kwargs
-
 
 class ClientUpdateView(LoginRequiredMixin, GetFormKwargsGetUserMixin, GetFormClassUserIsOwnerMixin, UpdateView):
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
-    # def get_form_class(self):
-    #     user = self.request.user
-    #     if user == self.object.mailing.user:
-    #         return ClientForm
-    #     raise PermissionDenied
-
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs['user'] = self.request.user
-    #     return kwargs
-
 
 class ClientDeleteView(LoginRequiredMixin, GetFormKwargsGetUserMixin, GetFormClassUserIsOwnerMixin, DeleteView):
     model = Client
     success_url = reverse_lazy('mailapp:mail_list')
 
-    # def get_form_class(self):
-    #     user = self.request.user
-    #     if user == self.object.mailing.user:
-    #         return ClientForm
-    #     raise PermissionDenied
-
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs['user'] = self.request.user
-    #     return kwargs
-
 
 class ClientDetailView(LoginRequiredMixin, GetFormClassUserIsOwnerMixin, DetailView):
     model = Client
-    # success_url = reverse_lazy('mailapp:mail_list')
-
-
-# class UserDetailView(LoginRequiredMixin, DetailView):
-#     model = User
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         # context['mailing_list'] = Mailing.objects.all()
-#         context['mailing_list'] = Mailing.objects.filter(user=self.object)
-#         return context
 
 
 class MailingListView(LoginRequiredMixin, ListView):
@@ -152,9 +112,9 @@ class MailingCreateAndFormsetMixin:
                                              body=f"{mailing.message_in} - first creation")
             message.save()
             mailing.message = message
-            print(f'Сохранение сообщения {mailing.message}')
+            # print(f'Сохранение сообщения {mailing.message}')
             mailing.save()
-            print('mailing.save()')
+            # print('mailing.save()')
         else:
             message = Message.objects.get(id=mailing.message_id)
 
@@ -163,11 +123,9 @@ class MailingCreateAndFormsetMixin:
             settings = MailingSettings.objects.create()
             settings.save()
             mailing.settings = settings
-            print(f'Сохранение настроек {mailing.settings}')
+            # print(f'Сохранение настроек {mailing.settings}')
             mailing.save()
             # print('settings.save()')
-        # else:
-        # settings = MailingSettings.objects.get(id=mailing.settings_id)
 
         # Лог рассылки - создание и изменение тоже туда пишутся, не только попытки отправки
         log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', status=False, mailing=mailing)
@@ -191,12 +149,6 @@ class MailingCreateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, Create
     form_class = MailingForm
 
     success_url = reverse_lazy('mailapp:mailing_list')  # object.pk
-
-    # def get_form_class(self):
-    #     user = self.request.user
-    #     if user == self.object.user or user.is_superuser:
-    #         return MailingForm
-    #     raise PermissionDenied
 
 
 class MailingUpdateView(LoginRequiredMixin, MailingCreateAndFormsetMixin, UpdateView):
@@ -295,6 +247,7 @@ class MessageListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['mailings'] = Mailing.objects.all()
+        context['only_users'] = ONLY_USERS_PROPERTY
 
         return context
 
@@ -329,6 +282,7 @@ class MailingSettingsListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['mailings'] = Mailing.objects.all()
+        context['only_users'] = ONLY_USERS_PROPERTY
         return context
 
 
