@@ -19,6 +19,7 @@ urlpatterns = [
     path('user_list/', UserListView.as_view(), name='user_list'),
     path('user_detail/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
 
+
     path('user_activity/<int:pk>/', toggle_activity_user, name='user_activity'),
 
     path('user_delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),

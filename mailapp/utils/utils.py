@@ -26,23 +26,26 @@ def get_info_and_send(mailing_item: Mailing):
 
     for client in mail_list:
         result = ''
-        try:
-            result = send_mail(
-                subject=mail_title,
-                message=mail_body,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[client.email],
-                fail_silently=False,
-            )
+        if client.is_active:
+            try:
+                result = send_mail(
+                    subject=mail_title,
+                    message=mail_body,
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[client.email],
+                    fail_silently=False,
+                )
 
-            log_text = f'Success!, time={timezone.now()}, mailing={mailing_item.title}, mail={client.email}'
-            log = MailingLog.objects.create(log_text=log_text, mailing=mailing_item, status=True, mail_answer=result)
-            log.save()
+                log_text = f'Success!, time={timezone.now()}, mailing={mailing_item.title}, mail={client.email}'
+                log = MailingLog.objects.create(log_text=log_text, mailing=mailing_item, status=True, mail_answer=result)
+                log.save()
 
-        except SMTPException as error:
-            log_text = f"Can't send: {error}, time={timezone.now()}, mailing={mailing_item.title}, mail={client.email}"
-            log = MailingLog.objects.create(log_text=log_text, mailing=mailing_item, status=False, mail_answer=result)
-            log.save()
+            except SMTPException as error:
+                log_text = f"Can't send: {error}, time={timezone.now()}, mailing={mailing_item.title}, mail={client.email}"
+                log = MailingLog.objects.create(log_text=log_text, mailing=mailing_item, status=False, mail_answer=result)
+                log.save()
+        else:
+            print(f"Client {client} is excluded from mailing")
 
 
 def select_mailings():

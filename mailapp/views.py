@@ -23,14 +23,14 @@ class ClientListView(LoginRequiredMixin, ListView):
     # redirect_field_name = "login"
 
 
-class GetFormKwargsGetUserMixin():
+class GetFormKwargsGetUserMixin:
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
 
 
-class GetFormClassUserIsOwnerMixin():
+class GetFormClassUserIsOwnerMixin:
     def get_form_class(self):
         user = self.request.user
         if user == self.object.mailing.user:
@@ -92,30 +92,19 @@ class ClientDeleteView(LoginRequiredMixin, GetFormKwargsGetUserMixin, GetFormCla
     #     return kwargs
 
 
-class UserListView(LoginRequiredMixin, ListView):
-    model = User
+class ClientDetailView(LoginRequiredMixin, GetFormClassUserIsOwnerMixin, DetailView):
+    model = Client
+    # success_url = reverse_lazy('mailapp:mail_list')
 
 
-# class UserCreateView(LoginRequiredMixin, CreateView):
+# class UserDetailView(LoginRequiredMixin, DetailView):
 #     model = User
-#     form_class = UserForm
-#     success_url = reverse_lazy('mailapp:user_list')
 #
-#
-# class UserUpdateView(LoginRequiredMixin, UpdateView):
-#     model = FreeUser
-#     form_class = UserForm
-#     success_url = reverse_lazy('mailapp:user_list')
-
-
-class UserDetailView(LoginRequiredMixin, DetailView):
-    model = User
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # context['mailing_list'] = Mailing.objects.all()
-        context['mailing_list'] = Mailing.objects.filter(user=self.object)
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         # context['mailing_list'] = Mailing.objects.all()
+#         context['mailing_list'] = Mailing.objects.filter(user=self.object)
+#         return context
 
 
 class MailingListView(LoginRequiredMixin, ListView):
@@ -257,6 +246,13 @@ class MessageCreateView(LoginRequiredMixin, CreateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailapp:message_list')
+
+    # def form_valid(self, form):
+    #     user = self.request.user
+    #     if user == self.object.user or user.has_perm("mailapp.view_mailing"):
+    #         return
+    #     else:
+    #         raise PermissionDenied
 
 
 class MessageUpdateView(LoginRequiredMixin, UpdateView):

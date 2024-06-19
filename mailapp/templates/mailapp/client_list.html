@@ -29,13 +29,14 @@
                 <p class="card-text">
 
 
-                <table class="table table-stripped">
+                <table class="table-responsive" >
                     <tr>
                         <th>Обращение</th>
                         <th>email</th>
                         <th>комментарий</th>
                         <th>Подписан на рассылку</th>
                         <th>Активен</th>
+                        <th>Посмотреть</th>
                         <th>Изменить</th>
                         <th>Удалить</th>
 
@@ -57,6 +58,10 @@
 
 
                        {% if user == object.mailing.user %}
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mail_detail' object.pk %}"
+                               role="button">Посмотреть</a>
+                        </td>
 
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mail_update' object.pk %}"
@@ -68,6 +73,8 @@
                         </td>
 
                         {% else %}
+                        <td><a class="btn btn-secondary" disabled>Посмотреть</a>
+                        </td>
                         <td><a class="btn btn-secondary" disabled>Изменить</a>
                         </td>
                         <td><a class="btn btn-secondary" disabled>Удалить</a>
