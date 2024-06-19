@@ -242,23 +242,66 @@ class MailingDetailView(LoginRequiredMixin, DetailView):
             raise PermissionDenied
 
 
-class MessageCreateView(LoginRequiredMixin, CreateView):
+# class MessageCreateView(LoginRequiredMixin, CreateView):
+#     model = Message
+#     form_class = MessageForm
+#     success_url = reverse_lazy('mailapp:message_list')
+
+class MessageUpdateView(LoginRequiredMixin, UpdateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailapp:message_list')
 
     # def form_valid(self, form):
     #     user = self.request.user
-    #     if user == self.object.user or user.has_perm("mailapp.view_mailing"):
+    #     message_owner = get_object_or_404(Message, message_id=self.id)
+    #     print(f"message_id={message_owner.user}, self.id= {user}")
+    #     if user == message_owner.user:
     #         return
     #     else:
     #         raise PermissionDenied
 
+    def get_form_class(self):
+        user = self.request.user
 
-class MessageUpdateView(LoginRequiredMixin, UpdateView):
-    model = Message
-    form_class = MessageForm
-    success_url = reverse_lazy('mailapp:message_list')
+
+
+
+
+        # message_id = self.id
+        # print(f"user={user}, message_id= {message_id}")
+
+        # mail_body = mailing_item.message.body
+
+        # message = self.message
+
+        # print(f"user={user}, message= {message}")
+        # message_owner = get_object_or_404(Mailing, message_id=message)
+        #
+        #
+        #     # version = self.version
+        #     # if user == version.product.owner:
+        #     #     return ProductForm
+        #     # raise PermissionDenied
+        #
+        # # message = Message.objects.get(pk=mailing_item.message_id)
+        #
+        #
+        # print(f"owner={message_owner.user}, user= {user}")
+        # if user == message_owner.user:
+        #     return MessageForm
+        # raise PermissionDenied
+    #
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs['user'] = self.request.user
+    #     return kwargs
+    #
+    # def get_form_class(self):
+    #     user = self.request.user
+    #     if user == self.object.mailing.user:
+    #         return MessageForm
+    #     raise PermissionDenied
 
 
 class MessageSettingsUpdateView(LoginRequiredMixin, UpdateView):
@@ -296,6 +339,14 @@ class MailingSettingsUpdateView(LoginRequiredMixin, UpdateView):
     model = MailingSettings
     form_class = MailingSettingsForm
     success_url = reverse_lazy('mailapp:settings_list')
+
+    def form_valid(self, form):
+        user = self.request.user
+        mailing = get_object_or_404(Mailing, settings_id=self.object.id)
+        if user == mailing.user:
+            return
+        else:
+            raise PermissionDenied
 
 
 class MailingSettingsListView(LoginRequiredMixin, ListView):

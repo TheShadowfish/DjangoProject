@@ -72,6 +72,10 @@ class ClientForm(StyleFormMixin, forms.ModelForm):
 
 
 class MessageForm(StyleFormMixin, forms.ModelForm):
+    # def __init__(self, user, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['mailing'].queryset = Mailing.objects.filter(user=user)
+
     class Meta:
         model = Message
         fields = '__all__'

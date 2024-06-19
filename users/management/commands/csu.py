@@ -39,4 +39,5 @@ class Command(BaseCommand):
         user3.set_password('1100')
         user3.save()
 
-
+#simple_user2@mail.ru
+#1100
