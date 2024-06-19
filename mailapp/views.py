@@ -263,20 +263,21 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_form_class(self):
         user = self.request.user
+        message = self.message
+        # Как получить идентификатор сообщения? Связь 1 к 1 - то есть ничего не работает, что работает для foreingh_key.
 
-
-
-
+        print(f"user={user}, message= {message}")
 
         # message_id = self.id
         # print(f"user={user}, message_id= {message_id}")
 
         # mail_body = mailing_item.message.body
 
-        # message = self.message
+        mailing_owner = get_object_or_404(Mailing, message_id=self.id)
+        print(f"user={user}, message= {mailing_owner.user}")
 
-        # print(f"user={user}, message= {message}")
-        # message_owner = get_object_or_404(Mailing, message_id=message)
+        return MessageForm
+
         #
         #
         #     # version = self.version
