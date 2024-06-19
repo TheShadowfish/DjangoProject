@@ -23,7 +23,22 @@ class ClientListView(LoginRequiredMixin, ListView):
     # redirect_field_name = "login"
 
 
-class ClientCreateView(LoginRequiredMixin, CreateView):
+class GetFormKwargsGetUserMixin():
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+
+class GetFormClassUserIsOwnerMixin():
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.mailing.user:
+            return ClientForm
+        raise PermissionDenied
+
+
+class ClientCreateView(LoginRequiredMixin, GetFormKwargsGetUserMixin, CreateView):
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
@@ -38,27 +53,43 @@ class ClientCreateView(LoginRequiredMixin, CreateView):
     #     product.save()
     #     return super().form_valid(form)
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user
-        return kwargs
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs['user'] = self.request.user
+    #     return kwargs
 
 
-class ClientUpdateView(LoginRequiredMixin, UpdateView):
+class ClientUpdateView(LoginRequiredMixin, GetFormKwargsGetUserMixin, GetFormClassUserIsOwnerMixin, UpdateView):
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
-    def get_form_class(self):
-        user = self.request.user
-        if user == self.object.mailing.user:
-            return ClientForm
-        raise PermissionDenied
+    # def get_form_class(self):
+    #     user = self.request.user
+    #     if user == self.object.mailing.user:
+    #         return ClientForm
+    #     raise PermissionDenied
+
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs['user'] = self.request.user
+    #     return kwargs
 
 
-class ClientDeleteView(LoginRequiredMixin, DeleteView):
+class ClientDeleteView(LoginRequiredMixin, GetFormKwargsGetUserMixin, GetFormClassUserIsOwnerMixin, DeleteView):
     model = Client
     success_url = reverse_lazy('mailapp:mail_list')
+
+    # def get_form_class(self):
+    #     user = self.request.user
+    #     if user == self.object.mailing.user:
+    #         return ClientForm
+    #     raise PermissionDenied
+
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs['user'] = self.request.user
+    #     return kwargs
 
 
 class UserListView(LoginRequiredMixin, ListView):
