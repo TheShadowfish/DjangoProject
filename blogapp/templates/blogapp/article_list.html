@@ -1,0 +1,74 @@
+{% extends 'mailapp/base.html'%}
+{% load static %}
+{% load my_tags %}
+{% block content %}
+
+
+<div class="row text-right">
+    <div class="col-12 mb-3">
+        <div class="card mb-3 box-shadow">
+            <br>
+            <div class="btn-group">
+                &nbsp; &nbsp; &nbsp; <a class="p-2 btn btn-outline-primary btn-lg btn-block"
+                                        href="#">Добавить статью в блог</a> &nbsp; &nbsp;
+                &nbsp;
+            </div>
+            <br>
+        </div>
+    </div>
+
+    {% for object in object_list %}
+
+    <div class="col-4">
+
+        <div class="card mb-3 box-shadow">
+            <img src="{{ object.image | media_filter }}" class="card-img-top" alt={{object.image|media_filter}}>
+
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div style="color: orange"><b>{{object.title}}</b></div>
+                </h5>
+                <p class="card-text">
+                    {% if object.body|length >= 100 %}
+                    {{ object.body|slice:":100"}} ...
+                    {% else %}
+                    {{ object.body}}
+                    {% endif %}
+                </p>
+                <br>
+                <p class="card-text">
+                    <b>Опубликовано</b> {{object.created_at}}<br>
+                    <b>Просмотров</b>{{views_count}}<br>
+                   </p>
+
+
+                <div class="btn-group">
+                    <a class="btn btn-success" href="{% url 'article:article_detail' object.pk%}" role="button">Посмотреть</a>
+
+                    {% if perms.article.change_article or user.is_superuser %}
+                    <a class="btn btn-success" href="#"
+                       role="button">Изменить</a>
+                    {%endif%}
+
+                   {% if perms.article.delete_article or user.is_superuser %}
+
+                    <a class="btn btn-danger" href="#"
+                       role="button">Удалить</a>
+
+                    {%endif%}
+                </div>
+
+            </div>
+
+    </div>
+
+
+    </div>
+    {% endfor %}
+
+
+
+</div>
+
+{% endblock %}
