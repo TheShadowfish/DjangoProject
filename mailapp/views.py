@@ -28,11 +28,32 @@ class ClientCreateView(LoginRequiredMixin, CreateView):
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
 
+    # login_url = "users:login"
+    # redirect_field_name = "login"
+
+    # def form_valid(self, form):
+    #     product = form.save()
+    #     user = self.request.user
+    #     product.owner = user
+    #     product.save()
+    #     return super().form_valid(form)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
 
 class ClientUpdateView(LoginRequiredMixin, UpdateView):
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailapp:mail_list')
+
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.mailing.user:
+            return ClientForm
+        raise PermissionDenied
 
 
 class ClientDeleteView(LoginRequiredMixin, DeleteView):

@@ -54,6 +54,10 @@
                         <td>{{object.is_active}}</td>
 
 
+
+
+                       {% if user == object.mailing.user %}
+
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mail_update' object.pk %}"
                                role="button">Изменить</a>
@@ -62,6 +66,14 @@
                             <a class="btn btn-primary" href="{%url 'mailapp:mail_delete' object.pk%}"
                                role="button">Удалить</a>
                         </td>
+
+                        {% else %}
+                        <td><a class="btn btn-secondary" disabled>Изменить</a>
+                        </td>
+                        <td><a class="btn btn-secondary" disabled>Удалить</a>
+                        </td>
+                        {%endif%}
+
 
                     </tr>
                     {% endfor %}
