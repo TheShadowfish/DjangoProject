@@ -3,12 +3,14 @@ from django import template
 
 import random
 import string
+import bleach
+import markdown
+
 
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
 register = template.Library()
-
 
 # Создание тега
 @register.simple_tag
@@ -81,3 +83,15 @@ def user_media_filter(path):
         return f'/media/{path}'
 
     return '/static/image/no_avatar.png'
+
+
+def markdown_comment(value):
+    return bleach.clean(
+        markdown.markdown(value, extensions=['nl2br']),
+        strip=True,
+        tags=['strong', 'p', 'b', 'blockquote', 'br'])
+
+
+@register.filter
+def comment_markdown(value):
+    return mark_safe(markdown_comment(value))

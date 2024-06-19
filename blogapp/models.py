@@ -44,7 +44,7 @@ class Article(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         verbose_name = "Запись в блоге"

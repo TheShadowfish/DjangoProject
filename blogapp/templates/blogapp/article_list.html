@@ -10,7 +10,8 @@
             <br>
             <div class="btn-group">
                 &nbsp; &nbsp; &nbsp; <a class="p-2 btn btn-outline-primary btn-lg btn-block"
-                                        href="#">Добавить статью в блог</a> &nbsp; &nbsp;
+                                        href="{%url 'blogapp:article_create' %}">Добавить статью в блог</a> &nbsp; &nbsp;
+
                 &nbsp;
             </div>
             <br>
@@ -30,8 +31,8 @@
                     <div style="color: orange"><b>{{object.title}}</b></div>
                 </h5>
                 <p class="card-text">
-                    {% if object.body|length >= 100 %}
-                    {{ object.body|slice:":100"}} ...
+                    {% if object.body|comment_markdown|length >= 300 %}
+                    {{ object.body|comment_markdown|slice:":300"}} ...
                     {% else %}
                     {{ object.body}}
                     {% endif %}
@@ -44,17 +45,20 @@
 
 
                 <div class="btn-group">
-                    <a class="btn btn-success" href="{% url 'article:article_detail' object.pk%}" role="button">Посмотреть</a>
+                    <a class="btn btn-success" href="{% url 'blogapp:article_detail' object.pk%}" role="button">Посмотреть</a>
+
+                    <a class="btn btn-success" href="{% url 'blogapp:article_update' object.pk%}" role="button">Изменить</a>
+
+                    <a class="btn btn-success" href="{% url 'blogapp:article_delete' object.pk%}" role="button">Удалить</a>
+
 
                     {% if perms.article.change_article or user.is_superuser %}
-                    <a class="btn btn-success" href="#"
-                       role="button">Изменить</a>
+                    <a class="btn btn-success" href="{% url 'blogapp:article_update' object.pk%}" role="button">Изменить</a>
                     {%endif%}
 
                    {% if perms.article.delete_article or user.is_superuser %}
 
-                    <a class="btn btn-danger" href="#"
-                       role="button">Удалить</a>
+                     <a class="btn btn-success" href="{% url 'blogapp:article_delete' object.pk%}" role="button">Удалить</a>
 
                     {%endif%}
                 </div>

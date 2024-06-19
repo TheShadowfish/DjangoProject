@@ -1,59 +1,87 @@
 {% extends 'mailapp/base.html'%}
 {% load static %}
+{% load my_tags %}
 <!--{% load tz %}-->
 
 {% block content %}
 
 <div class="row text-right">
+    <div class="col-6">
+        <div class="card mb-3 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Изображение</h4>
+            </div>
+            <div class="card-body">
+                <img src="{{object.image|media_filter}}" class="card-img-top" alt={{object.image|media_filter}}>
 
-    <div class="col-12">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-6">
 
         <div class="card mb-3 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Информация о клиенте</h4>
+                <h4 class="my-0 font-weight-normal">{{object.title}}</h4>
             </div>
 
 
             <div class="card-body">
                 <h5 class="card-title">
-                    <div style="color: orange"><b>{{object.name}}</b></div>
+                    <div style="color: orange"><b>{{object.title}}</b></div>
                 </h5>
                 <p class="card-text">
 
-                    <b>Имя (ФИО) клиента:</b> {{ object.name }} <br>
-                    <b>Email клиента:</b> {{ object.email }} <br>
-                    <b>Комментарий:</b> {{ object.comment }} <br>
-                    <b>Активен (получает рассылку):</b> {{ object.is_active }} <br>
-                    <b>Рассылка:</b> {{ object.mailing }} <br>
+
                     <br>
-                  <h5 class="my-0 font-weight-normal" style="color: orange">Дополнительная информация о рассылке:</h5>
-                    <br>
-                    <b>Рассылка - заголовок:</b> {{object.mailing.message.title}}<br>
-                    <b>Рассылка - текст:</b> {{object.mailing.message.body}}<br>
-                    <br>
-                    <b>Время старта рассылки:</b> {{object.mailing.settings.datetime_send}}<br>
-                    <b>Периодичность (дни):</b> {{object.mailing.settings.periodicity}}<br>
-                    <b>Статус (активна):</b> {{object.mailing.settings.status}}<br>
-                    <b>Запущена сейчас:</b> {{object.mailing.settings.active}}<br>
-                <br><br>
+                    <b>Наименование: </b>{{object.title}}
+                    <br> <br>
+
+                    <b>Создано: </b>{{object.created_at}}
+                    <br> <br>
+                    <b>Опубликовано: </b>{{object.is_published}}
+                    <br><br>
+                    <small class="text-body-secondary">
+
+                        Просмотры: {{object.views_count}}
 
 
+                    </small>
+
+
+                </p>
                 <div class="btn-group">
-                    <a class="btn btn-primary" href="{% url 'mailapp:mail_list' %}" role="button">Вернуться к
-                        каталогу</a>
 
+                    <a class="btn btn-success" href="/" role="button">Вернуться на главную страницу сайта</a>
 
+                    <a class="btn btn-success" href="{% url 'blogapp:article_list' %}" role="button"> Вернуться на главную
+                        страницу блога</a>
                 </div>
-                <br>
 
 
             </div>
-
-
         </div>
 
 
     </div>
+
+
 </div>
 
+<div class="row text-right">
+    <div class="col-12">
+        <div class="card mb-3 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Текст статьи</h4>
+            </div>
+            <div class="card-body">
+                {{object.body|comment_markdown}}
+
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
