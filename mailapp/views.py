@@ -252,57 +252,19 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
     form_class = MessageForm
     success_url = reverse_lazy('mailapp:message_list')
 
-    # def form_valid(self, form):
-    #     user = self.request.user
-    #     message_owner = get_object_or_404(Message, message_id=self.id)
-    #     print(f"message_id={message_owner.user}, self.id= {user}")
-    #     if user == message_owner.user:
-    #         return
-    #     else:
-    #         raise PermissionDenied
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['message_id'] = self.object.id
 
-    def get_form_class(self):
+        mailing_owner = get_object_or_404(Mailing, message_id=self.object.id)
         user = self.request.user
-        message = self.message
-        # Как получить идентификатор сообщения? Связь 1 к 1 - то есть ничего не работает, что работает для foreingh_key.
+        print(f"user={user}, mailing_owner.user= {mailing_owner.user}")
+        context['owner'] = mailing_owner.user
 
-        print(f"user={user}, message= {message}")
+        if user != mailing_owner.user:
+            raise PermissionDenied
 
-        # message_id = self.id
-        # print(f"user={user}, message_id= {message_id}")
-
-        # mail_body = mailing_item.message.body
-
-        mailing_owner = get_object_or_404(Mailing, message_id=self.id)
-        print(f"user={user}, message= {mailing_owner.user}")
-
-        return MessageForm
-
-        #
-        #
-        #     # version = self.version
-        #     # if user == version.product.owner:
-        #     #     return ProductForm
-        #     # raise PermissionDenied
-        #
-        # # message = Message.objects.get(pk=mailing_item.message_id)
-        #
-        #
-        # print(f"owner={message_owner.user}, user= {user}")
-        # if user == message_owner.user:
-        #     return MessageForm
-        # raise PermissionDenied
-    #
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs['user'] = self.request.user
-    #     return kwargs
-    #
-    # def get_form_class(self):
-    #     user = self.request.user
-    #     if user == self.object.mailing.user:
-    #         return MessageForm
-    #     raise PermissionDenied
+        return context
 
 
 class MessageSettingsUpdateView(LoginRequiredMixin, UpdateView):
@@ -333,6 +295,7 @@ class MessageListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['mailings'] = Mailing.objects.all()
+
         return context
 
 
@@ -341,13 +304,23 @@ class MailingSettingsUpdateView(LoginRequiredMixin, UpdateView):
     form_class = MailingSettingsForm
     success_url = reverse_lazy('mailapp:settings_list')
 
-    def form_valid(self, form):
+    # В других методах получить object.id не вышло
+    # потому что: The view's object attribute is set during get/post by BaseUpdateView
+    # So it is not yet available in the dispatch method. But it will be available in the get_success_url and get_context_data methods as those happen after get/post.
+    # PS Django реально сложен...
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['settings_id'] = self.object.id
+
+        mailing_owner = get_object_or_404(Mailing, settings_id=self.object.id)
         user = self.request.user
-        mailing = get_object_or_404(Mailing, settings_id=self.object.id)
-        if user == mailing.user:
-            return
-        else:
+        print(f"user={user}, mailing_owner.user= {mailing_owner.user}")
+        context['owner'] = mailing_owner.user
+
+        if user != mailing_owner.user:
             raise PermissionDenied
+        return context
 
 
 class MailingSettingsListView(LoginRequiredMixin, ListView):

@@ -49,19 +49,24 @@
 
                         {%for mailing_item in mailings%}
                         {%if mailing_item.message_id == object.id%}
-
                         <td>{{mailing_item}}</td>
+                        {%endif%}
+                        {%endfor%}
 
 
 
-
-
-
+                        {%for mailing_item in mailings%}
+                        {%if mailing_item.message_id == object.id %}
+                        {%if mailing_item.user == user%}
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:message_update' mailing_item.message_id %}"
                                role="button">Изменить</a>
                         </td>
-
+                        {% else %}
+                        <td>
+                            <a class="btn btn-secondary" disabled>Изменить</a>
+                        </td>
+                        {%endif%}
                         {%endif%}
                         {%endfor%}
 
