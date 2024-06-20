@@ -23,12 +23,11 @@ class ArticleDetailView(DetailView):
         return self.object
 
 
-class ArticleCreateView(LoginRequiredMixin, CreateView):
-    # PermissionRequiredMixin  permission_required = "article.add_article"
+class ArticleCreateView(LoginRequiredMixin,  PermissionRequiredMixin, CreateView):
+
     model = Article
-
     form_class = ArticleForm
-
+    permission_required = "blogapp.add_article"
     success_url = reverse_lazy("blogapp:article_list")
 
     login_url = "users:login"
@@ -42,10 +41,10 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     #     return super().form_valid(form)
 
 
-class ArticleUpdateView(LoginRequiredMixin, UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Article
     form_class = ArticleForm
-    # permission_required = "article.update_article" PermissionRequiredMixin
+    permission_required = "blogapp.change_article"
 
     # success_url = reverse_lazy('article:blog')
 
@@ -63,10 +62,10 @@ class ArticleUpdateView(LoginRequiredMixin, UpdateView):
         return reverse("blogapp:article_detail", args=[self.kwargs.get("pk")])
 
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Article
     success_url = reverse_lazy("blogapp:article_list")
-    # permission_required = "article.delete_article" PermissionRequiredMixin
+    permission_required = "blogapp.delete_article"
 
     login_url = "users:login"
     redirect_field_name = "login"

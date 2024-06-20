@@ -89,7 +89,7 @@ def markdown_comment(value):
     return bleach.clean(
         markdown.markdown(value, extensions=['nl2br']),
         strip=True,
-        tags=['strong', 'p', 'b', 'blockquote', 'br'])
+        tags=['strong', 'p', 'b', 'li', 'blockquote', 'br'])
 
 
 @register.filter
