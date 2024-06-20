@@ -1,12 +1,16 @@
+import random
+
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.db.models import Count
 from django.forms import inlineformset_factory
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.utils import timezone
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
+from blogapp.models import Article
 from mailapp.forms import MailingForm, ClientForm, MessageForm, MailingSettingsForm, \
     MailingSettingsModeratorForm
 from mailapp.models import Client, Mailing, MailingLog, Message, MailingSettings
@@ -322,3 +326,46 @@ def toggle_activity_mailing(request, pk):
     mailing_item.settings.save()
 
     return redirect(reverse('mailapp:mailing_list'))
+
+
+# Та самая главная страница, которую мы должны реализовать
+class HomePageView(TemplateView):
+    template_name = "mailapp/home.html"
+
+    def get_context_data(self, **kwargs):
+        """
+        - количество рассылок всего,
+        - количество активных рассылок,
+        - количество уникальных клиентов для рассылок,
+        - три случайные статьи из блога.
+
+        :param kwargs:
+        :return:
+        """
+        context = super().get_context_data(**kwargs)
+        # количество рассылок всего
+        context["mailings_count"] = len(Mailing.objects.all())
+        # количество активных рассылок
+        context["mailings_count_active"] = len(Mailing.objects.filter(settings__status=True))
+
+        # количество уникальных клиентов для рассылок
+        emails_unique = Client.objects.values('email').annotate(total=Count('id'))
+        context["emails_unique"] = emails_unique
+        context["emails_unique_count"] = len(emails_unique)
+        # три случайные статьи из блога
+
+        # наверняка это можно более оптимально получить, надо спросить как
+        # чем весь список статей из базы тянуть
+        article_list_len = len(Article.objects.all())
+
+        # article_list_len_2 = Article.objects.Count()
+
+        context["article_list_len"] = article_list_len
+
+        valid_profiles_id_list = Article.objects.values_list('id', flat=True)
+        random_profiles_id_list = random.sample(list(valid_profiles_id_list), min(len(valid_profiles_id_list), 3))
+        context["random_articles"] = Article.objects.filter(id__in=random_profiles_id_list)
+
+        # def sample(self, population, k, *, counts=None):
+
+        return context

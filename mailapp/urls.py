@@ -3,17 +3,16 @@ from .views import ClientListView, \
     MailingListView, MailingCreateView, MailingUpdateView, MailingListViewSend, MailingDeleteView, ClientCreateView, \
     ClientUpdateView, ClientDeleteView, MailingDetailView, mailing_send, MessageListView, MessageUpdateView, \
     MessageSettingsUpdateView, MailingSettingsListView, MailingSettingsUpdateView, \
-    toggle_activity_mailing, ClientDetailView
+    toggle_activity_mailing, ClientDetailView, HomePageView
 
 # MessageCreateView,
 
 from mailapp.apps import MailappConfig
+
 app_name = MailappConfig.name
 
-
-
 urlpatterns = [
-    path('', ClientListView.as_view(), name='main'),
+    path('', HomePageView.as_view(), name='main'),
 
     path('mailing_list/', MailingListView.as_view(), name='mailing_list'),
     path('mailing_list_send/', MailingListViewSend.as_view(), name='mailing_list_send'),
@@ -39,7 +38,6 @@ urlpatterns = [
     path('settings_update/<int:pk>/', MailingSettingsUpdateView.as_view(), name='settings_update'),
 
     path('mailing_activity/<int:pk>/', toggle_activity_mailing, name='mailing_activity'),
-
 
 ]
 # path('message_create/', MessageCreateView.as_view(), name='message_create'),
