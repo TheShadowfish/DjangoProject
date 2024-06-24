@@ -14,7 +14,7 @@ from mailapp.apps import MailappConfig
 app_name = MailappConfig.name
 
 urlpatterns = [
-    path('', cache_page(60)(HomePageView.as_view()), name='main'),
+    path('', HomePageView.as_view(), name='main'),
 
     path('mailing_list/', MailingListView.as_view(), name='mailing_list'),
     path('mailing_list_send/', MailingListViewSend.as_view(), name='mailing_list_send'),
