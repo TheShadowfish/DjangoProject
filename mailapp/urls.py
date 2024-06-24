@@ -1,4 +1,6 @@
 from django.urls import path
+from django.views.decorators.cache import cache_page
+
 from .views import ClientListView, \
     MailingListView, MailingCreateView, MailingUpdateView, MailingListViewSend, MailingDeleteView, ClientCreateView, \
     ClientUpdateView, ClientDeleteView, MailingDetailView, mailing_send, MessageListView, MessageUpdateView, \
@@ -12,7 +14,7 @@ from mailapp.apps import MailappConfig
 app_name = MailappConfig.name
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='main'),
+    path('', cache_page(60)(HomePageView.as_view()), name='main'),
 
     path('mailing_list/', MailingListView.as_view(), name='mailing_list'),
     path('mailing_list_send/', MailingListViewSend.as_view(), name='mailing_list_send'),

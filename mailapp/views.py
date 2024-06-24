@@ -11,6 +11,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 from blogapp.models import Article
+from blogapp.services import get_cached_article_list
 from mailapp.forms import MailingForm, ClientForm, MessageForm, MailingSettingsForm, \
     MailingSettingsModeratorForm
 from mailapp.models import Client, Mailing, MailingLog, Message, MailingSettings
@@ -364,7 +365,9 @@ class HomePageView(TemplateView):
 
         valid_profiles_id_list = Article.objects.values_list('id', flat=True)
         random_profiles_id_list = random.sample(list(valid_profiles_id_list), min(len(valid_profiles_id_list), 3))
-        context["random_articles"] = Article.objects.filter(id__in=random_profiles_id_list)
+        # context["random_articles"] = Article.objects.filter(id__in=random_profiles_id_list)
+        # = get_cached_article_list()
+        context["random_articles"] = get_cached_article_list().filter(id__in=random_profiles_id_list)
 
         # def sample(self, population, k, *, counts=None):
 
