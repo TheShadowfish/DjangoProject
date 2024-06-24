@@ -9,28 +9,25 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from decouple import config
-
 
 import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m=ezbvb04tzaw!d+#)1ds8f^o5zo=^xu-erkk7a^dzn1uxytx!'
+SECRET_KEY = config('SECRET_KEY') #'django-insecure-m=ezbvb04tzaw!d+#)1ds8f^o5zo=^xu-erkk7a^dzn1uxytx!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG') == 'True'
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -43,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mailapp',
     'django_crontab',
+    'users',
+    'phonenumber_field',
+    'blogapp',
 ]
 
 MIDDLEWARE = [
@@ -75,21 +75,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mail_list',
+        'NAME': config('DB_POSTRESQL_DB_NAME'),
         'USER': config('DB_POSTRESQL_USER'),
         'HOST': '127.0.0.1',
         'PORT': 5432,
         'PASSWORD': config('DB_POSTRESQL_PASSWORD')
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -109,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -121,7 +118,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
@@ -132,14 +128,14 @@ STATICFILES_DIRS = (BASE_DIR / 'static',)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = 'media/'
-
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = config('EMAIL_USER') + '@yandex.ru'
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
 SERVER_EMAIL = EMAIL_HOST_USER
@@ -147,5 +143,23 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 CRONJOBS = [
     ('*/5 * * * *', 'mailapp.utils.utils.select_mailings'),
-    ('*/1 * * * *', 'mailapp.utils.task.print_hello')
 ]
+
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_URL = '/users/'
+
+CACHE_ENABLED = config('CACHE_ENABLED') == 'True'
+
+if CACHE_ENABLED:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": config('LOCATION'),
+            "TIMEOUT": 1200  # Ручная регулировка времени жизни кеша в секундах, по умолчанию 300
+        }
+    }
+
+# redis://username:password@127.0.0.1:6379 - если закрыт авторизацией

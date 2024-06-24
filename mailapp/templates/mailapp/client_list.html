@@ -29,17 +29,57 @@
                 <p class="card-text">
 
 
-                <table class="table table-stripped">
+                <table class="table-responsive">
                     <tr>
                         <th>Обращение</th>
                         <th>email</th>
                         <th>комментарий</th>
                         <th>Подписан на рассылку</th>
                         <th>Активен</th>
+                        <th>Посмотреть</th>
                         <th>Изменить</th>
                         <th>Удалить</th>
 
                     </tr>
+
+                    {% if only_users == True %}
+
+                    {% for object in object_list %}
+                    {% if user == object.mailing.user %}
+
+
+                    <tr>
+
+                        <td>{{object.name}}</td>
+                        <td>{{object.email}}</td>
+                        <td>{{object.comment}}</td>
+                        <td>{{object.mailing}}</td>
+                        <td>{{object.is_active}}</td>
+
+
+
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mail_detail' object.pk %}"
+                               role="button">Посмотреть</a>
+                        </td>
+
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mail_update' object.pk %}"
+                               role="button">Изменить</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mail_delete' object.pk%}"
+                               role="button">Удалить</a>
+                        </td>
+
+                        {%endif%}
+
+
+                    </tr>
+                    {% endfor %}
+
+
+                    {% else %}
 
 
                     {% for object in object_list %}
@@ -54,6 +94,12 @@
                         <td>{{object.is_active}}</td>
 
 
+                        {% if user == object.mailing.user %}
+                        <td>
+                            <a class="btn btn-primary" href="{%url 'mailapp:mail_detail' object.pk %}"
+                               role="button">Посмотреть</a>
+                        </td>
+
                         <td>
                             <a class="btn btn-primary" href="{%url 'mailapp:mail_update' object.pk %}"
                                role="button">Изменить</a>
@@ -63,8 +109,19 @@
                                role="button">Удалить</a>
                         </td>
 
+                        {% else %}
+                        <td><a class="btn btn-secondary" disabled>Посмотреть</a>
+                        </td>
+                        <td><a class="btn btn-secondary" disabled>Изменить</a>
+                        </td>
+                        <td><a class="btn btn-secondary" disabled>Удалить</a>
+                        </td>
+                        {%endif%}
+
+
                     </tr>
                     {% endfor %}
+                    {%endif%}
 
                 </table>
 

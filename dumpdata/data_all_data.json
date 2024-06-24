@@ -1,0 +1,4616 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-06-18T13:32:07.108Z",
+      "user": 16,
+      "content_type": 15,
+      "object_id": "16",
+      "object_repr": " waterbat (waterbat@yandex.ru)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-06-18T13:32:34.082Z",
+      "user": 16,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "simple_user2@mail.ru",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-06-18T13:32:53.125Z",
+      "user": 16,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "simple_user2@mail.ru",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-06-18T13:33:17.253Z",
+      "user": 16,
+      "content_type": 15,
+      "object_id": "17",
+      "object_repr": " simple_user2 (simple_user2@mail.ru)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-06-18T13:34:55.293Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "17",
+      "object_repr": " simple_user2 (simple_user2@mail.ru)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-06-18T15:07:27.657Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "2",
+      "object_repr": "manager",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-06-18T15:08:10.405Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "20",
+      "object_repr": " content-manager (content-manager@sky.pro)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f\", \"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-06-18T15:09:11.959Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "19",
+      "object_repr": " Manager (manager@sky.pro)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f\", \"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-06-18T15:09:19.299Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "19",
+      "object_repr": " Manager (manager@sky.pro)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-06-18T18:34:56.477Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "2",
+      "object_repr": "manager",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-06-20T06:10:30.475Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "3",
+      "object_repr": "content-manager",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-06-20T06:11:12.532Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "20",
+      "object_repr": " content-manager (content-manager@sky.pro)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-06-20T06:24:20.251Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "3",
+      "object_repr": "content-manager",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add рассылка",
+      "content_type": 7,
+      "codename": "add_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change рассылка",
+      "content_type": 7,
+      "codename": "change_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete рассылка",
+      "content_type": 7,
+      "codename": "delete_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view рассылка",
+      "content_type": 7,
+      "codename": "view_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add лог рассылки",
+      "content_type": 9,
+      "codename": "add_mailinglog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change лог рассылки",
+      "content_type": 9,
+      "codename": "change_mailinglog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete лог рассылки",
+      "content_type": 9,
+      "codename": "delete_mailinglog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view лог рассылки",
+      "content_type": 9,
+      "codename": "view_mailinglog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add емайл",
+      "content_type": 10,
+      "codename": "add_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change емайл",
+      "content_type": 10,
+      "codename": "change_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete емайл",
+      "content_type": 10,
+      "codename": "delete_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view емайл",
+      "content_type": 10,
+      "codename": "view_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add message",
+      "content_type": 11,
+      "codename": "add_message"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change message",
+      "content_type": 11,
+      "codename": "change_message"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete message",
+      "content_type": 11,
+      "codename": "delete_message"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view message",
+      "content_type": 11,
+      "codename": "view_message"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add mailing settings",
+      "content_type": 12,
+      "codename": "add_mailingsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change mailing settings",
+      "content_type": 12,
+      "codename": "change_mailingsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete mailing settings",
+      "content_type": 12,
+      "codename": "delete_mailingsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view mailing settings",
+      "content_type": 12,
+      "codename": "view_mailingsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add simple пользователь",
+      "content_type": 8,
+      "codename": "add_freeuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change simple пользователь",
+      "content_type": 8,
+      "codename": "change_freeuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete simple пользователь",
+      "content_type": 8,
+      "codename": "delete_freeuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view simple пользователь",
+      "content_type": 8,
+      "codename": "view_freeuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add пользователь",
+      "content_type": 15,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change пользователь",
+      "content_type": 15,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete пользователь",
+      "content_type": 15,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view пользователь",
+      "content_type": 15,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add user token",
+      "content_type": 16,
+      "codename": "add_usertoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change user token",
+      "content_type": 16,
+      "codename": "change_usertoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete user token",
+      "content_type": 16,
+      "codename": "delete_usertoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view user token",
+      "content_type": 16,
+      "codename": "view_usertoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can blocked user (bool is_active = False)",
+      "content_type": 7,
+      "codename": "can_set_user_inactive"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can turn off mailing (mailing.settings.status = False",
+      "content_type": 7,
+      "codename": "can_turn_off_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can blocked user (bool is_active = False)",
+      "content_type": 15,
+      "codename": "can_set_user_inactive"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can add Запись в блоге",
+      "content_type": 17,
+      "codename": "add_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can change Запись в блоге",
+      "content_type": 17,
+      "codename": "change_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can delete Запись в блоге",
+      "content_type": 17,
+      "codename": "delete_article"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can view Запись в блоге",
+      "content_type": 17,
+      "codename": "view_article"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "manager",
+      "permissions": [
+        54,
+        24,
+        55,
+        48
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+      "name": "content-manager",
+      "permissions": [
+        56,
+        57,
+        58,
+        59
+      ]
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "mailing"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "freeuser"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "mailinglog"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "client"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "message"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "mailapp",
+      "model": "mailingsettings"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "django_apscheduler",
+      "model": "djangojob"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "django_apscheduler",
+      "model": "djangojobexecution"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "users",
+      "model": "usertoken"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "blogapp",
+      "model": "article"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "1vgj7zpzxxu2k9oc5fss02v9u4yg7gx4",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGln-fyjpOYPlXa9xADlSnFSIu0OkFNC-mXkvlvK2trQNWtJU2JkpwU6_I2R8UN9Jued-mznOfV0m4LvCDzr4dS70vBzu30HLo31raZUITkGBiiCNE1GYiBS0dBm1NiqidLWQjc5p8j5W8FRzsEiieinY-wPziTfd:1sKBJL:XVgE72JvvZGMZlJKeOf2wQdrMGorBrJaKcji0EGASHs",
+      "expire_date": "2024-07-04T06:30:19.457Z"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 51,
+    "fields": {
+      "title": "settings_test_2 - first",
+      "body": "settings@yandex.ru - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 52,
+    "fields": {
+      "title": "settings_test_3 - first  CHANGED",
+      "body": "settings@yandex.ru - first creation CHANGED"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 53,
+    "fields": {
+      "title": "message_settings_update_2 - first",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 54,
+    "fields": {
+      "title": "message_settings_update_3 - first ",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 55,
+    "fields": {
+      "title": "message_settings_update_4 - first ",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 56,
+    "fields": {
+      "title": "message_settings_update_5 - first ",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 57,
+    "fields": {
+      "title": "message_settings_update_6 - first",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 58,
+    "fields": {
+      "title": "message_settings_update_7 - first",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 59,
+    "fields": {
+      "title": "message_settings_update_8 - first",
+      "body": "message_settings_update_2 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 60,
+    "fields": {
+      "title": "message_settings_update_9 - first CHANGED",
+      "body": "message_settings_update_2 - first creation CHANGED"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 61,
+    "fields": {
+      "title": "settings_test_8 - first ",
+      "body": "settings_test_8 - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 62,
+    "fields": {
+      "title": "mailing_1 - first ",
+      "body": "mailing - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 63,
+    "fields": {
+      "title": "CHANGED - first  2",
+      "body": "CHANGED - first creation 2"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 64,
+    "fields": {
+      "title": "SHITTTT!! - first changed 2",
+      "body": "SHITTTT!! - first creation changed 2"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 65,
+    "fields": {
+      "title": "last settings test - first ch",
+      "body": "last settings test - first creation ch"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 70,
+    "fields": {
+      "title": "SEND_probe_5 - first",
+      "body": "SEND_probe_5 - first creation ПРОВЕРКА РАБОТОСПОСОБНОСТИ 2"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 71,
+    "fields": {
+      "title": "appsheduller - first",
+      "body": "appsheduller проверка работоспособности хотя бы его - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 72,
+    "fields": {
+      "title": "Crontab-проверка",
+      "body": "Crontab-проверка работоспособности рассылки. Crontab все делает молча... - first creation"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 73,
+    "fields": {
+      "title": "simple_user_mailing - first",
+      "body": "message_in = models.TextField(verbose_name='описание', help_text='введите описание рассылки', **NULLABLE) - first creation - changed"
+    }
+  },
+  {
+    "model": "mailapp.message",
+    "pk": 74,
+    "fields": {
+      "title": "Список пользователей: - first",
+      "body": "Список пользователей: - first creation"
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 1,
+    "fields": {
+      "datetime_send": "2024-06-13T12:44:19.126Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 2,
+    "fields": {
+      "datetime_send": "2024-06-13T12:46:12.108Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 3,
+    "fields": {
+      "datetime_send": "2024-06-13T12:49:26.927Z",
+      "periodicity": 3,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 4,
+    "fields": {
+      "datetime_send": "2024-06-13T12:53:54.439Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 5,
+    "fields": {
+      "datetime_send": "2024-06-30T16:58:00Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 6,
+    "fields": {
+      "datetime_send": "2024-06-13T12:55:35.005Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 7,
+    "fields": {
+      "datetime_send": "2024-06-13T12:57:41.577Z",
+      "periodicity": 4,
+      "status": false,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 8,
+    "fields": {
+      "datetime_send": "2024-06-13T12:59:58.973Z",
+      "periodicity": 4,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 9,
+    "fields": {
+      "datetime_send": "2024-06-25T16:58:00Z",
+      "periodicity": 5,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 10,
+    "fields": {
+      "datetime_send": "2024-06-13T13:01:31.808Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 11,
+    "fields": {
+      "datetime_send": "2024-06-30T16:58:00Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 12,
+    "fields": {
+      "datetime_send": "2024-06-13T13:14:40.718Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 13,
+    "fields": {
+      "datetime_send": "2024-06-30T17:05:00Z",
+      "periodicity": 6,
+      "status": false,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 14,
+    "fields": {
+      "datetime_send": "2024-06-13T13:25:37.390Z",
+      "periodicity": 7,
+      "status": false,
+      "active": false
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 15,
+    "fields": {
+      "datetime_send": "2024-06-30T16:30:00Z",
+      "periodicity": 7,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 20,
+    "fields": {
+      "datetime_send": "2024-06-13T14:30:49.520Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 21,
+    "fields": {
+      "datetime_send": "2024-06-14T12:35:28.586Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 22,
+    "fields": {
+      "datetime_send": "2024-06-15T06:04:40.108Z",
+      "periodicity": 1,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 23,
+    "fields": {
+      "datetime_send": "2024-06-18T13:56:43.040Z",
+      "periodicity": 7,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailingsettings",
+    "pk": 24,
+    "fields": {
+      "datetime_send": "2024-06-18T19:19:58.772Z",
+      "periodicity": 7,
+      "status": true,
+      "active": true
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 37,
+    "fields": {
+      "title": "settings_test_2",
+      "message_in": "settings@yandex.ru",
+      "created_at": "2024-06-13T12:44:19.121Z",
+      "user": 16,
+      "message": 51,
+      "settings": 1
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 38,
+    "fields": {
+      "title": "settings_test_3",
+      "message_in": "settings@yandex.ru",
+      "created_at": "2024-06-13T12:46:12.102Z",
+      "user": 1,
+      "message": 52,
+      "settings": 2
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 39,
+    "fields": {
+      "title": "message_settings_update_2",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:49:26.915Z",
+      "user": 16,
+      "message": 53,
+      "settings": 3
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 40,
+    "fields": {
+      "title": "message_settings_update_3",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:53:54.433Z",
+      "user": 1,
+      "message": 54,
+      "settings": 4
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 41,
+    "fields": {
+      "title": "message_settings_update_4",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:54:38.781Z",
+      "user": 1,
+      "message": 55,
+      "settings": 5
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 42,
+    "fields": {
+      "title": "message_settings_update_5",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:55:34.999Z",
+      "user": 1,
+      "message": 56,
+      "settings": 6
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 43,
+    "fields": {
+      "title": "message_settings_update_6",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:57:41.571Z",
+      "user": 16,
+      "message": 57,
+      "settings": 7
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 44,
+    "fields": {
+      "title": "message_settings_update_7",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T12:59:58.948Z",
+      "user": 16,
+      "message": 58,
+      "settings": 8
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 45,
+    "fields": {
+      "title": "message_settings_update_8",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T13:00:43.565Z",
+      "user": 16,
+      "message": 59,
+      "settings": 9
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 46,
+    "fields": {
+      "title": "message_settings_update_9",
+      "message_in": "message_settings_update_2",
+      "created_at": "2024-06-13T13:01:31.801Z",
+      "user": 1,
+      "message": 60,
+      "settings": 10
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 47,
+    "fields": {
+      "title": "settings_test_8",
+      "message_in": "settings_test_8",
+      "created_at": "2024-06-13T13:11:17.115Z",
+      "user": 1,
+      "message": 61,
+      "settings": 11
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 48,
+    "fields": {
+      "title": "mailing_1",
+      "message_in": "mailing",
+      "created_at": "2024-06-13T13:14:40.712Z",
+      "user": 1,
+      "message": 62,
+      "settings": 12
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 49,
+    "fields": {
+      "title": "CHANGED изменено 2",
+      "message_in": "CHANGED изменено 2",
+      "created_at": "2024-06-13T13:18:08.999Z",
+      "user": 1,
+      "message": 63,
+      "settings": 13
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 50,
+    "fields": {
+      "title": "SHITTTT!!",
+      "message_in": "SHITTTT!!",
+      "created_at": "2024-06-13T13:25:37.384Z",
+      "user": 1,
+      "message": 64,
+      "settings": 14
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 51,
+    "fields": {
+      "title": "last settings test",
+      "message_in": "last settings test",
+      "created_at": "2024-06-13T13:29:00.304Z",
+      "user": 1,
+      "message": 65,
+      "settings": 15
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 56,
+    "fields": {
+      "title": "SEND_probe_5",
+      "message_in": "SEND_probe_5",
+      "created_at": "2024-06-13T14:30:49.513Z",
+      "user": 1,
+      "message": 70,
+      "settings": 20
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 57,
+    "fields": {
+      "title": "appsheduller",
+      "message_in": "appsheduller проверка работоспособности хотя бы его",
+      "created_at": "2024-06-14T12:35:28.577Z",
+      "user": 1,
+      "message": 71,
+      "settings": 21
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 58,
+    "fields": {
+      "title": "Crontab-проверка",
+      "message_in": "Crontab-проверка работоспособности рассылки. Crontab все делает молча...",
+      "created_at": "2024-06-15T06:04:40.100Z",
+      "user": 1,
+      "message": 72,
+      "settings": 22
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 60,
+    "fields": {
+      "title": "simple_user_mailing",
+      "message_in": "message_in = models.TextField(verbose_name='описание', help_text='введите описание рассылки', **NULLABLE)",
+      "created_at": "2024-06-18T13:56:43.032Z",
+      "user": 17,
+      "message": 73,
+      "settings": 23
+    }
+  },
+  {
+    "model": "mailapp.mailing",
+    "pk": 61,
+    "fields": {
+      "title": "Список пользователей:",
+      "message_in": "Список пользователей:",
+      "created_at": "2024-06-18T19:19:58.764Z",
+      "user": 17,
+      "message": 74,
+      "settings": 24
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 45,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:44:19.130277+00:00",
+      "mailing": 37,
+      "created_at": "2024-06-13T12:44:19.130Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 46,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:46:12.111529+00:00",
+      "mailing": 38,
+      "created_at": "2024-06-13T12:46:12.111Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 47,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:49:26.930959+00:00",
+      "mailing": 39,
+      "created_at": "2024-06-13T12:49:26.931Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 48,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:53:54.442978+00:00",
+      "mailing": 40,
+      "created_at": "2024-06-13T12:53:54.443Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 49,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:54:38.792267+00:00",
+      "mailing": 41,
+      "created_at": "2024-06-13T12:54:38.792Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 50,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:55:35.008128+00:00",
+      "mailing": 42,
+      "created_at": "2024-06-13T12:55:35.008Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 51,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:57:41.582045+00:00",
+      "mailing": 43,
+      "created_at": "2024-06-13T12:57:41.582Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 52,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 12:59:58.994559+00:00",
+      "mailing": 44,
+      "created_at": "2024-06-13T12:59:58.995Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 53,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:00:43.619262+00:00",
+      "mailing": 45,
+      "created_at": "2024-06-13T13:00:43.619Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 54,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:01:31.811675+00:00",
+      "mailing": 46,
+      "created_at": "2024-06-13T13:01:31.811Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 55,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:11:17.125678+00:00",
+      "mailing": 47,
+      "created_at": "2024-06-13T13:11:17.126Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 56,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:14:40.721674+00:00",
+      "mailing": 48,
+      "created_at": "2024-06-13T13:14:40.721Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 57,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:18:09.008261+00:00",
+      "mailing": 49,
+      "created_at": "2024-06-13T13:18:09.008Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 58,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:25:37.393792+00:00",
+      "mailing": 50,
+      "created_at": "2024-06-13T13:25:37.394Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 59,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 13:29:00.314389+00:00",
+      "mailing": 51,
+      "created_at": "2024-06-13T13:29:00.314Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 60,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 14:02:50.983821+00:00",
+      "mailing": 49,
+      "created_at": "2024-06-13T14:02:50.984Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 61,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 14:05:25.215029+00:00",
+      "mailing": 49,
+      "created_at": "2024-06-13T14:05:25.215Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 62,
+    "fields": {
+      "log_text": "Change parameters 2024-06-13 14:30:49.523436+00:00",
+      "mailing": 56,
+      "created_at": "2024-06-13T14:30:49.523Z",
+      "status": true,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 63,
+    "fields": {
+      "log_text": "Success!, time=2024-06-13 20:58:20.459311+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-13T20:58:20.459Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 64,
+    "fields": {
+      "log_text": "Success!, time=2024-06-13 21:09:20.676938+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-13T21:09:20.677Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 65,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:36:49.698336+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-14T09:36:49.698Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 67,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:37:54.964334+00:00, mailing=last settings test, mail=last@ya.ru",
+      "mailing": 51,
+      "created_at": "2024-06-14T09:37:54.964Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 70,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:38:37.072705+00:00, mailing=CHANGED изменено 2, mail=CHANGED@CHANGED.CHANGED",
+      "mailing": 49,
+      "created_at": "2024-06-14T09:38:37.073Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 71,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:38:37.618127+00:00, mailing=CHANGED изменено 2, mail=www@yandex.ru",
+      "mailing": 49,
+      "created_at": "2024-06-14T09:38:37.618Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 72,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:41:32.562610+00:00, mailing=CHANGED изменено 2, mail=CHANGED@CHANGED.CHANGED",
+      "mailing": 49,
+      "created_at": "2024-06-14T09:41:32.563Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 73,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 09:41:33.148212+00:00, mailing=CHANGED изменено 2, mail=www@yandex.ru",
+      "mailing": 49,
+      "created_at": "2024-06-14T09:41:33.148Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 75,
+    "fields": {
+      "log_text": "Change parameters 2024-06-14 10:02:14.326568+00:00",
+      "mailing": 56,
+      "created_at": "2024-06-14T10:02:14.326Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 76,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 10:21:21.691434+00:00, mailing=SHITTTT!!, mail=SHITTTT@yandex.ru",
+      "mailing": 50,
+      "created_at": "2024-06-14T10:21:21.691Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 77,
+    "fields": {
+      "log_text": "Change parameters 2024-06-14 10:42:30.668740+00:00",
+      "mailing": 50,
+      "created_at": "2024-06-14T10:42:30.669Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 78,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:40.557903+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-14T12:24:40.558Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 79,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:41.099676+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-14T12:24:41.099Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 80,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:41.470766+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-14T12:24:41.471Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 81,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:41.932729+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-14T12:24:41.933Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 82,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:42.375047+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-14T12:24:42.375Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 83,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:42.770383+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-14T12:24:42.770Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 84,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:43.276429+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-14T12:24:43.276Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 85,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:43.742478+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-14T12:24:43.742Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 86,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:44.199968+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-14T12:24:44.200Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 87,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:44.716619+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-14T12:24:44.716Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 88,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:24:45.190267+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-14T12:24:45.190Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 89,
+    "fields": {
+      "log_text": "Change parameters 2024-06-14 12:35:28.590293+00:00",
+      "mailing": 57,
+      "created_at": "2024-06-14T12:35:28.590Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 90,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 12:35:49.352921+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-14T12:35:49.354Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 91,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:02.345602+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-14T19:50:02.346Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 92,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:02.890294+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-14T19:50:02.890Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 93,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:03.301242+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-14T19:50:03.301Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 94,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:03.712192+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-14T19:50:03.712Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 95,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:04.164647+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-14T19:50:04.165Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 96,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:04.648818+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-14T19:50:04.649Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 97,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:05.165613+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-14T19:50:05.165Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 98,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:05.651706+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-14T19:50:05.652Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 99,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:06.118084+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-14T19:50:06.118Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 100,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:06.521809+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-14T19:50:06.522Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 101,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:06.985562+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-14T19:50:06.985Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 102,
+    "fields": {
+      "log_text": "Success!, time=2024-06-14 19:50:07.543756+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-14T19:50:07.544Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 103,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:05.019080+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T04:15:05.019Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 104,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:09.330490+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T04:15:09.330Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 105,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:09.691489+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-15T04:15:09.691Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 106,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:10.113241+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-15T04:15:10.113Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 107,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:10.611334+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-15T04:15:10.611Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 108,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:11.049735+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-15T04:15:11.050Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 109,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:11.627412+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-15T04:15:11.627Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 110,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:12.212170+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-15T04:15:12.212Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 111,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:12.660011+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-15T04:15:12.660Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 112,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:13.268350+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-15T04:15:13.268Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 113,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:13.721323+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-15T04:15:13.721Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 114,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 04:15:14.273812+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-15T04:15:14.274Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 115,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:02.487802+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T05:55:02.488Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 116,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:03.029090+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T05:55:03.029Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 117,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:03.478821+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-15T05:55:03.479Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 118,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:03.835045+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-15T05:55:03.835Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 119,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:04.349017+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-15T05:55:04.349Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 120,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:04.829285+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-15T05:55:04.829Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 121,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:05.370315+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-15T05:55:05.370Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 122,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:05.871249+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-15T05:55:05.871Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 123,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:06.387135+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-15T05:55:06.387Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 124,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:06.860313+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-15T05:55:06.860Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 125,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:07.385473+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-15T05:55:07.385Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 126,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 05:55:07.876158+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-15T05:55:07.876Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 127,
+    "fields": {
+      "log_text": "Change parameters 2024-06-15 06:04:40.112240+00:00",
+      "mailing": 58,
+      "created_at": "2024-06-15T06:04:40.112Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 128,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 06:05:01.959006+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-15T06:05:01.959Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 129,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:02.825962+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T07:00:02.826Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 130,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:03.457942+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-15T07:00:03.458Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 131,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:03.847852+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-15T07:00:03.848Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 132,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:04.347745+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-15T07:00:04.348Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 133,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:04.828949+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-15T07:00:04.829Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 134,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:05.231533+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-15T07:00:05.231Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 135,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:05.777824+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-15T07:00:05.778Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 136,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:06.258431+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-15T07:00:06.258Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 137,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:06.659513+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-15T07:00:06.659Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 138,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:07.079231+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-15T07:00:07.079Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 139,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:07.448228+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-15T07:00:07.448Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 140,
+    "fields": {
+      "log_text": "Success!, time=2024-06-15 07:00:07.928862+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-15T07:00:07.929Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 141,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:04.537383+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T16:05:04.538Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 142,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:05.182534+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T16:05:05.183Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 143,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:05.706326+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T16:05:05.706Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 144,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:06.756512+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T16:05:06.756Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 145,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:07.356454+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T16:05:07.356Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 146,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:07.919117+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T16:05:07.919Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 147,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:08.308139+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T16:05:08.308Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 148,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:08.842584+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T16:05:08.843Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 149,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:09.394528+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T16:05:09.395Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 150,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:09.799327+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T16:05:09.799Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 151,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:10.380063+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T16:05:10.380Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 152,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:10.778266+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T16:05:10.778Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 153,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 16:05:11.277653+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T16:05:11.278Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 154,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:02.538532+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T17:10:02.538Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 155,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:03.065688+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T17:10:03.065Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 156,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:03.575004+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T17:10:03.575Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 157,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:04.122300+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T17:10:04.122Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 158,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:04.585257+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T17:10:04.585Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 159,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:04.981554+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T17:10:04.981Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 160,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:05.449283+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T17:10:05.449Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 161,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:05.872913+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T17:10:05.873Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 162,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:06.284000+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T17:10:06.284Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 163,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:06.760216+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T17:10:06.760Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 164,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:07.314408+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T17:10:07.314Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 165,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:07.762953+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T17:10:07.763Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 166,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 17:10:08.229352+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T17:10:08.229Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 167,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:02.834844+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T18:20:02.835Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 168,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:03.270834+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T18:20:03.271Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 169,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:03.691342+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T18:20:03.691Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 170,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:04.184288+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T18:20:04.184Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 171,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:04.581582+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T18:20:04.581Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 172,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:04.983906+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T18:20:04.984Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 173,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:05.519376+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T18:20:05.519Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 174,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:05.996916+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T18:20:05.997Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 175,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:06.481149+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T18:20:06.481Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 176,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:06.859491+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T18:20:06.859Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 177,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:07.235386+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T18:20:07.235Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 178,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:07.791427+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T18:20:07.792Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 179,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 18:20:08.354305+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T18:20:08.354Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 180,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:05.585915+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T19:25:05.586Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 181,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:06.135655+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T19:25:06.135Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 182,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:06.589556+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T19:25:06.589Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 183,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:07.227281+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T19:25:07.227Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 184,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:07.865603+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T19:25:07.865Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 185,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:08.279304+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T19:25:08.279Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 186,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:08.789835+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T19:25:08.790Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 187,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:09.257681+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T19:25:09.258Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 188,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:09.674496+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T19:25:09.674Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 189,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:10.066849+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T19:25:10.067Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 190,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:10.553738+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T19:25:10.554Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 191,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:10.978984+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T19:25:10.979Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 192,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 19:25:11.491116+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T19:25:11.491Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 193,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:02.964151+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T20:30:02.964Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 194,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:03.590410+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T20:30:03.590Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 195,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:04.043418+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T20:30:04.043Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 196,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:04.516921+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T20:30:04.517Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 197,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:04.905711+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T20:30:04.906Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 198,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:05.459450+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T20:30:05.459Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 199,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:05.976110+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T20:30:05.976Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 200,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:06.345962+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T20:30:06.346Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 201,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:06.886170+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T20:30:06.886Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 202,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:07.418934+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T20:30:07.419Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 203,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:07.777121+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T20:30:07.777Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 204,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:08.266046+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T20:30:08.266Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 205,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 20:30:08.823091+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T20:30:08.823Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 206,
+    "fields": {
+      "log_text": "Change parameters 2024-06-16 21:28:00.218396+00:00",
+      "mailing": 56,
+      "created_at": "2024-06-16T21:28:00.218Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 207,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:02.670977+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-16T21:35:02.671Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 208,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:03.200373+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-16T21:35:03.200Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 209,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:03.683426+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T21:35:03.683Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 210,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:04.187567+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-16T21:35:04.187Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 211,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:04.749886+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-16T21:35:04.750Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 212,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:05.290720+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-16T21:35:05.291Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 213,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:05.732048+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-16T21:35:05.732Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 214,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:06.244025+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-16T21:35:06.244Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 215,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:06.688580+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-16T21:35:06.688Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 216,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:07.229284+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-16T21:35:07.229Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 217,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:07.714537+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-16T21:35:07.714Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 218,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:08.194691+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-16T21:35:08.195Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 219,
+    "fields": {
+      "log_text": "Success!, time=2024-06-16 21:35:08.613152+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-16T21:35:08.613Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 220,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:02.551926+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-17T05:45:02.552Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 221,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:03.143190+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-17T05:45:03.143Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 222,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:03.669546+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T05:45:03.669Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 223,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:04.170586+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T05:45:04.170Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 224,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:04.625052+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-17T05:45:04.625Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 225,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:05.185381+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-17T05:45:05.185Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 226,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:05.643537+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-17T05:45:05.643Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 227,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:06.224223+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-17T05:45:06.224Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 228,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:06.685670+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-17T05:45:06.685Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 229,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:07.153251+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-17T05:45:07.153Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 230,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:07.662274+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-17T05:45:07.662Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 231,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:08.127701+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-17T05:45:08.127Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 232,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 05:45:08.616098+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-17T05:45:08.616Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 233,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:02.221837+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-17T06:50:02.222Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 234,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:02.874653+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-17T06:50:02.874Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 235,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:03.461793+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T06:50:03.462Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 236,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:04.573963+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T06:50:04.574Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 237,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:05.126491+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-17T06:50:05.126Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 238,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:05.687025+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-17T06:50:05.687Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 239,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:06.172345+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-17T06:50:06.172Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 240,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:06.729694+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-17T06:50:06.730Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 241,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:07.326042+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-17T06:50:07.326Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 242,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:07.832125+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-17T06:50:07.832Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 243,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:08.406479+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-17T06:50:08.406Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 244,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:08.856237+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-17T06:50:08.856Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 245,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 06:50:09.228571+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-17T06:50:09.228Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 246,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:02.001555+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-17T07:55:02.001Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 247,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:02.489697+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-17T07:55:02.490Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 248,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:02.954505+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T07:55:02.954Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 249,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:03.689224+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-17T07:55:03.689Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 250,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:04.141704+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-17T07:55:04.142Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 251,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:04.592056+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-17T07:55:04.592Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 252,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:05.206423+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-17T07:55:05.206Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 253,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:05.952847+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-17T07:55:05.953Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 254,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:06.471629+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-17T07:55:06.472Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 255,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:07.017237+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-17T07:55:07.017Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 256,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:07.484463+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-17T07:55:07.484Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 257,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:07.892742+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-17T07:55:07.893Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 258,
+    "fields": {
+      "log_text": "Success!, time=2024-06-17 07:55:08.427222+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-17T07:55:08.427Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 259,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:02.486927+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-18T08:25:02.487Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 260,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:03.057871+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-18T08:25:03.058Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 261,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:03.618968+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-18T08:25:03.619Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 262,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:04.251595+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-18T08:25:04.251Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 263,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:05.064590+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-18T08:25:05.064Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 264,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:05.658845+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-18T08:25:05.659Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 265,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:06.228545+00:00, mailing=message_settings_update_2, mail=message@yandex.ru",
+      "mailing": 39,
+      "created_at": "2024-06-18T08:25:06.228Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 266,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:06.630353+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-18T08:25:06.630Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 267,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:07.148798+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-18T08:25:07.149Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 268,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:07.698074+00:00, mailing=message_settings_update_6, mail=message@yandex.ru",
+      "mailing": 43,
+      "created_at": "2024-06-18T08:25:07.698Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 269,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:08.265495+00:00, mailing=message_settings_update_7, mail=message@yandex.ru",
+      "mailing": 44,
+      "created_at": "2024-06-18T08:25:08.265Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 270,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:08.664623+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-18T08:25:08.664Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 271,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 08:25:09.278698+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-18T08:25:09.279Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 272,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:22:26.315713+00:00",
+      "mailing": 39,
+      "created_at": "2024-06-18T13:22:26.316Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 273,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:22:50.482475+00:00",
+      "mailing": 44,
+      "created_at": "2024-06-18T13:22:50.482Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 274,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:23:06.775991+00:00",
+      "mailing": 45,
+      "created_at": "2024-06-18T13:23:06.776Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 275,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:24:44.630547+00:00",
+      "mailing": 37,
+      "created_at": "2024-06-18T13:24:44.630Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 276,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:25:36.737311+00:00",
+      "mailing": 43,
+      "created_at": "2024-06-18T13:25:36.737Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 277,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 13:56:43.045054+00:00",
+      "mailing": 60,
+      "created_at": "2024-06-18T13:56:43.045Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 278,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 14:00:03.013274+00:00, mailing=simple_user_mailing, mail=waterbat@mail.ru",
+      "mailing": 60,
+      "created_at": "2024-06-18T14:00:03.013Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 279,
+    "fields": {
+      "log_text": "Change parameters 2024-06-18 19:19:58.776097+00:00",
+      "mailing": 61,
+      "created_at": "2024-06-18T19:19:58.776Z",
+      "status": false,
+      "mail_answer": "No sending, create or change"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 280,
+    "fields": {
+      "log_text": "Success!, time=2024-06-18 19:20:02.832546+00:00, mailing=Список пользователей:, mail=simpl@yandex.ru",
+      "mailing": 61,
+      "created_at": "2024-06-18T19:20:02.833Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 281,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:02.641560+00:00, mailing=settings_test_2, mail=settings@yandex.ru",
+      "mailing": 37,
+      "created_at": "2024-06-19T12:35:02.641Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 282,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:04.877835+00:00, mailing=appsheduller, mail=shadowfish@yandex.ru",
+      "mailing": 57,
+      "created_at": "2024-06-19T12:35:04.878Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 283,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:05.548831+00:00, mailing=Crontab-проверка, mail=shadowfish@yandex.ru",
+      "mailing": 58,
+      "created_at": "2024-06-19T12:35:05.549Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 284,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:06.163230+00:00, mailing=SEND_probe_5, mail=shadowfish@yandex.ru",
+      "mailing": 56,
+      "created_at": "2024-06-19T12:35:06.163Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 285,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:06.857926+00:00, mailing=SEND_probe_5, mail=acc4androidih@gmail.ru",
+      "mailing": 56,
+      "created_at": "2024-06-19T12:35:06.858Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 286,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:07.473502+00:00, mailing=settings_test_3, mail=settings@yandex.ru",
+      "mailing": 38,
+      "created_at": "2024-06-19T12:35:07.473Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 287,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:07.868468+00:00, mailing=message_settings_update_3, mail=message@yandex.ru",
+      "mailing": 40,
+      "created_at": "2024-06-19T12:35:07.868Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 288,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:08.470902+00:00, mailing=message_settings_update_5, mail=message@yandex.ru",
+      "mailing": 42,
+      "created_at": "2024-06-19T12:35:08.471Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 289,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:09.049344+00:00, mailing=message_settings_update_9, mail=message@yandex.ru",
+      "mailing": 46,
+      "created_at": "2024-06-19T12:35:09.049Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.mailinglog",
+    "pk": 290,
+    "fields": {
+      "log_text": "Success!, time=2024-06-19 12:35:09.649521+00:00, mailing=mailing_1, mail=mailing@yandex.ru",
+      "mailing": 48,
+      "created_at": "2024-06-19T12:35:09.649Z",
+      "status": true,
+      "mail_answer": "1"
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 38,
+    "fields": {
+      "name": "Уважаемый settings_test_1!",
+      "email": "settings@yandex.ru",
+      "comment": "settings@yandex.ru",
+      "is_active": true,
+      "mailing": 37
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 39,
+    "fields": {
+      "name": "Уважаемый settings_test_1!",
+      "email": "settings@yandex.ru",
+      "comment": "settings@yandex.ru",
+      "is_active": true,
+      "mailing": 38
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 40,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 39
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 41,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 40
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 42,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 41
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 43,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 42
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 44,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 43
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 45,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 44
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 46,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 45
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 47,
+    "fields": {
+      "name": "Уважаемый message!",
+      "email": "message@yandex.ru",
+      "comment": "message_settings_update_2",
+      "is_active": true,
+      "mailing": 46
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 48,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "settings@yandex.ru",
+      "comment": "settings_test_8",
+      "is_active": true,
+      "mailing": 47
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 49,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "mailing@yandex.ru",
+      "comment": "mailing",
+      "is_active": true,
+      "mailing": 48
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 50,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "CHANGED@CHANGED.CHANGED",
+      "comment": "CHANGED",
+      "is_active": true,
+      "mailing": 49
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 51,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "SHITTTT@yandex.ru",
+      "comment": "SHITTTT!!",
+      "is_active": true,
+      "mailing": 50
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 52,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "last@ya.ru",
+      "comment": "last settings test",
+      "is_active": true,
+      "mailing": 51
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 53,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "www@yandex.ru",
+      "comment": "www@yandex.ru",
+      "is_active": true,
+      "mailing": 49
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 54,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "shadowfish@yandex.ru",
+      "comment": "shadowfish@yandex.ru",
+      "is_active": true,
+      "mailing": 56
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 55,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "acc4androidih@gmail.ru",
+      "comment": "acc4androidih@gmail.ru",
+      "is_active": true,
+      "mailing": 56
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 56,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "shadowfish@yandex.ru",
+      "comment": "shadowfish@yandex.ru",
+      "is_active": true,
+      "mailing": 57
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 57,
+    "fields": {
+      "name": "Crontab доставляет!",
+      "email": "shadowfish@yandex.ru",
+      "comment": "Crontab-проверка работоспособности рассылки. Crontab все делает молча...",
+      "is_active": true,
+      "mailing": 58
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 58,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "waterbat@mail.ru",
+      "comment": "message_in = models.TextField(verbose_name='описание', help_text='введите описание рассылки', **NULLABLE)",
+      "is_active": true,
+      "mailing": 60
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 59,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "simpl@yandex.ru",
+      "comment": "simpl@yandex.ru",
+      "is_active": true,
+      "mailing": 61
+    }
+  },
+  {
+    "model": "mailapp.client",
+    "pk": 60,
+    "fields": {
+      "name": "Уважаемый клиент!",
+      "email": "styarttosend@mail.ru",
+      "comment": "styarttosend@mail.ru проверка рассылки",
+      "is_active": true,
+      "mailing": 60
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$BkgQh7urO6W74WoGwYEZk2$6PaRzKLqjRpsFTEjKmRu/jlXeG9ZMSkzDugmottumaw=",
+      "last_login": "2024-06-20T06:23:50.720Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-16T19:26:29.369Z",
+      "email": "admin@sky.pro",
+      "name": "ADMIN",
+      "description": "Запись администратора",
+      "phone_number": "+79998887766",
+      "avatar": "",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$2le4f7N785J9duwlFHovHO$EMh0B7uCnCs2A/pwBGaDP93VxFIdOKO9D0k7plMwvnk=",
+      "last_login": "2024-06-16T20:21:19.490Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-16T20:20:58.677Z",
+      "email": "simple@user.ru",
+      "name": "simple_user",
+      "description": null,
+      "phone_number": null,
+      "avatar": "",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$DPvmwbiNnybwTo0gcXjq7e$n8qeW6dZEkzKy6HA3TM1L5h2TaJ2NuyBI6hWU7jQpek=",
+      "last_login": "2024-06-17T08:18:22.673Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-17T06:05:14.129Z",
+      "email": "shadowfish@yandex.ru",
+      "name": "shadowfish",
+      "description": null,
+      "phone_number": null,
+      "avatar": "",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$zfRlpTrvncp0pBXtY0iohB$mhbCxUN6Nx5JnC2y3dZV5XnPciug9UPZxu+rGLl6/NI=",
+      "last_login": "2024-06-18T13:20:13Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-17T08:32:45Z",
+      "email": "waterbat@yandex.ru",
+      "name": "waterbat",
+      "description": "",
+      "phone_number": null,
+      "avatar": "",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$1xQnxrJPZxG0d3h3Y9PLnw$v5qVvszKIja2/nekFvxW8mLZk3B6ySc09HNUfx0iAzI=",
+      "last_login": "2024-06-20T06:22:31.845Z",
+      "is_superuser": false,
+      "first_name": "simple",
+      "last_name": "user2",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-18T13:32:54Z",
+      "email": "simple_user2@mail.ru",
+      "name": "simple_user2",
+      "description": "я простой пользователь, и не знаю пароля админа. И модератора. И контент-менеджера. И не могу отвандалить тут ничего, плак-плак...",
+      "phone_number": null,
+      "avatar": "users/avatars/beaneye-style-ilustration-image-me_501590-24683_25nSujr.jpg",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$igVyzb9uQOTQ0l7JmCzcs4$/2jdwPVUYza9MgAIw2m2RMwpZK8RxIjuXadaEMjkFkw=",
+      "last_login": "2024-06-19T13:37:39.439Z",
+      "is_superuser": false,
+      "first_name": "Manager",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-18T15:00:43Z",
+      "email": "manager@sky.pro",
+      "name": "Manager",
+      "description": "Менеджер. Просматривает пользователей и рассылки, может отключать рассылки и блокировать пользователей.",
+      "phone_number": null,
+      "avatar": "users/avatars/36..04.jpg",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$OhxJThJxDKjNZfNf5dIXXT$J9x7uoDmUcwSjDWnEcmW7P6Uz5DUgDELwO4TatZIQ9c=",
+      "last_login": "2024-06-20T06:30:19.455Z",
+      "is_superuser": false,
+      "first_name": "Content-manager",
+      "last_name": "SkyPro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-18T15:00:44Z",
+      "email": "content-manager@sky.pro",
+      "name": "content-manager",
+      "description": "Контент-менеджер, работает с блогом",
+      "phone_number": null,
+      "avatar": "users/avatars/mysterious-mafia-man-wearing-hat_52683-34829.jpg",
+      "is_content_manager": false,
+      "is_moderator": false,
+      "is_banned": false,
+      "groups": [
+        3
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.usertoken",
+    "pk": 7,
+    "fields": {
+      "user": 10,
+      "created_at": "2024-06-17T06:05:14.714Z",
+      "token": "c21eef5115c140e83deb66eafe0a6ce6"
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 1,
+    "fields": {
+      "title": "Методы борьбы со спамом",
+      "body": "<strong>Основные категории</strong>\r\n\r\n<b>Каким бывает спам:</b>\r\n\r\nрассылки — новостные, акционные, информационные и так далее;\r\nписьма-призывы — купить, зарегистрироваться, перейти по ссылке, заказать услугу;\r\nписьма, которые приходят с неизвестных адресов.\r\nК сожалению, общей категории, которая включает все ненужные конкретному пользователю письма, нет. Ни одно средство защиты не сможет с точностью до 100% определить ненужность письма и поместить его в специальное хранилище или уничтожить. Для борьбы со спамом применяется несколько методов.\r\n\r\n<b>Использование фильтров или отписка</b>\r\n\r\nТеоретически можно просто отписаться от назойливых новостных или продающих рассылок и забыть о спаме. Как вариант, создать универсальный фильтр и настроить его на корректную работу. Однако это только теория, практически справиться со спамом такими методами достаточно сложно. Например, существуют сервисы, которые продолжают присылать письма, даже если от них отписаться. Ссылки на отписку существуют, но они не работают или приводят не туда, куда нужно. Часто используется пересылка писем и найти реального отправителя, чтобы отписаться от рассылки сложно.\r\nИногда достаточно написать в техподдержку. Фильтры также не всегда помогают, настроить их работу под конкретную рассылку сложно. Можно пропустить действительно важное сообщение, которое система защиты определит как спам. Тем более, что формат и структура писем меняются с целью обхода фильтрации.\r\n\r\n<b>Применение сторонних почтовых сервисов или агрегирование</b>\r\n\r\nОбщеизвестные почтовые сервисы могут себе позволить мощные системы фильтрации нежелательных сообщений. Использование аккаунтов на таких сервисах для получения писем позволяет избавиться от существенной доли спама. Более того, система фильтров настроена таким образом, что позволяет фильтровать входящие сообщения на категории:\r\n- реклама;\r\n- социальные сети;\r\n- общие и т.д.\r\nМинус такого подхода — использование только одного аккаунта для доступа к почте. Достаточно его взломать и можно получить доступ ко всей переписке. Вопрос безопасности выходит на первое место.\r\nВ любом случае, такой подход имеет свои достоинства. Вам не нужно настраивать собственные фильтры, можно использовать существующие механизмы от стороннего ресурса. Нагрузка на систему также снижается к минимуму, ведь антиспам-фильтры работают со стороны почтового сервиса.\r\n\r\n<b>Почта на один раз</b>\r\n\r\nСуть способа сводится к использованию определенного адреса электронной почты только один раз для конкретного действия. Например, для регистрации на ресурсе или тестировании сервиса. После этого забываете об этом адресе и создаете новый для другой операции. Вы можете не беспокоиться за эти адреса, почтовые сервисы их просто аннулируют через определенный период времени.\r\nЭтот способ позволяет сохранить свой постоянный почтовый адрес в неизвестности для спамеров. Он особенно удобен в случае, когда без адреса электронной почты невозможно зарегистрироваться или выполнить определенное действие на сервисе.\r\n\r\n<b>Дополнительные адреса</b>\r\n\r\nАналог предыдущего при одном небольшом замечании. Дополнительный почтовый адрес вами может использоваться многократно, исключительно для случаев регистрации в различных ресурсах. Такой адрес остается активным и используется вами, не блокируется почтовым сервисом как брошенный.\r\nСпособ очень удобен. Например, если вам необходимо получить сообщение, вы оставляете дополнительный адрес и проверяете почту в нужное время. Даже если такой адрес получат спамеры, не страшно, ведь это дополнительная почта, которая используется только в разовых ситуациях, для регистрации или восстановления пароля.\r\n\r\n<b>Использование особых меток для писем или категоризация сообщений</b>\r\n\r\nЕсли вас атаковали спамеры, фильтры не справляются и почта завалена ненужными сообщениями, используйте другое место для сбора важных писем. Суть этого метода основана на том, что спамеры стремятся доставить письмо в папку входящие. Оставьте ее злоумышленникам, а себе создайте другую. Вы можете настроить фильтрацию входящей почты таким образом, чтобы помеченная особыми метками нужная почта попадала в созданный каталог.\r\nЕсли ваша почта является единственной и основной, то такой способ позволяет нормально общаться, не обращая внимание на спам, пробивающийся через стандартные фильтры. В случае, когда этот адрес используется редко для решения определенных задач, то данного метода борьбы более чем достаточно.\r\n\r\n<b>Способы борьбы со спамом в зависимости от категорий</b>\r\n\r\nДля определенных видов спама актуальны разные способы противодействия:\r\n- новостные и акционные рассылки — лучше всего помогает разовый или дополнительный почтовые адреса, для основной почты достаточно использовать метод отписки и фильтрации;\r\n- сообщения со специально созданных адресов — бороться с ними помогают разовые и дополнительные адреса, агрегатирование и отход в сторону альтернативных папок для сбора полезных писем;\r\n- для борьбы с призывами к покупке, регистрации или переходу по ссылке достаточно использовать методы из предыдущего пункта;\r\n- рассылка спама с неизвестных адресов — бороться можно при помощи использования меток и категорий, созданных в качестве альтернативы стандартным способам, также действенно агрегатирование сообщений.\r\nЛюбую из категорий спама можно побороть комбинацией разных способов. Все варианты доступны для применения любым пользователем почтовых сервисов, не требуют специальных знаний и дополнительного ресурса. В статье указаны только доступные и простые методы. Но существуют ещё специализированные способы борьбы, которые и вовсе не оставляют никакой альтернативы спаму. Правда доступны они лишь организациям, владельца собственного почтового домена и корпоративной почты.",
+      "image": "blog/photo/fighting-spam.jpg",
+      "created_at": "2024-06-19",
+      "is_published": true,
+      "views_count": 7
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 3,
+    "fields": {
+      "title": "12 способов повысить эффективность почтовой рассылки",
+      "body": "<strong> 12 способов повысить эффективность почтовой рассылки </strong>\r\n\r\n<b>Разработайте уникальный стиль</b>\r\n\r\nУзнаваемость — как визуальная, так и стилистическая — основной признак серьезности вашего подхода и магнит для подписчиков. Не жалейте времени и средств, подробно проработайте дизайн, учитывающий все особенности вашего контента и выгодно оттеняющий его отличия от конкурентов. В дальнейшем это существенно увеличит шансы для адреса рассылки оказаться в белом списке, а для самих писем — быть внимательно прочитанными, а не бегло просмотренными.\r\n\r\n<b>Создавайте правильные заголовки</b>\r\n\r\nТема письма должна кратко обрисовывать его суть. Не помешает при этом заинтриговать подписчика, задать ему вопрос или даже бросить вызов. Но не пытайтесь объять необъятное: слишком длинные заголовки сразу снизят внимание к рассылке. Помните о том, что существует прехедер (предзаголовок), который формируется из текста в начале письма. Дополнительную информацию можно указать в нем. Именно дополнительную: не стоит повторять уже сказанное в теме.\r\n\r\nКак в самом заголовке, так и в прехедере избегайте \"спамерских\" слов и клишированных фраз — помимо опен-рейта они снижают вероятность прохождения через почтовые фильтры.\r\n\r\n<b>Следите за качеством текстов</b>\r\n\r\nСтарайтесь сделать письма содержательными. Если подписчик не извлечет пользы, он будет их просматривать реже, а то и вовсе отпишется. Еще более негативного результата можно добиться, увлекаясь рекламой в ущерб информативности. Соблюдайте интересы читателей наравне со своими, так обе стороны останутся довольны друг другом.\r\n\r\nГрамотность также очень важна. Текст без ошибок и опечаток располагает читателя к вам, вызывая доверие и стимулируя клики по ссылкам. Небрежно составленный и оформленный — дает противоположный эффект. Если вы не можете написать хороший текст самостоятельно, наймите специалиста.\r\n\r\n<b>Включайте в письма яркие элементы</b>\r\n\r\nАнимированные картинки, видео, кнопки, инфографика, смайлики в теме и тексте письма помогают привлечь и удержать внимание, заинтересовать читателя, призвать его к действию. Как следствие — повышается опен-рейт, растет эмоциональная вовлеченность подписчиков. Наглядность, простота и доступность информации, оригинальная или забавная подача увеличивают также и лояльность аудитории.яркие элементы в письмах\r\nПредлагайте за подписку награды\r\nОбещание приятных бонусов — прекрасный способ пополнить армию своих подписчиков. Однако не переусердствуйте: награда должна быть привлекательной, но не настолько, чтобы кнопку \"подписаться\" нажимали лишь ради ее получения. Любители \"бесплатного сыра\" не прочтут ни одного вашего письма. Поэтому выбирайте подарки, непосредственно связанные с вашей спецификой, так вы отсеете большинство случайных людей.\r\n\r\n<b>Используйте цепочки писем</b>\r\n\r\nОсобенно хорошо это работает с новичками. Так называемые welcome-цепочки (серию из нескольких текстов с приветственной информацией) по статистике открывают чуть ли не в два раза чаще обычных. Но и у обычных цепочек из двух писем и больше опен-рейт все равно выше, чем у одиночных писем.\r\n\r\n<b>Создавайте атмосферу личного взаимодействия с подписчиком</b>\r\n\r\nЛюдям нравится душевное отношение. Такой банальный прием, как обращение по имени, удивительно стимулирует клики по ссылкам внутри письма. Поздравления с праздниками укрепляют лояльность. Пишите от лица конкретного сотрудника или персонажа, являющегося частью вашего уникального стиля. Сопровождайте подпись его фотографией (портретом).\r\n\r\n<b>Поздравляйте читателей с праздниками, и не только с днем рождения и Новым годом.</b>\r\n\r\n<b>Следите за базой</b>\r\n\r\nРегулярная работа с базой подписчиков — необходимое условие для того, чтобы ваша рассылка была успешной и востребованной. Сегментация даже по таким несложным параметрам, как пол, возраст и сфера занятости, позволит лучше подбирать темы и находить подход к читателям. Удаляйте неверные адреса и отписывайте фильтрующих вас как спам, чтобы база на момент отправки писем была максимально активной, ведь ваша цель — хороший опен-рейт.\r\n\r\n<b>Проводите опросы</b>\r\n\r\nВо-первых, их результаты помогут вам сегментировать базу и планировать дальнейшее развитие рассылки. Во-вторых, любому человеку будет приятно знать, что его мнение ценят. Так вы расположите читателей к себе, усиливая социальный аспект вашего взаимодействия.\r\n\r\n<b>Тестируйте письма перед отправкой</b>\r\n\r\nПочтовые сервисы предоставляют возможность предпросмотра и проверки прохождения спам-фильтров: не пренебрегайте ими. Для надежности запускайте проверочную рассылку по базе сотрудников или друзей, они помогут обнаружить ошибки, которые вы не заметили.\r\n\r\n<b>Анализируйте реакцию аудитории</b>\r\n\r\nОбращайте внимание не только на опен-рейт и клики. Делайте выводы из результатов опросов, отмечайте, какие письма вызвали наибольший отклик. Экспериментируйте с дизайном, опираясь на фидбек. И вы создадите рассылку, которую будут ждать с нетерпением и читать с удовольствием.",
+      "image": "blog/photo/metrics-1110x420.png",
+      "created_at": "2024-06-20",
+      "is_published": true,
+      "views_count": 2
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 4,
+    "fields": {
+      "title": "7 ошибок в email-рассылках, которые могут обернуться для вас крупными потерями",
+      "body": "<strong>Ошибки в email</strong>\r\n\r\nСколько стоят ошибки в email-рассылке? По статистике один потраченный доллар на email маркетинг приносит возврат в 40 долларов. Допустим, что письма отправили с ошибкой — не работает ссылка на странице с акцией, которую бренд рекламирует. Компания впустую потратит маркетинговый бюджет и недополучит значительный доход.\r\n\r\nМаленькие ошибки в письмах иногда оборачиваются большими потерями: денег, репутации, аудитории. Люди отписываются или нажимают «отправить в спам», когда получают странные email рассылки с непонятными символами, плохо читаемым текстом, и картинками, которые не отображаются. Поэтому важно проверять правильность каждого эмэйл.\r\n\r\nВ статье разберём 7 типичных ошибок, из-за которых маркетинговая кампания может провалиться.\r\n\r\n<b>1. Список рассылки открыт для всех</b>\r\n\r\nПоказывать пользователю все адреса, которым также пришла рассылка, — серьёзная ошибка.\r\nВо-первых, если предложение в письме позиционируется как эксклюзивное, адресат увидит, что это неправда. Ведь такое же получили и другие люди.\r\nВо-вторых, email адрес — это персональные данные пользователей, которые нельзя просто так передавать другим людям.\r\nВ третьих, база клиентов окажется у конкурентов, которые, возможно, подписаны на вашу рассылку.\r\n\r\n<b>2. Тэги вместо имени пользователя</b>\r\n\r\nАвтоматическая подстановка имени пользователя в письме при рассылке — приём персонализации. Работает такой способ через настройку переменных в письмах, которые добавляются туда через специальные тэги.\r\nПри ошибке в настройках пользователь вместо своего имени увидит набор символов, например, {first_name}. Одним людям это покажется забавным, другие примут письмо за спам, пожалуются и отпишутся.\r\n\r\n<b>3. Не работают ссылки в письме</b>\r\n\r\nЕсли ссылка в сообщении не открывается или ведёт на страницу с ошибкой 404, бренд рискует недополучить прибыль. Вряд ли пользователь будет настойчиво разбираться и писать в техподдержку, чтобы получить правильную ссылку на акцию и скидки. В лучшем случае найдёт ваш сайт через поисковик, в худшем — не сделает ничего.\r\nДаже емейл рассылка, которая не должна ничего продавать, с неработающей ссылкой приведёт к потере лояльности. Так известный бренд прислал видеопоздравление, но вместо видео открывалась несуществующая страница. Поздравление не удалось.\r\n\r\n<b>4. Не работают кнопки в письме</b>\r\n\r\nЧастный случай неработающих ссылок — неактивные элементы дизайна. В примере на картинке есть кнопка, но при нажатии — на весь экран открывается картинка. То есть вёрстка письма для рассылки проходила неправильно: маркетолог не сделал кнопку активной.\r\nЕсли в теле письма есть дублирующая ссылка с таким же CTA, конверсию ещё можно спасти. Когда кнопка на изображении — единственный вариант перехода на сайт, ошибка приведёт к потере денег.\r\n\r\n<b>5. Не отображаются изображения</b>\r\n\r\nИспользовать изображения и дизайн в письмах маркетологи начали не вчера, но до сих пор совершают ошибки, из-за которых картинки не отображаются.\r\nИногда причина в весе и размере изображения, которое не прогружается, когда у пользователя медленный интернет. Влияет также формат: обычно используют JPG, PNG, GIF, а вот эксперименты с другими типами картинок приводят к долгой загрузке.\r\nПользователь не станет ждать, когда изображение появится на экране, и, скорее всего, закроет письмо. А если имэйл полностью сделан из картинки, кампания пройдёт впустую и не принесёт результата.\r\n\r\n<b>6. Не видно текст из-за инверсии</b>\r\n\r\nПри отправке рассылок маркетологи иногда забывают о существовании ночного режима на устройствах, когда светлый фон меняется на тёмный. Если не подстроить текст и дизайн под Dark Mode, в письме эти элементы не будет видно.\r\nОбычно проблема решается выбором такого дизайна картинок и текста, который одинаково хорошо смотрится на светлом и тёмном, а ещё прозрачностью фона картинок. Ещё не все провайдеры поддерживают и отображают правильно инверсию.\r\nИногда из-за цвета текста происходят вот такие ситуации: белые буквы на белом фоне. Поэтому важно проверять вид писем в разных темах и по возможности для разных почтовых клиентов.\r\n\r\n<b>7. Отображаются неправильные символы</b>\r\n\r\nКаждый хотя бы раз получал email c непонятыми или одинаковыми символами вместо текста. Обычно причина — несовпадение кодировки символов в редакторе, который использует сервис почтовых рассылок.\r\nЕщё такие «загадочные» письма приходят при попытке бренда выделиться и сделать письмо со своим фирменным шрифтом, который не поддерживает почтовый клиент пользователя.\r\n\r\n<strong>Резюме</strong>\r\n\r\nТипичные ошибки в письмах, которые вредят репутации компании и могут снизить доход от рекламной кампании:\r\n<li>Тэги или код вместо имени пользователя и персонализации.</li>\r\n<li>Список рассылки видят все адресаты, тогда клиентская база бренда становится доступной конкурентам.</li>\r\n<li>Не работают ссылки и кнопки в письме.</li>\r\n<li>Изображения долго открываются или не загружаются совсем.</li>\r\n<li>Текст письма становится «невидимым», когда отображается в другой цветовой теме (вечерний тёмный режим).</li>\r\n<li>Вместо текста в письме непонятные или одинаковые символы.</li>",
+      "image": "blog/photo/7_oshibok_v_email_rassylkah_871a188532.png",
+      "created_at": "2024-06-20",
+      "is_published": true,
+      "views_count": 1
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 6,
+    "fields": {
+      "title": "Email-рассылки: правила создания",
+      "body": "<strong>Email-рассылки: правила создания</strong>\r\n\r\n<b>Что такое email-рассылка</b>\r\n\r\nEmail-рассылка – это отправка писем определенной группе адресатов с помощью электронной почты. Она используется как маркетинговый инструмент, один из элементов в цепочке продаж, способ информирования клиента и поддержания его лояльности.\r\n\r\nМожет показаться, что сегодня email-рассылки не работают. Люди все чаще пользуются мессенджерами, Telegram, а почтой – иногда не каждый день, а редко, несколько раз в месяц, для пересылки рабочих файлов. Однако статистика показывает, что электронная почта по-прежнему остается работающим методом коммуникации. Кроме того, почта активно используется для регистрации, получения уведомлений, запросов, деловых переписок, поэтому письма, поступающие в почтовый ящик, пользователи по-прежнему читают.\r\n\r\nEmail-рассылки могут отправляться на регулярной основе (например, еженедельно, раз в месяц или два раза в месяц, или ежеквартально) или в определенное время. Для их создания обычно используются специальные программы, которые отправляют электронные сообщения массово всей базе. Компании также могут использовать автоматические системы, которые помогают анализировать результаты email-кампаний.\r\n\r\n<b>Какие задачи решает email рассылка</b>\r\nРассылка остается популярным маркетинговым и рекламным инструментом, поскольку решает сразу несколько задач:\r\n\r\nЗадачи\r\n<li>Является одним из инструментов воронки продаж, которая превращает читателей сайта в покупателей.</li>\r\n<li>Используется для совершения целевых действий – например, регистрации на мероприятие.</li>\r\n<li>Делает лучше продажи сопутствующих и дополнительных товаров.</li>\r\n<li>Напоминает о продукте, стимулирует интерес к нему.</li>\r\n<li>Привлекает трафик на сайт или в блог.</li>\r\n<li>Помогает в решении технических вопросов – например, служит для подтверждения регистрации или оплаты.</li>\r\n<li>Используется как способ анонсирования событий на неделю или месяц.</li>\r\n<li>Является средством сбора обратной связи.</li>\r\n<li>В некоторых случаях рассылка становится инструментом прямых продаж.</li>\r\n<li>Способствует возвращению в базу подписчиков, которые интересовались товаром, но не совершили покупки.</li>\r\n<li>Собирает отзывы, комментарии, используется для организации обратной связи.</li>\r\n<li>С помощью email можно решать расширенные маркетинговые задачи. Например, они помогают лучше сегментировать базу, персонализировать сообщения по базе, получать статистику, тестировать работу и маркетинговые инструменты.</li>\r\n\r\n<b>Типы e-mail рассылок</b>\r\n\r\nСуществует три типа рассылок:\r\n\r\nСлужебные уведомления - отправляются автоматически системой и содержат информацию о различных операциях, происходящих в рамках бизнес-процессов. Они обычно включают короткий текст и информацию о дате, времени и месте события. Это может быть, например, уведомление о новом заказе, обновление информации в аккаунте пользователя. Обычно предназначены непосредственно адресату, без копирования других пользователей или групп. Они также могут быть настроены на отправку в конкретное время или в зависимости от действий пользователя.\r\nАвтоматическая - отправляют автоматически при действиях, происходящих в системе. Например, автоматическая рассылка ограниченным пользователям может быть настроена для отправки письма с информацией о новом товаре или услуге, которые стали доступными для заказа, или для отправки промокода после покупки товара. Они обычно содержат более детальную информацию, чем служебные уведомления, и могут включать графику, изображения и другие элементы дизайна. Они также могут быть настроены для отправки на несколько адресов, в зависимости от условий или действий.\r\nРегулярная массовая email рассылка по базе - это процесс отправки одинаковых или похожих сообщений большому количеству подписчиков одновременно. Цель такой рассылки может быть различной: информирование о новостях, продвижение товаров или услуг, повышение узнаваемости бренда и т.д. Предполагает отправку через промежутки времени, например, еженедельно, раз в месяц или ежеквартально. Частота может быть разной в зависимости от целей и задач, которые стоят перед отправителем.\r\n\r\n<b>Какие виды писем существуют</b>\r\n\r\nДля email-рассылок используются следующие виды писем:\r\n\r\nТриггерные - отправляют клиенту в ответ на действия, которые он совершает на сайте. Это, например, оформление заказа, подписка, оставление отзыва или комментария, остановку покупки в середине процесса и другие. Когда клиент выполняет любое из этих действий, триггерные письма автоматически отправляются на электронную почту, чтобы предоставить дополнительную информацию или поддержку.\r\n\r\nТранзакционные - используются для подтверждений и напоминаний о покупках, подписках, изменении настроек профиля и т.д. Транзакционные письма обычно содержат личную информацию - имя пользователя, информацию о заказе, статус его выполнения, ссылки для отмены подписки или изменения настроек и т.д.\r\n\r\nПромо-письма – отправляются с целью продвижения товаров или услуг. Они могут содержать информацию о скидках, акциях на месяц или на две недели с ограниченным доступом, новых продуктах или услугах, которые можно получить бесплатно.\r\nКонтентные - письма подписчикам с целью предоставления им информации о новых продуктах, услугах, мероприятиях или других событиях. Они могут также содержать статьи, советы, обзоры или любой другой материал, который хотят видеть пользователи и который будет интересен и полезен подписчикам.\r\nПродающие – письма с целью убедить получателя купить продукт или услугу, которую предлагает отправитель. Они используются в маркетинговых кампаниях и рекламе для увеличения продаж и привлечения новых клиентов.\r\nРеактивационные - отправляются подписчикам, которые перестали открывать рассылку для базы в течение определенного периода времени (например, месяц). Реактивационные письма обычно представляют собой просьбу подтвердить свою подписку или привлекательные предложения, например, скидки на продукты или услуги бесплатно, чтобы привлечь внимание получателей и побудить их к возвращению.\r\nФормат выбирается в зависимости от маркетинговых задач, которые нужно решить с их помощью.\r\n\r\n<b>Функционал сервисов email-рассылок</b>\r\n\r\nНезависимо от того, какой сервис используется, в базовый функционал каждого из них входят опции:\r\n\r\n<li>Загрузка собственной базы контактов с сайтов.</li>\r\n<li>Возможность сегментировать контакты.</li>\r\n<li>Валидация email-адресов – исправление опечаток и ошибок.</li>\r\n<li>Редактирование писем.</li>\r\n<li>Планирование времени отправки.</li>\r\n<li>Автоматическая настройка триггеров, создание сценариев взаимодействия с пользователями на сайте.</li>\r\n<li>Персонализация (например, обращение по имени).</li>\r\n<li>Интеграция с системами, собирающими данные о пользователях.</li>\r\n<li>Сбор статистики, необходимой для аналитики, используя utm-метки и другие инструменты.</li>\r\n<li>Возможность отписки, которая должна быть в соответствии с требованиями законодательства России.</li>\r\n<li>Встроенные блочные конструкторы, позволяющие создавать рассылки различных форматов и работать с дизайном.</li>\r\n<li>Готовые конструкторы и шаблоны писем с разным содержанием.</li>\r\n<li>Удобная система для предпросмотра и другие инструменты для тестирования.</li>\r\n<li>Настройка отправки через сервис автоматических писем.</li>\r\nПеречисленного набора инструментов достаточно небольшой компании, которая только начинает использовать email-маркетинг для продвижения продукции. Для крупного бизнеса необходим расширенный функционал.\r\n\r\n<b>Как собрать базу контактов</b>\r\n\r\nЕсли адреса в базу сайта собраны незаконно, письма, вероятнее всего, попадут в спам. Так происходит, если база:\r\n\r\n<li>собрана из доступных источников – например, по соцсетям, в мессенджерах;</li>\r\n<li>куплена;</li>\r\n<li>собрана с помощью парсера;</li>\r\n<li>автоматически создана программой.</li>\r\n\r\nДля законного сбора контактов в базу лучше использовать методы:\r\n\r\n<li>Загрузить на одной из страниц сайта форму подписки, протестировав разные варианты текста и дизайна.</li>\r\n<li>Разместить форму подписки на странице компании в соцсетях.</li>\r\n<li>Создать отдельный лендинг для сбора контактов в форму.</li>\r\n<li>Разместить в личном кабинете чек-бокс, предложив пользователям заполнить его при регистрации или добавлении товара в корзину или оплате картой.</li>\r\n<li>Установить на странице товара кнопку «Сообщить, когда появится в наличии».</li>\r\n<li>Экспортировать адреса из CRM-системы сайта.</li>\r\n\r\nВажно продумать инструменты не только для сбора, но и для регулярной актуализации имеющейся базы данных.\r\n\r\n<b>Как создавать письма для рассылки</b>\r\n\r\nПри создании письма необходимо обратить внимание на несколько нюансов:\r\n\r\n<li>Цепляющая тема, чтобы подписчик понял, о чем письмо, и захотел его прочитать. Это могут быть, к примеру, эмодзи или провокационные формулировки.</li>\r\n<li>Прехедер – дополнение к теме, позволяющее раскрыть ее.</li>\r\n<li>Размер письма - нужно обратить внимание на максимальный размер, доступные почтовым сервисам, чтобы пользователям не приходилось переходить в облако или на сайт, чтобы дочитать письмо.</li>\r\n<li>Ширина - сервисы рекомендуют использовать ширину 600 пикселей.</li>\r\n<li>Текст – не должен включать шаблонных фраз и стоп-слов, которые могут стать сигналом для спам-фильтров или настроек DMARC.</li>\r\n<li>Ссылки с призывом к действию либо в формате гиперссылок.</li>\r\n<li>Письмо будет привлекательнее, если добавить к нему изображения и анимацию.</li>\r\n<li>Лучшие шрифты - Arial и Arial Black, Times New Roman, Verdana, Courier New, Tahoma, MS Sans Serif, Trebuchet MS, Georgia. Они корректно отображаются во всех браузерах.</li>\r\n<li>Письмо должно включать информацию о компании, ее контакты.</li>\r\n<li>Согласно требованию закона, в каждом письме должна быть ссылка на отписку.</li>\r\n\r\n<b>Несколько дополнительных рекомендаций, следование которым поможет сделать рассылки более эффективными:</b>\r\n\r\n<li>Базу лучше собрать самостоятельно, не нужно покупать готовую.</li>\r\n<li>Сделайте валидацию email, которая поможет не попасть в спам.</li>\r\n<li>Введите двухступенчатую систему подтверждения адреса (Double Opt-in).</li>\r\n<li>Персонализируйте письма, чтобы они казались более личными.</li>\r\n<li>Не перегружайте письмо текстом, особенно на профессиональном языке, и изображениями.</li>\r\n<li>Разработайте шаблоны писем, обратив особое внимание на дизайн и верстку.</li>\r\n<li>Создайте название, которое поможет выделить выгоду и пользу рассылки для читателя.</li>\r\n\r\n<b>Как оценить эффективность email-рассылки</b>\r\n\r\nОценить работу можно по нескольким критериям. Ниже приведены некоторые доступные и наиболее важные из них:\r\n\r\n<li>Количество просмотров письма - сколько раз письмо было открыто получателями. Чем больше открытий, тем выше вероятность того, что рассылка была замечена и прочитана.</li>\r\n<li>Количество переходов на сайт и кликов - сколько раз получатели нажали на ссылки в письме. Это число показывает, насколько хорошо вы смогли заинтересовать аудиторию и подтолкнуть ее к действию.</li>\r\n<li>Количество отписок - сколько людей отписалось от рассылки после получения вашего письма. Если это количество очень высокое, то, возможно, вы не достигаете своей аудитории или сообщение не соответствует их ожиданиям.</li>\r\n<li>Количество конверсий - сколько раз получатели выполнили желаемое действие, например, произвели покупку или зарегистрировались на сайте. Это наиболее важный показатель результата, поскольку именно он указывает, насколько успешно вы смогли превратить интерес получателей в конкретные действия.</li>\r\n<li>ROI (отношение прибыли к затратам) - сколько вы получили прибыли по сравнению с затратами на ее проведение. Если ROI положительный, то рассылка была эффективной.</li>\r\n<li>Общая эффективность вашей email-рассылки по базе зависит от множества факторов, включая качество контента, дизайн, таргетинг, время отправки, насколько долгой она будет и др. Поэтому для более точной оценки лучше проводить A/B-тестирование и сравнивать результаты разных версий рассылки.</li>\r\n\r\n\r\n<b>Ошибки в email-рассылках</b>\r\n\r\nСамые распространенные ошибки, которые допускают маркетологи:\r\n\r\n<li>Отсутствие персонализации. Люди любят, когда обращаются к ним по имени и когда им предлагают контент, соответствующий их интересам и предпочтениям.</li>\r\n<li>Неуместные темы писем. Тема письма является первым, что видит получатель, поэтому она должна быть краткой, информативной и привлекательной. Если тема письма не соответствует смыслу или является неинформативной, получатель может не захотеть его открыть.</li>\r\n<li>Отсутствие ясного призыва к действию. Каждое письмо должно иметь ясный призыв к действию, который скажет получателю, что нужно сделать после прочтения письма – например, подписаться, войти в группу.</li>\r\n<li>Отсутствие подписи отправителя. Подпись отправителя должна содержать контактную информацию - номер телефона или адрес почты, а также название компании.</li>\r\n<li>Недостаточная проверка перед отправкой. Отправка письма с опечатками, ошибками в ссылках или другими техническими проблемами может повлиять на репутацию.</li>\r\n<li>Слишком частая отправка. Следует поддерживать определенный ритм рассылки на всю базу и не перегружать получателей.</li>\r\n\r\n<b>Заключение</b>\r\n\r\nЕmail-рассылки являются эффективным методом маркетинга и коммуникации с клиентами. Они позволяют достигать большой аудитории, легко контролировать и анализировать результаты, а также повышать узнаваемость бренда и удерживать клиентов. Однако, для того чтобы рассылки были действительно работающими, необходимо уделить внимание качеству контента, адаптировать его под интересы и потребности аудитории, а также следить за техническими аспектами, такими как корректная отображаемость на различных устройствах и соответствие стандартам спам-фильтров. Следуя этим принципам, компании смогут использовать email-рассылки для улучшения своего бизнеса и взаимодействия с клиентами.Email-рассылки: правила создания и 34 сервиса для отправки сообщений",
+      "image": "blog/photo/servisy_dlya_rassylki_cb2b14b876.png",
+      "created_at": "2024-06-20",
+      "is_published": true,
+      "views_count": 1
+    }
+  }
+]

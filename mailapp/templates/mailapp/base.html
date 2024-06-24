@@ -38,7 +38,25 @@
                     <br>
 
                      </span>
-                    Сегодня у нас: {% current_time '%d-%m-%Y' %}
+               <label>Сегодня &nbsp;{%  current_time '%Y-%m-%d' %}  </label>
+
+     {% if user.is_authenticated %}
+     <label>, &nbsp; Добро пожаловать, пользователь <b>{{user.email}}</b>.
+            &nbsp; Ваши полномочия:
+            {% if user.is_superuser %}
+            <b>суперпользователь</b>.
+            {% endif %}
+            {% if user.is_staff and user.is_superuser == False%}
+            <b>персонал сайта (is staff)</b>.
+            {% endif %}
+            {% if user.is_staff == False and user.is_superuser == False  %}
+            <b>пользователь</b>.
+            {% endif %}
+         </label>
+
+     {% else %}
+    <label>, &nbsp;Вы находитесь на сайте как <b>анонимный пользователь</b>. </label>
+     {% endif %}
 
 
         </small>

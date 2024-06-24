@@ -1,20 +1,22 @@
 from django.db import models
 from django.utils import timezone
 
+from users.models import User
+
 NULLABLE = {'blank': True, 'null': True}
 
 
 # Create your models here.
-class User(models.Model):
-    name = models.CharField(max_length=150, verbose_name='имя пользователя')
-    email = models.EmailField(max_length=150, verbose_name='почта')
-
-    class Meta:
-        verbose_name = 'пользователь'
-        verbose_name_plural = 'пользователи'
-
-    def __str__(self):
-        return f" {self.name}"
+# class User(models.Model):
+#     name = models.CharField(max_length=150, verbose_name='имя пользователя')
+#     email = models.EmailField(max_length=150, verbose_name='почта')
+#
+#     class Meta:
+#         verbose_name = 'simple пользователь'
+#         verbose_name_plural = 'simple пользователи'
+#
+#     def __str__(self):
+#         return f" {self.name}"
 
 
 class Message(models.Model):
@@ -48,7 +50,7 @@ class MailingSettings(models.Model):
 class Mailing(models.Model):
     title = models.CharField(max_length=150, unique=True, verbose_name='рассылка',
                              help_text='введите название рассылки')
-    message_in = models.TextField(verbose_name='сообщение', help_text='введите текст рассылки', **NULLABLE)
+    message_in = models.TextField(verbose_name='описание', help_text='введите описание рассылки', **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='дата создания',
                                       help_text='введите дату создания рассылки')
     # status = models.BooleanField(default=False, verbose_name='статус', help_text='введите статус рассылки')
@@ -56,7 +58,7 @@ class Mailing(models.Model):
     #                                      help_text='введите дату срабатывания')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь',
-                             help_text='пользователь', related_name='user')
+                             help_text='пользователь', related_name='user', **NULLABLE)
 
     message = models.OneToOneField(Message, on_delete=models.CASCADE, verbose_name='сообщение', **NULLABLE,
                                    related_name='message')
@@ -67,6 +69,22 @@ class Mailing(models.Model):
     class Meta:
         verbose_name = 'рассылка'
         verbose_name_plural = 'рассылки'
+        permissions = [
+            ("can_turn_off_mailing", "Can turn off mailing (mailing.settings.status = False"),
+        ]
+
+
+    """
+    # Функционал менеджера
+    - Может просматривать любые рассылки.  PermissionRequiredMixin permission_required = "article.view_article
+    - Может просматривать список пользователей сервиса.  PermissionRequiredMixin permission_required = "article.view_article
+    - Может блокировать пользователей сервиса. "can_set_user_inactive", "Can blocked user (bool is_active (is_blocked ?) = False)"
+    - Может отключать рассылки. "can_turn_off_mailing", "Can turn off mailing (mailing.settings.status = False"
+
+    - Не может редактировать рассылки.
+    - Не может управлять списком рассылок.
+    - Не может изменять рассылки и сообщения.
+     """
 
     def __str__(self):
         return f" {self.title}"
@@ -114,5 +132,5 @@ class Client(models.Model):
         return f" {self.email}"
 
     class Meta:
-        verbose_name = 'емайл'
-        verbose_name_plural = 'емайлы'
+        verbose_name = 'клиент'
+        verbose_name_plural = 'клиенты'

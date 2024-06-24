@@ -7,13 +7,20 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "^5.0.6"
+django = "4.2.2"
 psycopg2 = "^2.9.9"
 python-decouple = "^3.8"
 black = "^24.4.2"
 pytz = "^2024.1"
 django-crontab = "^0.7.1"
 python-crontab = "^3.1.0"
+django-phonenumber-field = {extras = ["phonenumberslite"], version = "^7.3.0"}
+pillow = "^10.3.0"
+ipython = "^8.25.0"
+bleach = "^6.1.0"
+markdown = "^3.6"
+pytils = "^0.4.1"
+redis = "^5.0.6"
 
 
 [build-system]

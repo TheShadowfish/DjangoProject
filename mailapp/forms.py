@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import BooleanField
-from mailapp.models import User, Client, Mailing, Message, MailingSettings
+from mailapp.models import Client, Mailing, Message, MailingSettings
 
 
 class StyleFormMixin:
@@ -13,11 +13,11 @@ class StyleFormMixin:
                 field.widget.attrs['class'] = 'form-control'
 
 
-class UserForm(StyleFormMixin, forms.ModelForm):
-    class Meta:
-        model = User
-        fields = '__all__'
-        # fields = ('username', 'email')
+# class UserForm(StyleFormMixin, forms.ModelForm):
+#     class Meta:
+#         model = FreeUser
+#         fields = '__all__'
+#         # fields = ('username', 'email')
 
 
 class MailingForm(StyleFormMixin, forms.ModelForm):
@@ -29,7 +29,7 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
         #           'status',
         #           'datetime_send',
         #           'user')
-        exclude = ('created_at', 'message', 'settings')
+        exclude = ('created_at', 'message', 'settings', 'user')
         widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
 
     # def clean(self):
@@ -40,13 +40,42 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
     #     return cleaned_data
 
 
+class MailingSettingsModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = MailingSettings
+        fields = ('status',)
+        # fields = ('title',
+        #           'message',
+        #           'status',
+        #           'datetime_send',
+        #           'user')
+        # exclude = ('created_at', 'message', 'settings', 'user')
+        # widgets = {'datetime_send': forms.TextInput(attrs={'type': 'datetime-local'}), }
+
+    # def clean(self):
+    #     cleaned_data = self.cleaned_data
+    #     log = MailingLog.objects.create(log_text=f'Change parameters {timezone.now()}', mailing=self.instance)
+    #     log.save()
+    #
+    #     return cleaned_data
+
+
 class ClientForm(StyleFormMixin, forms.ModelForm):
+
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['mailing'].queryset = Mailing.objects.filter(user=user)
+
     class Meta:
         model = Client
         fields = '__all__'
 
 
 class MessageForm(StyleFormMixin, forms.ModelForm):
+    # def __init__(self, user, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['mailing'].queryset = Mailing.objects.filter(user=user)
+
     class Meta:
         model = Message
         fields = '__all__'

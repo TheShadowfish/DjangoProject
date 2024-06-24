@@ -1,21 +1,20 @@
 from django.urls import path
-from .views import ClientListView, UserListView, UserCreateView, UserDetailView, UserUpdateView, UserDeleteView, \
+from django.views.decorators.cache import cache_page
+
+from .views import ClientListView, \
     MailingListView, MailingCreateView, MailingUpdateView, MailingListViewSend, MailingDeleteView, ClientCreateView, \
     ClientUpdateView, ClientDeleteView, MailingDetailView, mailing_send, MessageListView, MessageUpdateView, \
-    MessageCreateView, MessageSettingsUpdateView, MailingSettingsListView, MailingSettingsUpdateView
+    MessageSettingsUpdateView, MailingSettingsListView, MailingSettingsUpdateView, \
+    toggle_activity_mailing, ClientDetailView, HomePageView
+
+# MessageCreateView,
 
 from mailapp.apps import MailappConfig
+
 app_name = MailappConfig.name
 
-
-
 urlpatterns = [
-    path('', ClientListView.as_view(), name='main'),
-    path('user_list/', UserListView.as_view(), name='user_list'),
-    path('user_create/', UserCreateView.as_view(), name='user_create'),
-    path('user_detail/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
-    path('user_update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
-    path('user_delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),
+    path('', cache_page(60)(HomePageView.as_view()), name='main'),
 
     path('mailing_list/', MailingListView.as_view(), name='mailing_list'),
     path('mailing_list_send/', MailingListViewSend.as_view(), name='mailing_list_send'),
@@ -28,16 +27,19 @@ urlpatterns = [
     path('mail_create/', ClientCreateView.as_view(), name='mail_create'),
     path('mail_update/<int:pk>/', ClientUpdateView.as_view(), name='mail_update'),
     path('mail_delete/<int:pk>/', ClientDeleteView.as_view(), name='mail_delete'),
+    path('mail_detail/<int:pk>/', ClientDetailView.as_view(), name='mail_detail'),
 
     path('mailing_send/<int:pk>/', mailing_send, name='mailing_send'),
 
     path('message_list/', MessageListView.as_view(), name='message_list'),
-    path('message_create/', MessageCreateView.as_view(), name='message_create'),
+
     path('message_settings_update/<int:pk>/', MessageSettingsUpdateView.as_view(), name='message_settings_update'),
     path('message_update/<int:pk>/', MessageUpdateView.as_view(), name='message_update'),
 
     path('settings_list/', MailingSettingsListView.as_view(), name='settings_list'),
     path('settings_update/<int:pk>/', MailingSettingsUpdateView.as_view(), name='settings_update'),
 
+    path('mailing_activity/<int:pk>/', toggle_activity_mailing, name='mailing_activity'),
 
 ]
+# path('message_create/', MessageCreateView.as_view(), name='message_create'),
