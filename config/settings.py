@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m=ezbvb04tzaw!d+#)1ds8f^o5zo=^xu-erkk7a^dzn1uxytx!'
+SECRET_KEY = config('SECRET_KEY') #'django-insecure-m=ezbvb04tzaw!d+#)1ds8f^o5zo=^xu-erkk7a^dzn1uxytx!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mail_list',
+        'NAME': config('DB_POSTRESQL_DB_NAME'),
         'USER': config('DB_POSTRESQL_USER'),
         'HOST': '127.0.0.1',
         'PORT': 5432,
@@ -150,3 +150,16 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 LOGIN_URL = '/users/'
+
+CACHE_ENABLED = config('CACHE_ENABLED') == 'True'
+
+if CACHE_ENABLED:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": config('LOCATION'),
+            "TIMEOUT": 1200  # Ручная регулировка времени жизни кеша в секундах, по умолчанию 300
+        }
+    }
+
+# redis://username:password@127.0.0.1:6379 - если закрыт авторизацией
