@@ -5,11 +5,18 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 from blogapp.forms import ArticleForm
 from blogapp.models import Article
+from blogapp.services import get_cached_article_list
+from pytils.translit import slugify
 
 
 # Create your views here.
 class ArticleListView(ListView):
     model = Article
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data["object_list"] = get_cached_article_list()
+        return context_data
 
 
 class ArticleDetailView(DetailView):
@@ -22,9 +29,10 @@ class ArticleDetailView(DetailView):
 
         return self.object
 
+    # и как быть с кешированием если объект меняется при прсомотре? Никак.
 
-class ArticleCreateView(LoginRequiredMixin,  PermissionRequiredMixin, CreateView):
 
+class ArticleCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Article
     form_class = ArticleForm
     permission_required = "blogapp.add_article"
@@ -39,6 +47,14 @@ class ArticleCreateView(LoginRequiredMixin,  PermissionRequiredMixin, CreateView
     #         new_article.slug = slugify(new_article.name)
     #         new_article.save()
     #     return super().form_valid(form)
+    def form_valid(self, form):
+        if form.is_valid():
+            new_article = form.save()
+            new_article.slug = slugify(new_article.title)
+            new_article.save()
+
+        get_cached_article_list(recached=True)
+        return super().form_valid(form)
 
 
 class ArticleUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
@@ -57,6 +73,14 @@ class ArticleUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView)
     #         new_article.slug = slugify(new_article.name)
     #         new_article.save()
     #     return super().form_valid(form)
+    def form_valid(self, form):
+        if form.is_valid():
+            new_article = form.save()
+            new_article.slug = slugify(new_article.title)
+            new_article.save()
+
+        get_cached_article_list(recached=True)
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse("blogapp:article_detail", args=[self.kwargs.get("pk")])
@@ -69,3 +93,7 @@ class ArticleDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView)
 
     login_url = "users:login"
     redirect_field_name = "login"
+
+    def form_valid(self, form):
+        get_cached_article_list(recached=True)
+        return super().form_valid(form)

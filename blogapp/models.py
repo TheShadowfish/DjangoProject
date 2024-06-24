@@ -25,6 +25,9 @@ class Article(models.Model):
         help_text="Загрузите превью статьи",
         **NULLABLE,
     )
+
+    slug = models.SlugField(unique=True, max_length=250, verbose_name="slug", help_text="slug", null=True)
+
     created_at = models.DateField(
         **NULLABLE,
         verbose_name="Дата создания",

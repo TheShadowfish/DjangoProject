@@ -42,22 +42,36 @@
                 <br>
                 <p class="card-text">
                     <b>Опубликовано: </b> {{object.created_at}}<br>
-                    <b>Просмотров: </b>{{object.views_count}}<br>
                    </p>
 
 
                 <div class="btn-group">
-                    <a class="btn btn-success" href="{% url 'blogapp:article_detail' object.pk%}" role="button">Посмотреть</a>
+                    {% comment "кнопка спрятана, теперь переход по slug %}
+                     <a class="btn btn-success" href="{% url 'blogapp:article_detail' object.pk%}" role="button">Посмотреть</a>
+
+                     <a class="btn btn-success" href="{% url 'blogapp:article_update' object.pk%}" role="button">Изменить</a>
+
+                    <a class="btn btn-success" href="{% url 'blogapp:article_delete' object.pk%}" role="button">Удалить</a>
+                    {% endcomment %}
+
+                    <a class="btn btn-success" href="{% url 'blogapp:article_detail' object.slug%}" role="button">Посмотреть</a>
 
                     {% if perms.blogapp.change_article or user.is_superuser %}
-                    <a class="btn btn-success" href="{% url 'blogapp:article_update' object.pk%}" role="button">Изменить</a>
+                    <a class="btn btn-success" href="{% url 'blogapp:article_update' object.slug%}" role="button">Изменить</a>
                     {%endif%}
 
                    {% if perms.blogapp.delete_article or user.is_superuser %}
 
-                     <a class="btn btn-success" href="{% url 'blogapp:article_delete' object.pk%}" role="button">Удалить</a>
+                     <a class="btn btn-danger" href="{% url 'blogapp:article_delete' object.slug%}" role="button">Удалить</a>
 
                     {%endif%}
+
+
+
+
+
+
+
                 </div>
 
             </div>
