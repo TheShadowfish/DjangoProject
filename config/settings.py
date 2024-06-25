@@ -83,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_POSTRESQL_DB_NAME'),
         'USER': config('DB_POSTRESQL_USER'),
-        'HOST': '127.0.0.1',
-        'PORT': 5432,
+        'HOST': config('DB_POSTRESQL_HOST'),
+        'PORT': config('DB_POSTRESQL_PORT'),
         'PASSWORD': config('DB_POSTRESQL_PASSWORD')
     }
 }
@@ -131,12 +131,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = config('EMAIL_USER') + '@yandex.ru'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = config('EMAIL_USE_TLS') == 'True'
+EMAIL_USE_SSL = config('EMAIL_USE_SSL') == 'True'
 
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
